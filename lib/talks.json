@@ -1,9 +1,104 @@
 [
   {
-    "title": "THEMING REACT COMPONENTS",
+    "title": "Right Mobile Strategy For Your Product",
+    "id": "1",
+    "created": "2020-06-27",
+    "location": "Agile Pakistan (Online)",
+    "slides": "https://docs.google.com/presentation/d/1Z7r9382jSUQNde94nc0UKGy0G408TjfHgFgXQjG6ZoQ/edit?usp=sharing",
+    "video": "https://www.facebook.com/watch/live/?v=506867229987882"
+  },
+
+  {
+    "title": "Google Cloud Run LiveClass",
+    "id": "2",
+    "created": "2020-06-30",
+    "location": "GDG Live Pakistan (Online)",
+    "slides": "https://docs.google.com/presentation/d/152JJEx0CYgX3im9ug2iV30qY-HH1OlRJbwAFJJ76ehE/edit?usp=sharing",
+    "video": "https://www.facebook.com/watch/live/?v=728193967992015"
+  },
+
+  {
+    "title": "Using GraphQL with Django",
+    "id": "3",
+    "created": "2020-06-28",
+    "location": "Python Karachi Meetup (Online)",
+    "slides": "https://docs.google.com/presentation/d/1hGzjlxubfyDMiPB0UKf7D4wyoO40hvQDPe3dsuFH0e0/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=6AwMSu2m5iw&feature=youtu.be"
+  },
+
+  {
+    "title": "Strategies for learning the tech skills you always wanted",
+    "id": "4",
+    "created": "2020-04-07",
+    "location": "Nest I/O (Online)",
+    "slides": "https://docs.google.com/presentation/d/1ht0hEnV5E4ozICFbencgxbJyJBApuriJPRCSDGmw9Ek/edit?usp=sharing",
+    "video": "https://www.facebook.com/watch/live/?v=506867229987882&ref=watch_permalink"
+  },
+
+  {
+    "title": "Testing Angular Apps using Karate",
+    "id": "5",
+    "created": "2020-02-16",
+    "location": "Angular Pakistan Meetup, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1hVcQ4Qqi_8lr11H9EX6tk8u8ujWEigwr3MbbWxNUeow/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=N_XlBIFMdlg"
+  },
+
+  {
+    "title": "Introduction to Docker - MasterClass",
+    "id": "6",
+    "created": "2020-02-15",
+    "location": "Fedora Meetup, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1TP_k41vnTYlarznpNCvrEjSMtjHtlppdb2uOsN8PPz0/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=mDrzbcdqjNE&t=1s"
+  },
+
+  {
+    "title": "Introduction to Application Perfomance Management using Elastic Stack",
+    "id": "7",
+    "created": "2019-12-21",
+    "location": "Elastic Meetup, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1JdgTSKY56XLyWEQjiFwwOCBHto9EucGlCRHG3B6-dwk/edit?usp=sharing"
+  },
+
+  {
+    "title": "Blazingly Fast Websites using AMP",
+    "id": "8",
+    "created": "2019-12-07",
+    "location": "Google IO Extended, Islamabad",
+    "slides": "https://docs.google.com/presentation/d/1ys411WZswkiG7ofORKXk_CEX3jykjlsr63cdTc8zsv4/edit?usp=sharing"
+  },
+
+  {
+    "title": "Advanced Interactions using AMP",
+    "id": "9",
+    "created": "2019-11-16",
+    "location": "Wordcamp Islamabad",
+    "slides": "https://docs.google.com/presentation/d/1viaUYZTbVGhO42fhurJWrD8hgCGsavrIURA_pOPjidw/edit?usp=sharing"
+  },
+
+  {
+    "title": "Mistakes while making PWAs",
+    "id": "9",
+    "created": "2019-10-26",
+    "location": "GDE Summit, SF, USA",
+    "slides": "https://developers.google.com/community/experts"
+  },
+
+  {
+    "title": "Instant Deploys for Django Apps using Cloud Run",
+    "id": "10",
+    "created": "2019-10-12",
+    "location": "Pycon Pakistan, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1O_D-Z0yS_gSvFNUD76mAM3RorkDmRoiTWDOSugNQfPY/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=IROpl7WdvL8"
+  },
+
+  {
+    "title": "Theming React Components",
     "id": "0",
     "created": "2020-05-21",
-    "location": "Google IO Extended, Karachi",
-    "link": "https://docs.google.com/presentation/d/1Z7r9382jSUQNde94nc0UKGy0G408TjfHgFgXQjG6ZoQ/edit?usp=sharing"
+    "location": "Wordcamp Karachi 2019, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1Z7r9382jSUQNde94nc0UKGy0G408TjfHgFgXQjG6ZoQ/edit?usp=sharing"
   }
 ]

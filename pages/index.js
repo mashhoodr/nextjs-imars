@@ -55,17 +55,31 @@ export default function Home({ allPostsData, allPodcastData, allTalksData }) {
               ""
             )
           )}
+          <li className={utilStyles.listItem}>
+            <Link href="https://anchor.fm/mashhoodr">
+              <a>
+                <small>> Listen to the rest all of them here.</small>
+              </a>
+            </Link>
+          </li>
         </ul>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Talks</h2>
         <ul className={utilStyles.list}>
-          {allTalksData.map(({ id, created, title, location, link }) => (
+          {allTalksData.map(({ id, created, title, location, slides, video }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href="" as={link}>
+              <Link href="" as={slides}>
                 <a>{title}</a>
-              </Link>
+              </Link>{" "}
+              {video ? (
+                <Link href="" as={video}>
+                  <a>
+                    <small>[Video]</small>
+                  </a>
+                </Link>
+              ) : null}
               <br />
               <small className={utilStyles.lightText}>
                 {location} - <DateUtil dateString={created} />
