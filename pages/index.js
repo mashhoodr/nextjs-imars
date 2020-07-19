@@ -7,7 +7,7 @@ import allTalksData from "../lib/talks.json";
 import Link from "next/link";
 import DateUtil from "../components/date";
 
-export default function Home({ allPostsData, allPodcastData, allTalksData }) {
+export default function Home({ allPostsData, allPodcastData }) {
   return (
     <Layout home>
       <Head>
@@ -18,23 +18,21 @@ export default function Home({ allPostsData, allPodcastData, allTalksData }) {
           Hello, I’m <strong>Mashhood</strong>. I’m a software engineer and a community leader.
         </p>
         <p>I am also a Google Developer Expert for Web and Angular.</p>
-        <p>
-          You can contact me on:
-          <ul>
-            <li>
-              <a href="https://twitter.com/mashhoodr">Twitter</a>
-            </li>
-            <li>
-              <a href="https://twitter.com/mashhoodr">Facebook</a>
-            </li>
-            <li>
-              <a href="https://twitter.com/mashhoodr">LinkedIn</a>
-            </li>
-            <li>
-              <a href="https://twitter.com/mashhoodr">Upwork</a>
-            </li>
-          </ul>
-        </p>
+        <p>You can contact me on:</p>
+        <ul>
+          <li>
+            <a href="https://twitter.com/mashhoodr">Twitter</a>
+          </li>
+          <li>
+            <a href="https://facebook.com/mashhoodr">Facebook</a>
+          </li>
+          <li>
+            <a href="http://linkedin.com/in/mashhoodr">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/mashhoodr">Github</a>
+          </li>
+        </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Podcast: Karachi Wala Developer</h2>
@@ -98,9 +96,7 @@ export default function Home({ allPostsData, allPodcastData, allTalksData }) {
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
-                <DateUtil dateString={date} />
-              </small>
+              <small className={utilStyles.lightText}>{date ? <DateUtil dateString={date} /> : null}</small>
             </li>
           ))}
         </ul>
@@ -116,7 +112,6 @@ export async function getStaticProps() {
     props: {
       allPostsData,
       allPodcastData,
-      allTalksData,
     },
   };
 }
