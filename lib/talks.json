@@ -14,7 +14,8 @@
     "created": "2020-06-30",
     "location": "GDG Live Pakistan (Online)",
     "slides": "https://docs.google.com/presentation/d/152JJEx0CYgX3im9ug2iV30qY-HH1OlRJbwAFJJ76ehE/edit?usp=sharing",
-    "video": "https://www.facebook.com/watch/live/?v=728193967992015"
+    "video": "https://www.facebook.com/watch/live/?v=728193967992015",
+    "featured": true
   },
 
   {
@@ -66,7 +67,8 @@
     "id": "8",
     "created": "2019-12-07",
     "location": "Google IO Extended, Islamabad",
-    "slides": "https://docs.google.com/presentation/d/1ys411WZswkiG7ofORKXk_CEX3jykjlsr63cdTc8zsv4/edit?usp=sharing"
+    "slides": "https://docs.google.com/presentation/d/1ys411WZswkiG7ofORKXk_CEX3jykjlsr63cdTc8zsv4/edit?usp=sharing",
+    "featured": true
   },
 
   {
@@ -82,7 +84,8 @@
     "id": "9",
     "created": "2019-10-26",
     "location": "GDE Summit, SF, USA",
-    "slides": "https://developers.google.com/community/experts"
+    "slides": "https://developers.google.com/community/experts",
+    "featured": true
   },
 
   {
@@ -91,14 +94,63 @@
     "created": "2019-10-12",
     "location": "Pycon Pakistan, Karachi",
     "slides": "https://docs.google.com/presentation/d/1O_D-Z0yS_gSvFNUD76mAM3RorkDmRoiTWDOSugNQfPY/edit?usp=sharing",
-    "video": "https://www.youtube.com/watch?v=IROpl7WdvL8"
+    "video": "https://www.youtube.com/watch?v=IROpl7WdvL8",
+    "featured": true
   },
 
   {
+    "title": "Rapid Prototyping Python Services using AWS Chalice",
+    "id": "12",
+    "created": "2019-09-14",
+    "location": "Pycon UK, Cardiff",
+    "slides": "https://docs.google.com/presentation/d/1eOANLxmvakXh-0BOgpajocojXaTR3AjSGm9IrVaKork/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=kDHu6oarH1Y",
+    "featured": true
+  },
+
+  {
+    "title": "Scaling Frontend Development using Microfrontends",
+    "id": "13",
+    "created": "2019-08-15",
+    "location": "ng-my KL, Malaysia",
+    "slides": "https://docs.google.com/presentation/d/1ggotsSdh3ZEiXxGam_-Fri6IYpth8H1yzGO0Zvd2C5k/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=WXbD4HMwVAc",
+    "featured": true
+  },
+  {
     "title": "Theming React Components",
     "id": "0",
-    "created": "2020-05-21",
+    "created": "2019-08-24",
     "location": "Wordcamp Karachi 2019, Karachi",
     "slides": "https://docs.google.com/presentation/d/1Z7r9382jSUQNde94nc0UKGy0G408TjfHgFgXQjG6ZoQ/edit?usp=sharing"
+  },
+  {
+    "title": "PWAs: Mobile for the next billion users",
+    "id": "14",
+    "created": "2018-08-05",
+    "location": "Wordcamp Karachi, 2019",
+    "slides": "https://docs.google.com/presentation/d/1mmAYmAwbalz4jcbee2OKq86GKHGogGXPVtelY6K1Uc8/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=lDKul6ymD34&",
+    "featured": true
+  },
+
+  {
+    "title": "A Guide to Instant Loading Angular Apps",
+    "id": "17",
+    "created": "2018-03-05",
+    "location": "JSHeroes, Cluj, Romania",
+    "slides": "https://docs.google.com/presentation/d/1G9CipvkuSi-vqhk1R79v_Hqas_-Atp_i9iFRlp_07K4/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=OigaRuQrkFs",
+    "featured": true
+  },
+
+  {
+    "title": "Rapid Prototyping using Anglar and Firebase",
+    "id": "16",
+    "created": "2018-02-01",
+    "location": "ng-europe, Paris, France",
+    "slides": "https://docs.google.com/presentation/d/15O6bbM0wPxR2fI1wFkBh6yfp827gXZnZXPOctgKq_3E/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=9ienVyg2Vnk",
+    "featured": true
   }
 ]

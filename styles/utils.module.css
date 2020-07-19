@@ -50,3 +50,8 @@
 .lightText {
   color: #666;
 }
+
+.smallHeading {
+  font-size: 13px;
+  font-weight: 400;
+}

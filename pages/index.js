@@ -17,6 +17,9 @@ export default function Home({ allPostsData, allPodcastData }) {
         <p>
           Hello, I’m <strong>Mashhood</strong>. I’m a software engineer and a community leader.
         </p>
+        <p>
+          Previously I was the founder at <a href="http://recurship.com">Recurship</a>.
+        </p>
         <p>I am also a Google Developer Expert for Web and Angular.</p>
         <p>You can contact me on:</p>
         <ul>
@@ -35,7 +38,14 @@ export default function Home({ allPostsData, allPodcastData }) {
         </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Podcast: Karachi Wala Developer</h2>
+        <h2 className={utilStyles.headingLg}>
+          Podcast: Karachi Wala Developer {"  "}
+          <Link href="https://anchor.fm/mashhoodr">
+            <a>
+              <small className={utilStyles.smallHeading}>all episodes</small>
+            </a>
+          </Link>
+        </h2>
         <ul className={utilStyles.list}>
           {allPodcastData.map(({ id, created, title, link, description }, index) =>
             index < 3 ? (
@@ -49,56 +59,54 @@ export default function Home({ allPostsData, allPodcastData }) {
                   <div dangerouslySetInnerHTML={{ __html: description }} />
                 </small>
               </li>
-            ) : (
-              ""
-            )
+            ) : null
           )}
-          <li className={utilStyles.listItem}>
-            <Link href="https://anchor.fm/mashhoodr">
-              <a>
-                <small>> Listen to the rest all of them here.</small>
-              </a>
-            </Link>
-          </li>
+          <li className={utilStyles.listItem}></li>
         </ul>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        {/* TODO create page for all the talks (only showing featured here) */}
         <h2 className={utilStyles.headingLg}>Talks</h2>
         <ul className={utilStyles.list}>
-          {allTalksData.map(({ id, created, title, location, slides, video }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href="" as={slides}>
-                <a>{title}</a>
-              </Link>{" "}
-              {video ? (
-                <Link href="" as={video}>
-                  <a>
-                    <small>[Video]</small>
-                  </a>
-                </Link>
-              ) : null}
-              <br />
-              <small className={utilStyles.lightText}>
-                {location} - <DateUtil dateString={created} />
-              </small>
-            </li>
-          ))}
+          {allTalksData
+            .filter(({ featured }) => featured)
+            .map(({ id, created, title, location, slides, video }) => (
+              <li className={utilStyles.listItem} key={id}>
+                <Link href="" as={slides}>
+                  <a>{title}</a>
+                </Link>{" "}
+                {video ? (
+                  <Link href="" as={video}>
+                    <a>
+                      <small>[Video]</small>
+                    </a>
+                  </Link>
+                ) : null}
+                <br />
+                <small className={utilStyles.lightText}>
+                  {location} - <DateUtil dateString={created} />
+                </small>
+              </li>
+            ))}
         </ul>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>{date ? <DateUtil dateString={date} /> : null}</small>
-            </li>
-          ))}
+          {allPostsData.map(
+            ({ id, date, title }) =>
+              id && (
+                <li className={utilStyles.listItem} key={id}>
+                  <Link href="/posts/[id]" as={`/posts/${id}`}>
+                    <a>{title}</a>
+                  </Link>
+                  <br />
+                  <small className={utilStyles.lightText}>{date ? <DateUtil dateString={date} /> : null}</small>
+                </li>
+              )
+          )}
         </ul>
       </section>
     </Layout>
