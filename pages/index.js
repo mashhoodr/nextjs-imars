@@ -18,9 +18,12 @@ export default function Home({ allPostsData, allPodcastData }) {
           Hello, I’m <strong>Mashhood</strong>. I’m a software engineer and a community leader.
         </p>
         <p>
+          Currently Im working as the CTO at <a href="https://sastaticket.pk">Sastaticket.pk</a>.
+        </p>
+        <p>
           Previously I was the founder at <a href="http://recurship.com">Recurship</a>.
         </p>
-        <p>I am also a Google Developer Expert for Web and Angular.</p>
+        <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Web and Angular.</p>
         <p>You can contact me on:</p>
         <ul>
           <li>
