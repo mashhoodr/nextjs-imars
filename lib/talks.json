@@ -1,5 +1,22 @@
 [
   {
+    "title": "Understanding Core Web Vitals",
+    "id": "22",
+    "created": "2020-09-14",
+    "location": "GDG Kolachi DevFest, Online",
+    "slides": "https://docs.google.com/presentation/d/1BCSq3miPABHkba_mteoHT-1kqRiMQAF9aCYHPngMlVg/edit?usp=sharing",
+    "featured": true
+  },
+  {
+    "title": "Optimizing Angular apps using Core Web Vitals",
+    "id": "21",
+    "created": "2020-09-13",
+    "location": "GDG Doha DevFest, Online",
+    "slides": "https://docs.google.com/presentation/d/1BCSq3miPABHkba_mteoHT-1kqRiMQAF9aCYHPngMlVg/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=J1gN2jjkoiY",
+    "featured": true
+  },
+  {
     "title": "How to plan your MVP",
     "id": "20",
     "created": "2020-08-11",
