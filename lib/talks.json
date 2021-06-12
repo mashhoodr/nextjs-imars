@@ -1,10 +1,11 @@
 [
   {
-    "title": "Is NoCode replacing Software Development?",
+    "title": "Optimizing Core Web Vitals for Angular Apps",
     "id": "26",
     "created": "2020-06-01",
-    "location": "021Disrupt 2020, Online",
+    "location": "Global Angular Conference, Online",
     "slides": "https://docs.google.com/presentation/d/1QyQS6C3DbXOM7tJ85AaD4lFyrpRozOmYlvlQsdLqjL0/edit?usp=sharing",
+    "video": "https://youtu.be/NTGtbbFG2SM?t=3828",
     "featured": true
   },
   {
@@ -13,6 +14,7 @@
     "created": "2020-12-05",
     "location": "021Disrupt 2020, Online",
     "slides": "https://docs.google.com/presentation/d/1U8S7CHzsL-EL4gdomL3juFhgtEr2ZMPyQb76NTIS9G0/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=sdoXenAr0VM",
     "featured": true
   },
   {
@@ -21,6 +23,7 @@
     "created": "2020-12-16",
     "location": "OSFP, Online",
     "slides": "https://docs.google.com/presentation/d/1bwfxGHKXZ0dWwb1l0mB_XBbMelEXrdAbppDoXJjGkKc/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=79SkypUFo-0",
     "featured": true
   },
   {
