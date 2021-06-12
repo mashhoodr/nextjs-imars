@@ -1,5 +1,37 @@
 [
   {
+    "title": "Is NoCode replacing Software Development?",
+    "id": "26",
+    "created": "2020-06-01",
+    "location": "021Disrupt 2020, Online",
+    "slides": "https://docs.google.com/presentation/d/1QyQS6C3DbXOM7tJ85AaD4lFyrpRozOmYlvlQsdLqjL0/edit?usp=sharing",
+    "featured": true
+  },
+  {
+    "title": "Is NoCode replacing Software Development?",
+    "id": "25",
+    "created": "2020-12-05",
+    "location": "021Disrupt 2020, Online",
+    "slides": "https://docs.google.com/presentation/d/1U8S7CHzsL-EL4gdomL3juFhgtEr2ZMPyQb76NTIS9G0/edit?usp=sharing",
+    "featured": true
+  },
+  {
+    "title": "Deploying Super Fast Websites on a CDN",
+    "id": "24",
+    "created": "2020-12-16",
+    "location": "OSFP, Online",
+    "slides": "https://docs.google.com/presentation/d/1bwfxGHKXZ0dWwb1l0mB_XBbMelEXrdAbppDoXJjGkKc/edit?usp=sharing",
+    "featured": true
+  },
+  {
+    "title": "Web Performance with Core Web Vitals",
+    "id": "23",
+    "created": "2020-12-12",
+    "location": "DevCon5, Online",
+    "slides": "https://docs.google.com/presentation/d/14iOSaC6ku-IGb99GxfWdilVqeFOSS0JEGabVVDT-rDI/edit?usp=sharing",
+    "featured": false
+  },
+  {
     "title": "Understanding Core Web Vitals",
     "id": "22",
     "created": "2020-09-14",
@@ -25,7 +57,7 @@
     "video": "https://web.facebook.com/NICKarachi/videos/3568092613250986/",
     "featured": true
   },
-  
+
   {
     "title": "Right Mobile Strategy For Your Product",
     "id": "1",
