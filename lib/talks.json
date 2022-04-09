@@ -1,5 +1,47 @@
 [
   {
+    "title": "Understanding Technical Interviews",
+    "id": "28",
+    "created": "2022-02-18",
+    "location": "Major Hacking League, Online",
+    "slides": "https://docs.google.com/presentation/d/1tTPeuyYfFIokxJLjbwCjt20OJlAvDN26KbdyN1_JehE/edit?usp=sharing",
+    "featured": true
+  },
+    {
+    "title": "React 101",
+    "id": "27",
+    "created": "2022-01-18",
+    "location": "Turing Communities, Online",
+    "slides": "https://docs.google.com/presentation/d/19bfI8UMnq_8KZh0oRflF2W2lYKwtqTvsy8ATZiqMUT4/edit?usp=sharing",
+    "featured": true
+  },
+    {
+    "title": "Scaling frontend developement using Nx",
+    "id": "29",
+    "created": "2021-11-18",
+    "location": "GDG Kolachi DevFest 21, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1dQ3EIr0Oyo2dv3UrYdXTdjI1Yt0eHUN_xdGcJ2pZrAY/edit?usp=sharing",
+    "featured": false
+  },
+  
+   {
+    "title": "What makes Angular awesome.",
+    "id": "30",
+    "created": "2021-12-18",
+    "location": "GDG Islamabad DevFest 21, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1tydVzz7WDvMkBVPWzKAfcqEPBN-OqO-5JzvfQxWdgVg/edit?usp=sharing",
+    "featured": false
+  },
+  {
+    "title": "Exploring Data at Sastaticket.pk",
+    "id": "30",
+    "created": "2021-11-01",
+    "location": "Karachi.AI Guest Speaker, Karachi",
+    "slides": "https://docs.google.com/presentation/d/12do2V7QynyLjhaYN1BGgIzvXabX6uJfB8PSmqL5egq4/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=9RldUxVvgpU",
+    "featured": true
+  },
+  {
     "title": "Optimizing Core Web Vitals for Angular Apps",
     "id": "26",
     "created": "2020-06-01",
