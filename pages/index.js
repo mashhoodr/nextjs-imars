@@ -18,13 +18,14 @@ export default function Home({ allPostsData, allPodcastData }) {
           Hello, I’m <strong>Mashhood</strong>. I’m a software engineer and a community leader.
         </p>
         <p>
-          Currently Im working as the CTO at <a href="https://sastaticket.pk">Sastaticket.pk</a>.
+          Currently Im working as the leading the engineering team at <a href="https://sastaticket.pk">Sastaticket.pk</a>.
         </p>
         <p>
-          Previously I was the founder at <a href="http://recurship.com">Recurship</a>.
+          Previously I was the founder and technical lead at <a href="http://recurship.com">Recurship</a>.
         </p>
         <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Web and Angular.</p>
-        <p>You can contact me on:</p>
+        <p>I enjoy reading <a>books</a> and educating my local community using <a>blog posts</a>, <a>my podcast</a> and <a>talks at community events.</a></p>
+        <p>You can find me at:</p>
         <ul>
           <li>
             <a href="https://twitter.com/mashhoodr">Twitter</a>
@@ -38,16 +39,14 @@ export default function Home({ allPostsData, allPodcastData }) {
           <li>
             <a href="https://github.com/mashhoodr">Github</a>
           </li>
+          <li>
+            <a href="https://instagram.com/mashhoodr">Instagram</a>
+          </li>
         </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>
-          Podcast: Karachi Wala Developer {"  "}
-          <Link href="https://anchor.fm/mashhoodr">
-            <a>
-              <small className={utilStyles.smallHeading}>all episodes</small>
-            </a>
-          </Link>
+          Latest from my podcast
         </h2>
         <ul className={utilStyles.list}>
           {allPodcastData.map(({ id, created, title, link, description }, index) =>
@@ -66,13 +65,19 @@ export default function Home({ allPostsData, allPodcastData }) {
           )}
           <li className={utilStyles.listItem}></li>
         </ul>
+        <Link href="https://anchor.fm/mashhoodr">
+          <a>
+            <small className={utilStyles.smallHeading}>[listen to all the episodes here]</small>
+          </a>
+        </Link>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         {/* TODO create page for all the talks (only showing featured here) */}
-        <h2 className={utilStyles.headingLg}>Talks</h2>
+        <h2 className={utilStyles.headingLg}>Most recent talks</h2>
         <ul className={utilStyles.list}>
           {allTalksData
+            .slice(0, 8)
             .filter(({ featured }) => featured)
             .map(({ id, created, title, location, slides, video }) => (
               <li className={utilStyles.listItem} key={id}>
@@ -93,12 +98,17 @@ export default function Home({ allPostsData, allPodcastData }) {
               </li>
             ))}
         </ul>
+        <Link href="/talks">
+          <a>
+            <small className={utilStyles.smallHeading}>[all the talks here]</small>
+          </a>
+        </Link>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>Archived blog posts</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(
+          {allPostsData.slice(0, 5).map(
             ({ id, date, title }) =>
               id && (
                 <li className={utilStyles.listItem} key={id}>
@@ -111,6 +121,11 @@ export default function Home({ allPostsData, allPodcastData }) {
               )
           )}
         </ul>
+        <Link href="/blog">
+          <a>
+            <small className={utilStyles.smallHeading}>[all the blog posts here]</small>
+          </a>
+        </Link>
       </section>
     </Layout>
   );

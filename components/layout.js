@@ -3,15 +3,15 @@ import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
-const name = "Mashhood Rastgar";
-export const siteTitle = "imars.info - Mashhood Rastgar's personal blog";
+const name = "KarachiWalaDeveloper";
+export const siteTitle = "karachiwala.dev - Mashhood Rastgar -  ramblings of a engineering leader based in Karachi sharing about tech and startups.";
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Learn how to build a personal website using Next.js" />
+        <meta name="description" content="ramblings of a engineering leader based in Karachi sharing about tech and startups." />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(

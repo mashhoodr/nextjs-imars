@@ -1,5 +1,12 @@
 [
   {
+    "title": "Fireside: Why does every developer need to know Javascipt.",
+    "id": "32",
+    "created": "2022-03-25",
+    "location": "Remotebase Remotefest Developer Conference, Online",
+    "slides": "https://remotefest.remotebase.com/"
+  },
+  {
     "title": "Understanding Technical Interviews",
     "id": "28",
     "created": "2022-02-18",
@@ -34,7 +41,7 @@
   },
   {
     "title": "Exploring Data at Sastaticket.pk",
-    "id": "30",
+    "id": "31",
     "created": "2021-11-01",
     "location": "Karachi.AI Guest Speaker, Karachi",
     "slides": "https://docs.google.com/presentation/d/12do2V7QynyLjhaYN1BGgIzvXabX6uJfB8PSmqL5egq4/edit?usp=sharing",
