@@ -3,11 +3,12 @@ import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { getPodcastData } from "../lib/podcast";
+import { getGoodReadsData } from "../lib/goodreads";
 import allTalksData from "../lib/talks.json";
 import Link from "next/link";
 import DateUtil from "../components/date";
 
-export default function Home({ allPostsData, allPodcastData }) {
+export default function Home({ allPostsData, allPodcastData, allBooksReadData }) {
   return (
     <Layout home>
       <Head>
@@ -24,7 +25,7 @@ export default function Home({ allPostsData, allPodcastData }) {
           Previously I was the founder and technical lead at <a href="http://recurship.com">Recurship</a>.
         </p>
         <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Web and Angular.</p>
-        <p>I enjoy reading <a>books</a> and educating my local community using <a>blog posts</a>, <a>my podcast</a> and <a>talks at community events.</a></p>
+        <p>I enjoy reading <Link href="https://www.goodreads.com/user/show/12569798-mashhood"><a>books</a></Link> and educating my local community using <Link href="/blog"><a>blog posts</a></Link>, <Link href="https://anchor.fm/mashhoodr"><a>my podcast</a></Link> and <Link href="/talks"><a>talks at community events.</a></Link></p>
         <p>You can find me at:</p>
         <ul>
           <li>
@@ -44,6 +45,7 @@ export default function Home({ allPostsData, allPodcastData }) {
           </li>
         </ul>
       </section>
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>
           Latest from my podcast
@@ -106,6 +108,28 @@ export default function Home({ allPostsData, allPodcastData }) {
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>
+          Recently read / reviewed books
+        </h2>
+        <ul className={`${utilStyles.list} ${utilStyles.bookReviewImages}`}>
+          {allBooksReadData.slice(0, 5).map(({ id, title, description }) =>
+            <li className={utilStyles.listItem} key={id}>
+              {title}
+              <small className={utilStyles.lightText}>
+                <div dangerouslySetInnerHTML={{ __html: description }} />
+              </small>
+            </li>
+          )}
+          <li className={utilStyles.listItem}></li>
+        </ul>
+        <Link href="https://www.goodreads.com/user/show/12569798-mashhood">
+          <a>
+            <small className={utilStyles.smallHeading}>[check out my book reviews]</small>
+          </a>
+        </Link>
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Archived blog posts</h2>
         <ul className={utilStyles.list}>
           {allPostsData.slice(0, 5).map(
@@ -134,10 +158,12 @@ export default function Home({ allPostsData, allPodcastData }) {
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const allPodcastData = await getPodcastData();
+  const allBooksReadData = await getGoodReadsData();
   return {
     props: {
       allPostsData,
       allPodcastData,
+      allBooksReadData,
     },
   };
 }

@@ -1,8 +1,15 @@
 [
   {
-    "title": "Fireside: Why does every developer need to know Javascipt.",
+    "title": "Panel: Turning Freelancers into Agencies.",
     "id": "32",
     "created": "2022-03-25",
+    "location": "Freelance Fest 2022, Karachi",
+    "slides": "https://www.facebook.com/pafla.org/posts/pfbid0gfbZurwXyxwSqmSLdFY2nKjjNV8mHGYiuiWd1bVjx1tcVQjrwvbNofvTYVzkE2Sal"
+  },
+  {
+    "title": "Fireside: Why does every developer need to know Javascipt.",
+    "id": "32",
+    "created": "2022-03-04",
     "location": "Remotebase Remotefest Developer Conference, Online",
     "slides": "https://remotefest.remotebase.com/"
   },
