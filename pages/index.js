@@ -28,7 +28,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
         <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Web and Angular.</p>
         <p>I enjoy reading <a href="https://www.goodreads.com/user/show/12569798-mashhood" target="_blank">books</a> and educating my local community using <Link href="/blog"><a>blog posts</a></Link>, <a href="https://anchor.fm/mashhoodr" target="_blank">my podcast</a> and <Link href="/talks"><a>talks at community events.</a></Link></p>
         <p>When Im not working, you will find me <a href="https://www.strava.com/athletes/51580844" target="_blank">working on my fitness</a> - currently cycling, running and swimming as time permits. Hoping to become a tri-athelete in the coming years.</p>
-        <p>I have recentlyed joined ADPList as a mentor. <a href="https://adplist.org/mentors/mashhood-rastgar" target="_blank">You may book a session with me via my profile.</a></p>
+        <p>I have recently joined ADPList as a mentor. <a href="https://adplist.org/mentors/mashhood-rastgar" target="_blank">You may book a session with me from here.</a></p>
         <p>&nbsp;</p>
         <p>You can find me at:</p>
         <ul>
