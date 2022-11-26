@@ -1,5 +1,29 @@
 [
   {
+    "title": "Webinar: Remote vs in-office: Managing the transition in a post covid world",
+    "id": "35",
+    "created": "2022-11-25",
+    "location": "Online",
+    "slides": "https://www.linkedin.com/feed/update/urn:li:activity:7001860273301065728/",
+    "featured": true,
+    "video": "https://www.linkedin.com/feed/update/urn:li:activity:7001860273301065728/"
+  },  {
+    "title": "Workshop: Digital Tools for Techpreneurs",
+    "id": "34",
+    "created": "2022-11-20",
+    "location": "Lincoln Corner Karachi",
+    "slides": "https://docs.google.com/presentation/d/16wzF1hIfA5k9SXIkUAQtNJYAY3cF4oofkOaqHM6P0jA/edit?usp=sharing",
+    "featured": true
+  },  
+  {
+    "title": "Workshop: How do apps read your mind?",
+    "id": "33",
+    "created": "2022-08-23",
+    "location": "+92Disrupt, Karachi",
+    "slides": "https://docs.google.com/presentation/d/18lVIu2MPBz3i-crOf-_y_IZGKLyQRShy-UqfPSolQtg/edit?usp=sharing",
+    "featured": true
+  },
+  {
     "title": "Panel (moderator): Dont miss your stop: Using Tech in Tourism!",
     "id": "32",
     "created": "2022-03-25",
