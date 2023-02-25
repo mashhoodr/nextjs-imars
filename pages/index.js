@@ -25,7 +25,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
         <p>
           I am also helping <a href="http://taleemabad.com/">Taleemabad</a>, the largest edu-tech in Pakistan, scale their products to thouands of schools and millions of children.
         </p>
-        <p>Taleemabad is on a mission to bring quality education to public schools and low free private schools - where most of Pakistani students are studying. You can learn more about their story <a href="https://www.youtube.com/watch?v=J8uAiZJMfzQ">here</a>.</p>
+        <p>Taleemabad is on a mission to bring quality education to public schools and low free private schools - where most of Pakistani students are studying. You can learn more about their story <a href="https://www.youtube.com/watch?v=YGwgUCgEWPk">here</a>.</p>
         <p>
           Previously I was the founder and technical lead at <a href="http://recurship.com">Recurship</a>, a boutique development studio for startups.
         </p>
