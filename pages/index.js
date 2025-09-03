@@ -17,7 +17,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Hello, I’m <strong>Mashhood</strong>. I’m a engineering leader and coach.
+          Hello, I’m <strong>Mashhood</strong>. I’m an engineering leader and coach.
         </p>
         <p>
           Currently, I am helping <a href="http://taleemabad.com/">Taleemabad</a>, the largest ed-tech in Pakistan, scale their products to thousands of schools and millions of children. 
