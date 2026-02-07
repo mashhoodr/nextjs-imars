@@ -17,22 +17,23 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Hello, I’m <strong>Mashhood</strong>. I’m an engineering leader and coach.
+          Hello, I’m <strong>Mashhood</strong>. I’m an engineering and AI leader and coach.
         </p>
         <p>
-          Currently, I am helping <a href="http://taleemabad.com/">Taleemabad</a>, the largest ed-tech in Pakistan, scale their products to thousands of schools and millions of children. 
+          Currently, I am helping <a href="http://taleemabad.com/">Taleemabad</a>, the largest ed-tech in Pakistan, scale their products to thousands of schools and millions of children. We are using AI to make education more accessible and affordable for everyone.
         </p>
         <p>Taleemabad is on a mission to bring quality education to public schools - where most of Pakistani students are studying. You can learn more about their story <a href="https://www.youtube.com/watch?v=YGwgUCgEWPk">here</a>.</p>
+        <p>We are also exploring the future of work with fluid roles and agentic organization. Connect with me if you would like to learn more!</p>
         <p>
           I used to lead the engineering team at <a href="https://sastaticket.pk">Sastaticket.pk</a>, the largest travel platform in Pakistan.
         </p>
         <p>
           Previously I was the founder and technical lead at <a href="http://recurship.com">Recurship</a>, a boutique development studio for startups.
         </p>
-        <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Machine Learning, and for Web as well.</p>
+        <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Machine Learning / AI, and for Web as well.</p>
         <p>I enjoy reading <a href="https://www.goodreads.com/user/show/12569798-mashhood" target="_blank">books</a> and educating my local community using <Link href="/blog">blog posts</Link>, <a href="https://anchor.fm/mashhoodr" target="_blank">my podcast</a> and <Link href="/talks">talks at community events.</Link></p>
         <p>When Im not working, you will find me <a href="https://www.strava.com/athletes/51580844" target="_blank">working on my fitness</a> - currently cycling, running and swimming as time permits. Hoping to become a tri-athelete in the coming years.</p>
-        <p>I have recently joined ADPList as a mentor. <a href="https://adplist.org/mentors/mashhood-rastgar" target="_blank">You may request a session with me from here.</a></p>
+        <p>I offer free coaching / mentoring sessions on ADPList. <a href="https://adplist.org/mentors/mashhood-rastgar" target="_blank">You may request a session with me from here.</a></p>
         <p>&nbsp;</p>
         <p>You can find me at:</p>
         <ul>
