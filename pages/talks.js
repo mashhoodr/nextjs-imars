@@ -20,15 +20,11 @@ export default function Talks() {
           {allTalksData
             .map(({ id, created, title, location, slides, video }) => (
               <li className={utilStyles.listItem} key={id}>
-                <Link href="" as={slides}>
-                  <a>{title}</a>
-                </Link>{" "}
+                <a href={slides} target="_blank" rel="noopener noreferrer">{title}</a>{" "}
                 {video ? (
-                  <Link href="" as={video}>
-                    <a>
-                      <small>[Video]</small>
-                    </a>
-                  </Link>
+                  <a href={video} target="_blank" rel="noopener noreferrer">
+                    <small>[Video]</small>
+                  </a>
                 ) : null}
                 <br />
                 <small className={utilStyles.lightText}>

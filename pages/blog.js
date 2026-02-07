@@ -19,9 +19,7 @@ export default function Blog({ allPostsData }) {
             ({ id, date, title }) =>
               id && (
                 <li className={utilStyles.listItem} key={id}>
-                  <Link href="/posts/[id]" as={`/posts/${id}`}>
-                    <a>{title}</a>
-                  </Link>
+                  <Link href={`/posts/${id}`}>{title}</Link>
                   <br />
                   <small className={utilStyles.lightText}>{date ? <DateUtil dateString={date} /> : null}</small>
                 </li>

@@ -30,7 +30,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
           Previously I was the founder and technical lead at <a href="http://recurship.com">Recurship</a>, a boutique development studio for startups.
         </p>
         <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Machine Learning, and for Web as well.</p>
-        <p>I enjoy reading <a href="https://www.goodreads.com/user/show/12569798-mashhood" target="_blank">books</a> and educating my local community using <Link href="/blog"><a>blog posts</a></Link>, <a href="https://anchor.fm/mashhoodr" target="_blank">my podcast</a> and <Link href="/talks"><a>talks at community events.</a></Link></p>
+        <p>I enjoy reading <a href="https://www.goodreads.com/user/show/12569798-mashhood" target="_blank">books</a> and educating my local community using <Link href="/blog">blog posts</Link>, <a href="https://anchor.fm/mashhoodr" target="_blank">my podcast</a> and <Link href="/talks">talks at community events.</Link></p>
         <p>When Im not working, you will find me <a href="https://www.strava.com/athletes/51580844" target="_blank">working on my fitness</a> - currently cycling, running and swimming as time permits. Hoping to become a tri-athelete in the coming years.</p>
         <p>I have recently joined ADPList as a mentor. <a href="https://adplist.org/mentors/mashhood-rastgar" target="_blank">You may request a session with me from here.</a></p>
         <p>&nbsp;</p>
@@ -65,9 +65,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
           {allPodcastData.map(({ id, created, title, link, description }, index) =>
             index < 3 ? (
               <li className={utilStyles.listItem} key={id}>
-                <Link href="" as={link}>
-                  <a>{title}</a>
-                </Link>
+                <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
                 <br />
                 <small className={utilStyles.lightText}>
                   <DateUtil dateString={new Date(created).toISOString()} />
@@ -91,9 +89,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
           {allBlogData.map(({ id, created, title, link, description }, index) =>
             index < 3 ? (
               <li className={utilStyles.listItem} key={id}>
-                <Link href="" as={link}>
-                  <a>{title}</a>
-                </Link>
+                <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
                 <br />
                 <small className={utilStyles.lightText}>
                   <DateUtil dateString={new Date(created).toISOString()} />
@@ -119,15 +115,11 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
             .filter(({ featured }) => featured)
             .map(({ id, created, title, location, slides, video }) => (
               <li className={utilStyles.listItem} key={id}>
-                <Link href="" as={slides}>
-                  <a>{title}</a>
-                </Link>{" "}
+                <a href={slides} target="_blank" rel="noopener noreferrer">{title}</a>{" "}
                 {video ? (
-                  <Link href="" as={video}>
-                    <a>
-                      <small>[Video]</small>
-                    </a>
-                  </Link>
+                  <a href={video} target="_blank" rel="noopener noreferrer">
+                    <small>[Video]</small>
+                  </a>
                 ) : null}
                 <br />
                 <small className={utilStyles.lightText}>
@@ -137,9 +129,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
             ))}
         </ul>
         <Link href="/talks">
-          <a>
-            <small className={utilStyles.smallHeading}>[all the talks here]</small>
-          </a>
+          <small className={utilStyles.smallHeading}>[all the talks here]</small>
         </Link>
       </section>
 
@@ -158,11 +148,9 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
           )}
           <li className={utilStyles.listItem}></li>
         </ul>
-        <Link href="https://www.goodreads.com/user/show/12569798-mashhood">
-          <a>
-            <small className={utilStyles.smallHeading}>[check out my book reviews]</small>
-          </a>
-        </Link>
+        <a href="https://www.goodreads.com/user/show/12569798-mashhood" target="_blank" rel="noopener noreferrer">
+          <small className={utilStyles.smallHeading}>[check out my book reviews]</small>
+        </a>
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -172,9 +160,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
             ({ id, date, title }) =>
               id && (
                 <li className={utilStyles.listItem} key={id}>
-                  <Link href="/posts/[id]" as={`/posts/${id}`}>
-                    <a>{title}</a>
-                  </Link>
+                  <Link href={`/posts/${id}`}>{title}</Link>
                   <br />
                   <small className={utilStyles.lightText}>{date ? <DateUtil dateString={date} /> : null}</small>
                 </li>
@@ -182,9 +168,7 @@ export default function Home({ allPostsData, allPodcastData, allBooksReadData, a
           )}
         </ul>
         <Link href="/blog">
-          <a>
-            <small className={utilStyles.smallHeading}>[all the blog posts here]</small>
-          </a>
+          <small className={utilStyles.smallHeading}>[all the blog posts here]</small>
         </Link>
       </section>
     </Layout>
