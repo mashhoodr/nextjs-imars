@@ -1,34 +1,299 @@
-.heading2Xl {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
+/* Hero */
+
+.hero {
+  padding-bottom: 1rem;
 }
 
-@media (max-width: 576px) {  
-  .heading2Xl {
-    font-size: 1.8rem;
+.heroTitle {
+  margin: 0.6rem 0 0;
+  font-size: 3rem;
+  line-height: 1.08;
+  font-weight: 650;
+  letter-spacing: -0.028em;
+}
+
+.heroLede {
+  margin: 1.5rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 34rem;
+}
+
+@media (max-width: 900px) {
+  .heroTitle {
+    font-size: 2.15rem;
+  }
+  .heroLede {
+    font-size: 1.08rem;
   }
 }
 
-.headingXl {
+/* Sections */
+
+.section {
+  padding-top: 4.5rem;
+  margin-top: 4.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.sectionLabel {
+  margin: 0 0 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sectionTitle {
+  margin: 0 0 1.5rem;
+  font-size: 1.85rem;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.sectionIntro {
+  margin: 0 0 2rem;
+  color: var(--ink-soft);
+  max-width: 34rem;
+}
+
+.subheading {
+  margin: 2.5rem 0 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* The 20/60/20 split */
+
+.splitRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin: 0 0 2.25rem;
+}
+
+.splitFigure {
   font-size: 2rem;
-  line-height: 1.3;
-  font-weight: 800;
-  letter-spacing: -0.05rem;
-  margin: 1rem 0;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
-.headingLg {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 1rem 0;
+.splitCaption {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
 }
 
-.headingMd {
-  font-size: 1.2rem;
-  line-height: 1.5;
+/* Offers sit under the split, so they get a different scale to avoid the two
+   three-column rows reading as one group. */
+
+.offerList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.offer {
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 1.25rem;
+}
+
+.offerName {
+  font-weight: 600;
+}
+
+.offerBody {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 700px) {
+  .splitRow {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .offer {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+
+/* Logo wall.
+   Seven marks with wildly different colours, weights and aspect ratios, so they
+   are desaturated to a common key and given a fixed optical height. Colour
+   returns on hover. */
+
+/* Hairlines are drawn on the tiles rather than by a background showing through a
+   1px gap. With seven marks in a four-column grid the trailing cell is empty,
+   and the background technique paints that empty cell grey. */
+.logoWall {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+
+.logoTile {
+  min-height: 6.5rem;
+  padding: 1.25rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoTile a,
+.logoTile span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logoImg {
+  max-height: 2.25rem;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition: filter 150ms ease, opacity 150ms ease;
+}
+
+/* Stacked lockups (mark above wordmark) are height-constrained where the wide
+   wordmarks are width-constrained, so they read much smaller at the same
+   max-height. Give them more vertical room to match optically. */
+.logoImgTall {
+  max-height: 3.5rem;
+}
+
+.logoTile a:hover .logoImg {
+  filter: none;
+  opacity: 1;
+}
+
+/* Fallback for marks we do not have a file for yet. */
+.logoWordmark {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink-faint);
+  text-align: center;
+  transition: color 150ms ease;
+}
+
+.logoTile a:hover .logoWordmark {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .logoWall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logoTile {
+    min-height: 5.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Track record + generic entry lists */
+
+.entryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry {
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 1.25rem;
+}
+
+.entryName {
+  font-weight: 600;
+}
+
+.entryBody {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 700px) {
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+
+/* Feed items: podcast, writing, talks, archive */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.itemTitle {
+  font-weight: 500;
+}
+
+.meta {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+.excerpt {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.excerpt p {
+  margin: 0;
+}
+
+.excerpt img {
+  display: none;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.lightText {
+  color: var(--ink-faint);
 }
 
 .borderCircle {
@@ -39,30 +304,42 @@
   color: inherit;
 }
 
-.padding1px {
-  padding-top: 10px;
+/* Retained for the standalone pages (/blog, /talks, /posts/[id], /privacy) */
+
+.headingMd {
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.listItem {
+.headingLg {
   margin: 0 0 1.25rem;
+  font-size: 1.85rem;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.02em;
 }
 
-.lightText {
-  color: #666;
+.headingXl,
+.heading2Xl {
+  margin: 0 0 1.25rem;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.padding1px {
+  padding-top: 0;
 }
 
 .smallHeading {
-  font-size: 15px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
   font-weight: 400;
-  color: #369;
 }
 
 .bookReviewImages img {
   float: right;
+  margin-left: 1rem;
+  max-width: 4rem;
 }

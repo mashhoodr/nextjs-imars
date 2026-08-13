@@ -1,177 +1,314 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+import Link from "next/link";
+import Layout, { Section, siteTitle, contactEmail } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { getPodcastData } from "../lib/podcast";
 import { getGoodReadsData } from "../lib/goodreads";
 import { getSubstackData } from "../lib/substack";
 import allTalksData from "../lib/talks.json";
-import Link from "next/link";
 import DateUtil from "../components/date";
 
-export default function Home({ allPostsData, allPodcastData, allBooksReadData, allBlogData }) {
+// Talks before this date are framework/web-performance era. Splitting them keeps
+// the older catalogue visible without it arguing against the current positioning.
+// TODO: talks.json currently ends at Feb 2023. The recent AI talks (Harness
+// Engineering, Future of Software Engineering, Loop Engineering, LUMS CS4602,
+// TEDx 2026) still need dates, venues and links before the Recent group appears.
+const RECENT_TALKS_FROM = "2023-06-01";
+
+const OFFERS = [
+  {
+    name: "Keynotes and talks",
+    body: "What is actually changing in engineering, and what it means for the room.",
+  },
+  {
+    name: "Team workshops",
+    body: "Three days, hands on, with your codebase and your tickets.",
+  },
+  {
+    name: "Advisory",
+    body: "Ongoing, for leaders making this shift at org level. A small number at a time.",
+  },
+];
+
+// Logos live in public/logos/. `logo` omitted falls back to a text wordmark in
+// the same tile, so the grid stays intact if an asset is ever missing.
+// `tall` marks stacked lockups, which need more vertical room to match the wide
+// wordmarks optically.
+const COMPANIES = [
+  { name: "Taleemabad", href: "https://taleemabad.com/", logo: "/logos/taleemabad.png" },
+  { name: "Sastaticket.pk", href: "https://www.sastaticket.pk/", logo: "/logos/sastaticket.svg" },
+  { name: "Novo Nordisk", href: "https://www.novonordisk.com/", logo: "/logos/novo-nordisk.png", tall: true },
+  { name: "Contour Software", href: "https://contour-software.com/", logo: "/logos/contour.svg" },
+  { name: "Arbisoft", href: "https://arbisoft.com/", logo: "/logos/arbisoft.svg" },
+  { name: "Metamorphic AI", href: "https://metamorphic-ai.com", logo: "/logos/metamorphic.png" },
+  { name: "LUMS", href: "https://www.lums.edu.pk/", logo: "/logos/lums.png", tall: true },
+  {
+    name: "Google Developer Expert (GDE)",
+    href: "https://developers.google.com/community/experts",
+    logo: "/logos/google-developers.svg",
+  },
+];
+
+const SOCIALS = [
+  ["Twitter", "https://twitter.com/mashhoodr"],
+  ["LinkedIn", "http://linkedin.com/in/mashhoodr"],
+  ["GitHub", "https://github.com/mashhoodr"],
+  ["Instagram", "https://instagram.com/mashhoodr"],
+  ["Strava", "https://www.strava.com/athletes/51580844"],
+];
+
+function FeedList({ items, limit = 3 }) {
+  return (
+    <ul className={utilStyles.list}>
+      {items.slice(0, limit).map(({ id, created, title, link, description }) => (
+        <li className={utilStyles.listItem} key={id}>
+          <a className={utilStyles.itemTitle} href={link} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+          <small className={utilStyles.meta}>
+            <DateUtil dateString={new Date(created).toISOString()} />
+          </small>
+          {description && (
+            <div
+              className={utilStyles.excerpt}
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function TalkItem({ title, location, created, slides, video }) {
+  return (
+    <li className={utilStyles.listItem}>
+      <a className={utilStyles.itemTitle} href={slides} target="_blank" rel="noopener noreferrer">
+        {title}
+      </a>{" "}
+      {video && (
+        <a href={video} target="_blank" rel="noopener noreferrer">
+          <small>[video]</small>
+        </a>
+      )}
+      <small className={utilStyles.meta}>
+        {location} · <DateUtil dateString={created} />
+      </small>
+    </li>
+  );
+}
+
+export default function Home({
+  allPostsData,
+  allPodcastData,
+  allBooksReadData,
+  allBlogData,
+  recentTalks,
+  earlierTalks,
+}) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>
-          Hello, I’m <strong>Mashhood</strong>. I’m an engineering and AI leader and coach.
+
+      <section className={utilStyles.hero}>
+        <p className={utilStyles.sectionLabel}>Introduction</p>
+        <h1 className={utilStyles.heroTitle}>
+          Getting faster isn&rsquo;t the same as getting better.
+        </h1>
+        <p className={utilStyles.heroLede}>
+          Your team ships more every week. Nobody can tell yet whether the work is improving.
         </p>
         <p>
-          Currently, I am helping <a href="http://taleemabad.com/">Taleemabad</a>, the largest ed-tech in Pakistan, scale their products to thousands of schools and millions of children. We are using AI to make education more accessible and affordable for everyone.
+          <a className={utilStyles.more} href={`mailto:${contactEmail}`}>
+            [write me a short note]
+          </a>
         </p>
-        <p>Taleemabad is on a mission to bring quality education to public schools - where most of Pakistani students are studying. You can learn more about their story <a href="https://www.youtube.com/watch?v=YGwgUCgEWPk">here</a>.</p>
-        <p>We are also exploring the future of work with fluid roles and agentic organization. Connect with me if you would like to learn more!</p>
-        <p>
-          I used to lead the engineering team at <a href="https://sastaticket.pk">Sastaticket.pk</a>, the largest travel platform in Pakistan.
+      </section>
+
+      <Section id="work" label="Work with me" title="Most teams are somewhere in the middle.">
+        <div className={utilStyles.splitRow}>
+          <div>
+            <div className={utilStyles.splitFigure}>20%</div>
+            <p className={utilStyles.splitCaption}>
+              already have agents doing real work unsupervised
+            </p>
+          </div>
+          <div>
+            <div className={utilStyles.splitFigure}>60%</div>
+            <p className={utilStyles.splitCaption}>using AI as a faster autocomplete</p>
+          </div>
+          <div>
+            <div className={utilStyles.splitFigure}>20%</div>
+            <p className={utilStyles.splitCaption}>
+              holding back, usually for good reasons
+            </p>
+          </div>
+        </div>
+
+        <p className={utilStyles.sectionIntro}>
+          The gap isn&rsquo;t effort. It&rsquo;s that nobody tells the middle sixty percent what
+          good looks like. My job is moving them, without losing the twenty percent who are right
+          to be cautious.
         </p>
-        <p>
-          Previously I was the founder and technical lead at <a href="http://recurship.com">Recurship</a>, a boutique development studio for startups.
-        </p>
-        <p>I am also a <a href="https://developers.google.com/community/experts">Google Developer Expert</a> for Machine Learning / AI, and for Web as well.</p>
-        <p>I enjoy reading <a href="https://www.goodreads.com/user/show/12569798-mashhood" target="_blank">books</a> and educating my local community using <Link href="/blog">blog posts</Link>, <a href="https://anchor.fm/mashhoodr" target="_blank">my podcast</a> and <Link href="/talks">talks at community events.</Link></p>
-        <p>When Im not working, you will find me <a href="https://www.strava.com/athletes/51580844" target="_blank">working on my fitness</a> - currently cycling, running and swimming as time permits. Hoping to become a tri-athelete in the coming years.</p>
-        <p>I offer free coaching / mentoring sessions on ADPList. <a href="https://adplist.org/mentors/mashhood-rastgar" target="_blank">You may request a session with me from here.</a></p>
-        <p>&nbsp;</p>
-        <p>You can find me at:</p>
-        <ul>
-          <li>
-            <a target="_blank" href="https://twitter.com/mashhoodr">Twitter</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://facebook.com/mashhoodr">Facebook</a>
-          </li>
-          <li>
-            <a target="_blank" href="http://linkedin.com/in/mashhoodr">LinkedIn</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/mashhoodr">Github</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://instagram.com/mashhoodr">Instagram</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.strava.com/athletes/51580844">Strava</a>
-          </li>
-        </ul>
-      </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>
-          Latest from my podcast
-        </h2>
-        <ul className={utilStyles.list}>
-          {allPodcastData.map(({ id, created, title, link, description }, index) =>
-            index < 3 ? (
-              <li className={utilStyles.listItem} key={id}>
-                <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
-                <br />
-                <small className={utilStyles.lightText}>
-                  <DateUtil dateString={new Date(created).toISOString()} />
-                  <div dangerouslySetInnerHTML={{ __html: description }} />
-                </small>
-              </li>
-            ) : null
-          )}
-          <li className={utilStyles.listItem}></li>
-        </ul>
-        <a href="https://anchor.fm/mashhoodr" target="_blank">
-          <small className={utilStyles.smallHeading}>[listen to all the episodes here]</small>
-        </a>
-      </section>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>
-          What am I thinking about...
-        </h2>
-        <ul className={utilStyles.list}>
-          {allBlogData.map(({ id, created, title, link, description }, index) =>
-            index < 3 ? (
-              <li className={utilStyles.listItem} key={id}>
-                <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
-                <br />
-                <small className={utilStyles.lightText}>
-                  <DateUtil dateString={new Date(created).toISOString()} />
-                  <div dangerouslySetInnerHTML={{ __html: description }} />
-                </small>
-              </li>
-            ) : null
-          )}
-          <li className={utilStyles.listItem}></li>
-        </ul>
-        <a href="https://mashhoodr.substack.com">
-          <small className={utilStyles.smallHeading}>[read all the posts here]</small>
-        </a>
-      </section>
-
-
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Most recent (featured) talks</h2>
-        <ul className={utilStyles.list}>
-          {allTalksData
-            .slice(0, 8)
-            .filter(({ featured }) => featured)
-            .map(({ id, created, title, location, slides, video }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <a href={slides} target="_blank" rel="noopener noreferrer">{title}</a>{" "}
-                {video ? (
-                  <a href={video} target="_blank" rel="noopener noreferrer">
-                    <small>[Video]</small>
-                  </a>
-                ) : null}
-                <br />
-                <small className={utilStyles.lightText}>
-                  {location} - <DateUtil dateString={created} />
-                </small>
-              </li>
-            ))}
-        </ul>
-        <Link href="/talks">
-          <small className={utilStyles.smallHeading}>[all the talks here]</small>
-        </Link>
-      </section>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>
-          Recently read / reviewed books
-        </h2>
-        <ul className={`${utilStyles.list} ${utilStyles.bookReviewImages}`}>
-          {allBooksReadData.slice(0, 5).map(({ id, title, description }) =>
-            <li className={utilStyles.listItem} key={id}>
-              {title}
-              <small className={utilStyles.lightText}>
-                <div dangerouslySetInnerHTML={{ __html: description }} />
-              </small>
+        <ul className={utilStyles.offerList}>
+          {OFFERS.map(({ name, body }) => (
+            <li className={utilStyles.offer} key={name}>
+              <div className={utilStyles.offerName}>{name}</div>
+              <p className={utilStyles.offerBody}>{body}</p>
             </li>
-          )}
-          <li className={utilStyles.listItem}></li>
+          ))}
         </ul>
-        <a href="https://www.goodreads.com/user/show/12569798-mashhood" target="_blank" rel="noopener noreferrer">
-          <small className={utilStyles.smallHeading}>[check out my book reviews]</small>
-        </a>
-      </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Archived blog posts</h2>
+        <p>
+          Tell me where your team sits.{" "}
+          <a href={`mailto:${contactEmail}`}>The first coffee is on me.</a>
+        </p>
+      </Section>
+
+      <Section id="proof" label="Track record" title="Where I have done this.">
+        <ul className={utilStyles.logoWall}>
+          {COMPANIES.map(({ name, href, logo, tall }) => (
+            <li className={utilStyles.logoTile} key={name}>
+              <a href={href} target="_blank" rel="noopener noreferrer" title={name}>
+                {logo ? (
+                  <img
+                    className={`${utilStyles.logoImg} ${tall ? utilStyles.logoImgTall : ""}`}
+                    src={logo}
+                    alt={name}
+                  />
+                ) : (
+                  <span className={utilStyles.logoWordmark}>{name}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="writing" label="Writing" title="What I am thinking about.">
+        <FeedList items={allBlogData} />
+        <a className={utilStyles.more} href="https://mashhoodr.substack.com">
+          [read everything on Substack]
+        </a>
+      </Section>
+
+      <Section id="podcast" label="Podcast" title="KarachiWalaDeveloper.">
+        <FeedList items={allPodcastData} />
+        <a
+          className={utilStyles.more}
+          href="https://anchor.fm/mashhoodr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          [listen to all the episodes]
+        </a>
+      </Section>
+
+      <Section id="talks" label="Talks" title="Conferences and community events.">
+        {recentTalks.length > 0 && (
+          <>
+            <p className={utilStyles.subheading}>Recent</p>
+            <ul className={utilStyles.list}>
+              {recentTalks.map((talk) => (
+                <TalkItem key={talk.id} {...talk} />
+              ))}
+            </ul>
+          </>
+        )}
+
+        {earlierTalks.length > 0 && (
+          <>
+            <p className={utilStyles.subheading}>
+              {recentTalks.length > 0 ? "Earlier — web performance and frontend" : "Selected"}
+            </p>
+            <ul className={utilStyles.list}>
+              {earlierTalks.map((talk) => (
+                <TalkItem key={talk.id} {...talk} />
+              ))}
+            </ul>
+          </>
+        )}
+
+        <Link className={utilStyles.more} href="/talks">
+          [all the talks]
+        </Link>
+      </Section>
+
+      <Section id="about" label="About" title="The rest of it.">
+        <p>
+          I am an engineering and AI leader based in Karachi. Right now I am helping{" "}
+          <a href="http://taleemabad.com/">Taleemabad</a>, the largest ed-tech in Pakistan, scale
+          to thousands of schools and millions of children, and rebuilding how the organisation
+          itself works around agents.
+        </p>
+        <p>
+          I offer free coaching and mentoring sessions on{" "}
+          <a href="https://adplist.org/mentors/mashhood-rastgar" target="_blank" rel="noopener noreferrer">
+            ADPList
+          </a>
+          . When I am not working you will find me cycling, running and swimming, slowly working
+          towards a triathlon.
+        </p>
+
+        <p className={utilStyles.subheading}>Reading</p>
+        <ul className={`${utilStyles.list} ${utilStyles.bookReviewImages}`}>
+          {allBooksReadData.slice(0, 4).map(({ id, title, description }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <span className={utilStyles.itemTitle}>{title}</span>
+              <div
+                className={utilStyles.excerpt}
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+            </li>
+          ))}
+        </ul>
+        <a
+          className={utilStyles.more}
+          href="https://www.goodreads.com/user/show/12569798-mashhood"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          [my book reviews]
+        </a>
+
+        <p className={utilStyles.subheading}>Elsewhere</p>
+        <p>
+          {SOCIALS.map(([label, href], i) => (
+            <span key={label}>
+              {i > 0 && " · "}
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                {label}
+              </a>
+            </span>
+          ))}
+        </p>
+
+        <p className={utilStyles.subheading}>Archive</p>
         <ul className={utilStyles.list}>
-          {allPostsData.slice(0, 5).map(
+          {allPostsData.slice(0, 3).map(
             ({ id, date, title }) =>
               id && (
                 <li className={utilStyles.listItem} key={id}>
-                  <Link href={`/posts/${id}`}>{title}</Link>
-                  <br />
-                  <small className={utilStyles.lightText}>{date ? <DateUtil dateString={date} /> : null}</small>
+                  <Link className={utilStyles.itemTitle} href={`/posts/${id}`}>
+                    {title}
+                  </Link>
+                  {date && (
+                    <small className={utilStyles.meta}>
+                      <DateUtil dateString={date} />
+                    </small>
+                  )}
                 </li>
               )
           )}
         </ul>
-        <Link href="/blog">
-          <small className={utilStyles.smallHeading}>[all the blog posts here]</small>
+        <Link className={utilStyles.more} href="/blog">
+          [older posts, 2009 to 2013]
         </Link>
-      </section>
+      </Section>
     </Layout>
   );
 }
@@ -181,12 +318,26 @@ export async function getStaticProps() {
   const allPodcastData = await getPodcastData();
   const allBooksReadData = await getGoodReadsData();
   const allBlogData = await getSubstackData();
+
+  // Filter before slicing. The previous order sliced first, so only featured
+  // talks that happened to fall in the first 8 entries could ever be shown.
+  const featured = allTalksData.filter(({ featured }) => featured);
+  const recentTalks = featured.filter(({ created }) => created >= RECENT_TALKS_FROM).slice(0, 6);
+  const earlierTalks = featured
+    .filter(({ created }) => created < RECENT_TALKS_FROM)
+    .slice(0, recentTalks.length > 0 ? 4 : 6);
+
   return {
     props: {
       allPostsData,
       allPodcastData,
       allBooksReadData,
       allBlogData,
+      recentTalks,
+      earlierTalks,
     },
+    // External feeds are fetched at build time, so without this the podcast and
+    // newsletter lists freeze at whenever the site was last deployed.
+    revalidate: 3600,
   };
 }

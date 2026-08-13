@@ -28,3 +28,9 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Working material, deliberately not published.
+# notes/ references an unsigned client proposal and unreleased product copy;
+# design/ is ~100MB of generated mockups.
+notes/
+design/
