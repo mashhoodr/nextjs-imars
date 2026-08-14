@@ -1,5 +1,6 @@
 import { absoluteUrl } from "../lib/site";
 import { getSortedPostsData } from "../lib/posts";
+import { getAllWriting } from "../lib/writing";
 
 /**
  * Generated rather than hand-written, so a new post in /posts is in the sitemap
@@ -29,6 +30,7 @@ function iso(date) {
 
 export async function getServerSideProps({ res }) {
   const posts = getSortedPostsData().filter(({ id }) => id);
+  const writing = getAllWriting();
   const today = new Date().toISOString().slice(0, 10);
 
   const entries = [
@@ -36,6 +38,15 @@ export async function getServerSideProps({ res }) {
     // needs a high priority. Anchors themselves are deliberately not listed:
     // duplicate URLs for one document dilute rather than help.
     { loc: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
+    // Current writing ranks above the archive deliberately: /blog is 2009–2015
+    // and exists for the record, not for discovery.
+    { loc: "/writing", lastmod: today, changefreq: "weekly", priority: "0.9" },
+    ...writing.map(({ slug, date, updated }) => ({
+      loc: `/writing/${slug}`,
+      lastmod: iso(updated || date),
+      changefreq: "monthly",
+      priority: "0.8",
+    })),
     { loc: "/talks", lastmod: today, changefreq: "monthly", priority: "0.8" },
     { loc: "/blog", lastmod: today, changefreq: "monthly", priority: "0.5" },
     ...posts.map(({ id, date }) => ({

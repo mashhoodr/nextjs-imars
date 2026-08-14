@@ -1,36 +1,62 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code working in this repository. Deployed to karachiwala.dev via Vercel on push to `master`.
 
 ## Commands
 
 ```bash
-npm run dev      # Start dev server
+npm run dev      # Dev server
 npm run build    # Production build
-npm start        # Start production server
+npm start        # Serve the production build
 ```
+
+`node`/`npm` are not on the non-interactive PATH. Prefix commands with:
+`export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"`
 
 ## Architecture
 
-Personal portfolio site built with Next.js 14 using Pages Router and Static Site Generation (SSG).
+Next.js 16 (Pages Router) + React 19. Everything is prerendered — SSG for pages,
+ISR (`revalidate: 3600`) on the homepage so external feeds do not freeze at deploy time.
+The only non-static route is `/sitemap.xml`, which is edge-cached for a day.
 
-### Data Sources
+### Content sources
 
-- **Local markdown posts**: `posts/*.md` - parsed with gray-matter + remark
-- **External RSS feeds** (fetched at build time via `rss-to-json`):
-  - Podcast: Anchor.fm RSS
-  - Books: Goodreads RSS
-  - Newsletter: Substack RSS
-- **Static JSON**: `lib/talks.json` - conference talks data
+| Source | Path | Notes |
+|---|---|---|
+| **Current writing** | `writing/*.md` | The active corpus. Frontmatter contract is documented in `lib/writing.js` |
+| **Blog archive** | `posts/*.md` | 2009–2015, kept for the record. Deliberately low priority in the sitemap |
+| **Talks** | `lib/talks.json` | ⚠️ Ends Feb 2023; the AI-era talks are still missing |
+| **Podcast / Books / Newsletter** | RSS at build time | Anchor.fm, Goodreads, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
 
-### Key Files
+Markdown is parsed by a small local `matter()` (regex + the `yaml` package) rather than
+gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark-html.
 
-- `pages/index.js` - Homepage aggregating all data sources via `getStaticProps`
-- `pages/posts/[id].js` - Dynamic routes for markdown blog posts
-- `lib/posts.js` - Markdown file reading and parsing utilities
-- `lib/podcast.js`, `lib/goodreads.js`, `lib/substack.js` - RSS feed fetchers
-- `components/layout.js` - Shared layout with site metadata
+### Key files
 
-### Data Flow
+- `lib/site.js` — **single source of identity.** Metadata, sitemap and JSON-LD all read from
+  it so they cannot drift. Change names, URLs and offers here, nowhere else.
+- `components/seo.js` — per-page title, description, canonical, OG, Twitter, and a linked
+  schema.org `@graph`. `Person` and `WebSite` have stable `@id`s that page nodes reference
+  rather than restate. Every page must render `<Seo>`; `Layout` no longer emits meta.
+- `components/layout.js` — fixed left rail, collapses to a header at 900px. Scroll-spy uses a
+  rAF scroll handler, not IntersectionObserver: sections are taller than the viewport, so
+  several intersect at once and the marker sticks.
+- `pages/writing/[slug].js` — articles, with `Article` schema and reading time.
+- `pages/sitemap.xml.js` — generated from `writing/` and `posts/`, never hand-edited.
 
-All pages use `getStaticProps` for SSG. External feeds are fetched at build time, so rebuilds are needed to update podcast/books/newsletter content.
+## Conventions
+
+- **British English** throughout (`lang="en-GB"`). Em dashes are house style on the site;
+  the LinkedIn drafts in `notes/` avoid them on purpose.
+- **Accessibility is a gate, not a nice-to-have.** Every page scores 100 on all four
+  Lighthouse categories. Verify before shipping; do not regress it.
+- **No third-party scripts.** The site loads 68 bytes of third-party code and has an LCP of
+  ~124ms. Embeds (Instagram, Strava, analytics widgets) would undo that — see
+  `notes/seo-geo-strategy.md` §7 for the reasoning and the cheap alternative.
+- `notes/` and `design/` are gitignored working material and must stay unpublished.
+
+## Known issues
+
+- `lib/goodreads.js` has an API key in the feed URL, in a public repo. Worth rotating.
+- `lib/talks.json` ends Feb 2023, so the talks section argues against the current positioning.
+- The site says "led engineering" at Sastaticket; LinkedIn says CTO. Pick one.

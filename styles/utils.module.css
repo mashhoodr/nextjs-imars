@@ -319,6 +319,119 @@
   color: var(--ink-faint);
 }
 
+/* Article pages
+   ---------------------------------------------------------------------------
+   The homepage is a pitch and reads in scanned chunks. An article is read
+   linearly, so it gets a narrower measure and more vertical rhythm. */
+
+.article {
+  padding-bottom: 2rem;
+}
+
+.articleTitle {
+  margin: 0 0 0.75rem;
+  font-size: 2.1rem;
+  line-height: 1.15;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  max-width: 30ch;
+}
+
+.lede {
+  margin: 1.25rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 34rem;
+}
+
+.prose {
+  margin-top: 2.5rem;
+  /* ~70 characters, the span most legibility research lands on. */
+  max-width: 36rem;
+}
+
+.prose > * + * {
+  margin-top: 1.35em;
+}
+
+.prose h2 {
+  margin-top: 2.75em;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.prose h3 {
+  margin-top: 2.25em;
+  font-size: 1.1rem;
+  font-weight: 620;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.5em;
+}
+
+.prose blockquote {
+  margin-left: 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+  color: var(--ink-soft);
+}
+
+.prose code {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  background: #f4f4f5;
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+.prose pre {
+  overflow-x: auto;
+  padding: 1rem 1.15rem;
+  background: #fafafa;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.prose img {
+  border-radius: 4px;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.articleRule {
+  margin: 3.5rem 0 1.5rem;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  max-width: 36rem;
+}
+
+.articleFoot {
+  max-width: 36rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
 .borderCircle {
   border-radius: 9999px;
 }

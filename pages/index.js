@@ -6,6 +6,7 @@ import { getSortedPostsData } from "../lib/posts";
 import { getPodcastData } from "../lib/podcast";
 import { getGoodReadsData } from "../lib/goodreads";
 import { getSubstackData } from "../lib/substack";
+import { getAllWriting } from "../lib/writing";
 import allTalksData from "../lib/talks.json";
 import DateUtil from "../components/date";
 
@@ -109,6 +110,7 @@ export default function Home({
   allPodcastData,
   allBooksReadData,
   allBlogData,
+  ownWriting,
   recentTalks,
   earlierTalks,
 }) {
@@ -206,8 +208,39 @@ export default function Home({
       </Section>
 
       <Section id="writing" label="Writing" title="What I am thinking about.">
+        {/* Own articles first. The homepage is the strongest page on the site,
+            so these internal links are also how /writing gets discovered and
+            gets its share of authority. The newsletter feed sits below. */}
+        {ownWriting.length > 0 && (
+          <>
+            <ul className={utilStyles.list}>
+              {ownWriting.map(({ slug, title, date, description }) => (
+                <li className={utilStyles.listItem} key={slug}>
+                  <Link className={utilStyles.itemTitle} href={`/writing/${slug}`}>
+                    {title}
+                  </Link>
+                  <small className={utilStyles.meta}>
+                    {date && <DateUtil dateString={date} />}
+                  </small>
+                  {description && <p className={utilStyles.excerpt}>{description}</p>}
+                </li>
+              ))}
+            </ul>
+            <p>
+              <Link className={utilStyles.more} href="/writing">
+                [all writing]
+              </Link>
+            </p>
+            <p className={utilStyles.subheading}>From the newsletter</p>
+          </>
+        )}
         <FeedList items={allBlogData} />
-        <a className={utilStyles.more} href="https://mashhoodr.substack.com">
+        <a
+          className={utilStyles.more}
+          href="https://mashhoodr.substack.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           [read everything on Substack]
         </a>
       </Section>
@@ -333,6 +366,7 @@ export async function getStaticProps() {
   const allPodcastData = await getPodcastData();
   const allBooksReadData = await getGoodReadsData();
   const allBlogData = await getSubstackData();
+  const ownWriting = getAllWriting().slice(0, 3);
 
   // Filter before slicing. The previous order sliced first, so only featured
   // talks that happened to fall in the first 8 entries could ever be shown.
@@ -348,6 +382,7 @@ export async function getStaticProps() {
       allPodcastData,
       allBooksReadData,
       allBlogData,
+      ownWriting,
       recentTalks,
       earlierTalks,
     },
