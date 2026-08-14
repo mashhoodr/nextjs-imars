@@ -538,8 +538,119 @@
   font-weight: 400;
 }
 
-.bookReviewImages img {
+.legacyBookImages img {
   float: right;
   margin-left: 1rem;
   max-width: 4rem;
+}
+
+
+/* Reading: two columns of covers
+   ---------------------------------------------------------------------------
+   Two columns rather than a table. A table would be the wrong semantics — these
+   are list items with an image and a caption, not tabular data — and it would
+   not reflow on a phone. */
+
+.bookGrid {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 1.5rem;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.bookCover {
+  display: block;
+  width: 110px;
+  /* Covers vary slightly around 2:3. A fixed box keeps the grid from jittering
+     row to row, and `contain` means no cover gets its title cropped off. */
+  aspect-ratio: 2 / 3;
+  background: #f4f4f5;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.bookCover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bookCoverFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ink-faint);
+}
+
+.bookMeta {
+  min-width: 0;
+}
+
+.bookTitle {
+  font-size: 0.92rem;
+  font-weight: 550;
+  line-height: 1.3;
+}
+
+.bookAuthor {
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.bookRating {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.bookRatingOff {
+  color: var(--rule);
+}
+
+.bookReview {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* One column below the rail breakpoint: 110px of cover plus text does not fit
+   two-up on a phone. */
+@media (max-width: 700px) {
+  .bookGrid {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+}
+
+/* Visible to assistive technology only. Preferred over aria-label, which is
+   invalid on generic elements and is not translated by browsers. */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

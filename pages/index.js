@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Layout, { Section, siteTitle, siteUrl, contactEmail } from "../components/layout";
 import Seo, { PERSON_ID, WEBSITE_ID } from "../components/seo";
 import utilStyles from "../styles/utils.module.css";
@@ -290,14 +291,48 @@ export default function Home({
         </p>
 
         <p className={utilStyles.subheading}>Reading</p>
-        <ul className={`${utilStyles.list} ${utilStyles.bookReviewImages}`}>
-          {allBooksReadData.slice(0, 4).map(({ id, title, description }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <span className={utilStyles.itemTitle}>{title}</span>
-              <div
-                className={utilStyles.excerpt}
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
+        {/* Two columns of covers. Only 4 of 33 books on the shelf have a review,
+            so the rating carries most entries and the review appears when there
+            is one. The publisher blurb the old markup rendered is gone: it read
+            as if it were his opinion. */}
+        <ul className={utilStyles.bookGrid}>
+          {allBooksReadData.slice(0, 6).map(({ id, title, author, cover, rating, review, link }) => (
+            <li className={utilStyles.book} key={id}>
+              <a
+                className={utilStyles.bookCover}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${title}${author ? ` by ${author}` : ""} on Goodreads`}
+              >
+                {cover ? (
+                  <Image
+                    src={cover}
+                    alt={`Cover of ${title}`}
+                    width={110}
+                    height={165}
+                  />
+                ) : (
+                  <span className={utilStyles.bookCoverFallback}>{title}</span>
+                )}
+              </a>
+              <div className={utilStyles.bookMeta}>
+                <div className={utilStyles.bookTitle}>{title}</div>
+                {author && <div className={utilStyles.bookAuthor}>{author}</div>}
+                {rating > 0 && (
+                  <div className={utilStyles.bookRating}>
+                    {/* Real text for assistive tech rather than aria-label, which
+                        is prohibited on a div with no role. The stars are then
+                        decoration and are hidden. */}
+                    <span className={utilStyles.srOnly}>{`Rated ${rating} out of 5.`}</span>
+                    <span aria-hidden="true">{"\u2605".repeat(rating)}</span>
+                    <span aria-hidden="true" className={utilStyles.bookRatingOff}>
+                      {"\u2605".repeat(5 - rating)}
+                    </span>
+                  </div>
+                )}
+                {review && <p className={utilStyles.bookReview}>{review}</p>}
+              </div>
             </li>
           ))}
         </ul>
