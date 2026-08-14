@@ -4,6 +4,8 @@ date: "2022-07-25"
 description: "Yesterday Cloudflare suffered an outage while deploying some enhancements to their network. We at Sastaticket.pk, find and fix the issue (30 mins) and recover…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/a-core-part-of-continuous-delivery"
 tags:
+  - continuous delivery
+  - engineering practice
   - engineering leadership
 ---
 

@@ -8,6 +8,7 @@ sourceTitle: "Failed squad goals"
 sourceHost: "jeremiahlee.com"
 tags:
   - engineering leadership
+  - product
 ---
 
 An excellent post by an x-spotify engineer sharing several important lessons from his time there. Strongly recommend reading the whole thing..

@@ -8,6 +8,7 @@ sourceTitle: "Giving a shit"
 sourceHost: "allenpike.com"
 tags:
   - engineering leadership
+  - engineering culture
 ---
 
 Been thinking about what makes different teams stand out - the same work done by 2 different teams or companies can be very different. The article below shares a very nice perspective on how people or teams tend to think - and why certain startups are so good with their products.

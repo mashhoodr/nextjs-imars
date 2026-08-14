@@ -8,6 +8,8 @@ sourceTitle: "Product backlog building canvas"
 sourceHost: "martinfowler.com"
 tags:
   - engineering leadership
+  - product
+  - requirements
 ---
 
 When starting or working in a product company, one of the most common questions I get is around how to build the engineering team - most feel that it is one of the bigger challenges to do with building the product. However over the last decade, I have seen time and time again, once the engineers are onboarded - they get a poorly written document outlining the scope or a verbal instruction on what they should implement. While this can work in a few rare cases, I believe most of us need a slightly more structured approach to communicating what needs to be built from engineering.

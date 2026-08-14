@@ -4,7 +4,8 @@ date: "2022-09-16"
 description: "Some exciting news from the #startup world. Everyone's favourite design tool Figma got bought by potentially one of the more hated companies out there, Adobe…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/adobe-acquires-figma"
 tags:
-  - engineering leadership
+  - product
+  - industry analysis
 ---
 
 Some exciting news from the **#startup** world. Everyone's favourite design tool **Figma** got bought by potentially one of the more hated companies out there, Adobe - for 20 BILLON USD! :O

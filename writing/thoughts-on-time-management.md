@@ -5,9 +5,10 @@ description: "Time management is one of the trickiest to do well. Personally bei
 originallyPublishedAt: "https://mashhoodr.substack.com/p/thoughts-on-time-management"
 tags:
   - engineering leadership
+  - productivity
 ---
 
-![](/writing-images/thoughts-on-time-management-1.jpeg)
+![A highlighted book passage: notice when you say you do not have time for something. You always have time, you just spend it on other things.](/writing-images/thoughts-on-time-management-1.jpeg)
 
 *from Hyper-focus by Chris Bailey*
 

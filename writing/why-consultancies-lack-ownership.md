@@ -5,6 +5,8 @@ description: "I have seen many startups engage consultancies esp. when they are 
 originallyPublishedAt: "https://mashhoodr.substack.com/p/why-consultancies-lack-ownership"
 tags:
   - engineering leadership
+  - outsourcing
+  - engineering culture
 ---
 
 I have seen many startups engage consultancies - esp. when they are not sure if they want to build a team in house. One of the biggest issues I usually see with that - consultancies are not designed to own any of the decision they make. For them (in most cases) it's just a project which lasts a few months or may be a year or so. This often leads to optimisations for delivery than for the product itself. Thus you can often see poor architectural decisions, spaghetti code, lack of testing and planning in general in most of these cases.

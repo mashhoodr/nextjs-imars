@@ -7,6 +7,8 @@ sourceUrl: "https://renegadeotter.com/2023/09/10/death-by-a-thousand-microservic
 sourceTitle: "Death by a thousand microservices"
 sourceHost: "renegadeotter.com"
 tags:
+  - architecture
+  - engineering practice
   - engineering leadership
 ---
 

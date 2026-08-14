@@ -8,6 +8,7 @@ sourceTitle: "Stop overcomplicating it the simple guidebook to upping your manag
 sourceHost: "review.firstround.com"
 tags:
   - engineering leadership
+  - engineering management
 ---
 
 One of my most important tasks is to work on mentorship for our leaders at Sastaticket - and coming across such guides such as this are always a welcome.

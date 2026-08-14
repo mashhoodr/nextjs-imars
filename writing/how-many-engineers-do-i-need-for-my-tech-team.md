@@ -8,6 +8,8 @@ sourceTitle: "Google ceo sundar pichai memo hiring slowdown 2022"
 sourceHost: "theverge.com"
 tags:
   - engineering leadership
+  - team building
+  - hiring
 ---
 
 With all the companies around me downsizing and / or freezing hiring now a days - one does start wondering about team sizing and the optimal team size. A sample from the posts:

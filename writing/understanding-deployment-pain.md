@@ -4,10 +4,12 @@ date: "2022-09-05"
 description: "One of the core metrics for Engineering productivity is the frequency of deployments, measured by \"number of deploys per day per developer\". According to the…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/understanding-deployment-pain"
 tags:
-  - engineering leadership
+  - continuous delivery
+  - developer productivity
+  - engineering practice
 ---
 
-![](/writing-images/understanding-deployment-pain-1.jpeg)
+![A typewritten quote card from Accelerate by Jez Humble: teams that implement comprehensive test and deployment automation, use continuous integration including trunk based development, shift left on security, manage test data effectively, use loosely coupled architectures, can work independently, and version control everything needed to reproduce production, decrease their deployment pain.](/writing-images/understanding-deployment-pain-1.jpeg)
 
 *quote from the book “Accelerate by Jez Humble”*
 
@@ -34,7 +36,7 @@ In the start your deployments are manual, the pain might not be so high initiall
 
 So the most important thing to understand is that a core part of reducing deployment pain is **automation.** Starting from deployment automation and then automated tests. Without these two the others have little effect on deployment pain. It’s when you start focusing on these two - another two factors will come into play, loosely coupled architectures and working independently.  You will realize that deploying a large monolith comprising of 100s of services is harder than deploying any one service of them. This might lead to refactoring some code, or even writing new services so we can reduce deployment pain.
 
-![](/writing-images/understanding-deployment-pain-2.jpeg)
+![A two-part thread by Allen Holub arguing that refusing to deploy on a Friday is a red flag: it signals code too poorly tested to risk over a weekend, and that a sprint is a review cadence rather than a deployment cadence.](/writing-images/understanding-deployment-pain-2.jpeg)
 
 *Quote from Allen Holub on Twitter*
 

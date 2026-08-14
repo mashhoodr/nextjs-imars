@@ -4,7 +4,9 @@ date: "2026-03-28"
 description: "Really enjoyed reading OpenAI's 'harness engineering' approach—and it's the clearest signal yet that the role of Software Engineers is changing and not…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/harness-engineering-the-future-of"
 tags:
-  - engineering leadership
+  - agentic engineering
+  - harness engineering
+  - engineering careers
 ---
 
 Really enjoyed reading OpenAI's 'harness engineering' approach—and it's the clearest signal yet that the role of Software Engineers is changing and not disappearing.

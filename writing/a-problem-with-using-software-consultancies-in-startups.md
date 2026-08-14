@@ -8,9 +8,11 @@ sourceTitle: "news.ycombinator.com"
 sourceHost: "news.ycombinator.com"
 tags:
   - engineering leadership
+  - outsourcing
+  - startups
 ---
 
-![](/writing-images/a-problem-with-using-software-consultancies-in-startups-1.jpeg)
+![A quote card from Accelerate by Jez Humble: because software delivery performance matters, there is a strong argument against outsourcing development of software that is strategic to your business, and for bringing that capability into the core of the organisation.](/writing-images/a-problem-with-using-software-consultancies-in-startups-1.jpeg)
 
 An interesting discussion (and a good article to read as well) on how big consultancies can fail some times.
 
@@ -22,7 +24,7 @@ A great example of this was the implementation of a specific check on our Sastat
 
 This is specially critical for startups. As we work towards finding the product market fit, and giving the user the best experience possible - things are precariously balanced with every decision we take. And if those executing do not have a part of the stake - then the results are best varied.
 
-![](/writing-images/a-problem-with-using-software-consultancies-in-startups-2.png)
+![A post by Asim Qureshi listing five reasons an outsourced medical app build was likely to fail: the contractor lacks drive and competence, the back end gets rushed, renegotiation is one-sided, replacing the team costs months and ownership, and complexity compounds as the app grows.](/writing-images/a-problem-with-using-software-consultancies-in-startups-2.png)
 
 *https://www.linkedin.com/feed/update/urn:li:activity:6835880649908453376/*
 

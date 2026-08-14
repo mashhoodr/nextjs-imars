@@ -7,7 +7,9 @@ sourceUrl: "https://mashable.com/article/doordash-glitch-free-food"
 sourceTitle: "Doordash glitch free food"
 sourceHost: "mashable.com"
 tags:
-  - engineering leadership
+  - engineering practice
+  - quality
+  - testing
 ---
 
 So a bug in DoorDash payment system lead to hundreds of free food orders last week. Millions of dollars lost in compensation and many customers ended up getting a poor experience as well. You can read more about it here:

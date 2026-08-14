@@ -8,11 +8,13 @@ sourceTitle: "\"An Elegant Puzzle\" by Will Larson"
 sourceHost: "amazon.com"
 tags:
   - engineering leadership
+  - technical debt
+  - team building
 ---
 
 When managing #engineering teams - one challenge is often to balance the work between new features (innovation) and fixing bugs or adjusting older features (maintenance). This excerpt from ["An Elegant Puzzle" by Will Larson]() is spot on about managing both aspecting from the same team rather than splitting the work between two teams.
 
-![](/writing-images/managing-innovation-and-maintenance-development-1.jpeg)
+![A highlighted book passage arguing that innovation and maintenance should be kept together rather than split across separate teams, to avoid a two-tiered class system of innovators and maintainers.](/writing-images/managing-innovation-and-maintenance-development-1.jpeg)
 
 This helps the team cycle through old and new stuff at the same time, so they have good knowledge about the old systems, and are happy to learn new things when creating the next generation stuff.
 
