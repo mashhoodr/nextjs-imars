@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
-import Layout, { Section, siteTitle, contactEmail } from "../components/layout";
+import Layout, { Section, siteTitle, siteUrl, contactEmail } from "../components/layout";
+import Seo, { PERSON_ID, WEBSITE_ID } from "../components/seo";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { getPodcastData } from "../lib/podcast";
@@ -109,9 +109,20 @@ export default function Home({
 }) {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+      <Seo
+        path="/"
+        jsonLd={[
+          {
+            "@type": "ProfilePage",
+            "@id": `${siteUrl}/#profilepage`,
+            url: siteUrl,
+            name: siteTitle,
+            isPartOf: { "@id": WEBSITE_ID },
+            about: { "@id": PERSON_ID },
+            mainEntity: { "@id": PERSON_ID },
+          },
+        ]}
+      />
 
       <section className={utilStyles.hero}>
         <p className={utilStyles.sectionLabel}>Introduction</p>
@@ -276,16 +287,15 @@ export default function Home({
         </a>
 
         <p className={utilStyles.subheading}>Elsewhere</p>
-        <p>
-          {SOCIALS.map(([label, href], i) => (
-            <span key={label}>
-              {i > 0 && " · "}
-              <a href={href} target="_blank" rel="noopener noreferrer">
+        <ul className={utilStyles.inlineList}>
+          {SOCIALS.map(([label, href]) => (
+            <li key={label}>
+              <a href={href} target="_blank" rel="me noopener noreferrer">
                 {label}
               </a>
-            </span>
+            </li>
           ))}
-        </p>
+        </ul>
 
         <p className={utilStyles.subheading}>Archive</p>
         <ul className={utilStyles.list}>

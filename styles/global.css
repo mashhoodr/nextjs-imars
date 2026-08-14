@@ -3,7 +3,9 @@
   --bg: #ffffff;
   --ink: #18181b;
   --ink-soft: #52525b;
-  --ink-faint: #a1a1aa;
+  /* Was #a1a1aa, which is 2.56:1 on white and failed WCAG AA for the dates and
+     mono labels it is used on. #71717a is 4.83:1 and reads almost identically. */
+  --ink-faint: #71717a;
   --accent: #1d4ed8;
   --rule: #e4e4e7;
 
@@ -39,6 +41,23 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Links sitting inside a run of prose need a non-colour cue: colour alone fails
+   WCAG 1.4.1 for anyone who cannot separate the blue from the near-black.
+   Standalone links (nav, `.more`, list items) are unambiguous and opt out. */
+p a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+/* A visible focus ring, which `outline: none` resets often remove by accident. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 img {

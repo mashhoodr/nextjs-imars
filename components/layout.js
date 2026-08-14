@@ -4,13 +4,18 @@ import Link from "next/link";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 
-export const name = "Mashhood Rastgar";
-export const siteTitle =
-  "Mashhood Rastgar — helping engineering organisations become agent-native";
-export const siteDescription =
-  "Harness engineering and agentic transformation for engineering organisations. Keynotes, team workshops and advisory.";
-export const siteUrl = "https://karachiwala.dev";
-export const contactEmail = "hello@karachiwala.dev";
+// Identity now lives in lib/site.js so the sitemap and JSON-LD can read the same
+// values. Re-exported here because pages already import them from this module.
+export {
+  name,
+  siteTitle,
+  siteDescription,
+  siteUrl,
+  contactEmail,
+} from "../lib/site";
+// `export ... from` re-exports without binding the names locally, so anything
+// this component actually renders has to be imported too.
+import { name, contactEmail } from "../lib/site";
 
 // Rail order mirrors the section order on the homepage.
 export const SECTIONS = [
@@ -77,21 +82,13 @@ export default function Layout({ children, home }) {
 
   return (
     <div className={styles.shell}>
+      {/* Everything else that belongs in <head> is emitted by <Seo>, which each
+          page renders with its own title, description and canonical. Keeping it
+          out of here is what stopped /blog and /talks sharing one title. */}
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content={siteDescription} />
-        <meta property="og:title" content={siteTitle} />
-        <meta property="og:description" content={siteDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={siteUrl} />
-        <meta property="og:image" content={`${siteUrl}/images/og.jpg`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Mashhood Rastgar speaking on stage" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={siteTitle} />
-        <meta name="twitter:description" content={siteDescription} />
-        <meta name="twitter:image" content={`${siteUrl}/images/og.jpg`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="alternate" type="application/rss+xml" title="Harness Engineering — Substack" href="https://mashhoodr.substack.com/feed" />
       </Head>
 
       <aside className={styles.rail}>

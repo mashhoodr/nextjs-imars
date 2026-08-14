@@ -1,13 +1,17 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
+import Seo, { breadcrumb } from "../components/seo";
 import utilStyles from "../styles/utils.module.css";
 
 export default function Privacy() {
   return (
     <Layout>
-      <Head>
-        <title>Privacy Policy - {siteTitle}</title>
-      </Head>
+      <Seo
+        title="Privacy policy"
+        description="How karachiwala.dev handles the small amount of data it collects."
+        path="/privacy"
+        jsonLd={[breadcrumb([{ name: "Privacy policy", path: "/privacy" }])]}
+      />
+      {/* A trust signal worth keeping indexable, so no noindex here. */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h1 className={utilStyles.headingXl}>Privacy Policy</h1>
         <p><strong>Last updated:</strong> February 7, 2026</p>

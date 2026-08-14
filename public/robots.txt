@@ -1,0 +1,52 @@
+# karachiwala.dev
+#
+# This site wants to be read, quoted and cited, including by AI assistants.
+# The named blocks below are redundant with the wildcard, but they are here on
+# purpose: several of these crawlers are blocked by default in hosting presets
+# and CDN bot rules, and naming them makes the intent explicit and reviewable.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# --- Answer engines: allowed deliberately ---
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini and AI Overviews grounding
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl, which many models are trained from
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://karachiwala.dev/sitemap.xml
