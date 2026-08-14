@@ -1,6 +1,7 @@
 ---
 title: "What actually works with AI coding tools"
-date: "2026-08-14"
+date: "2026-02-27"
+updated: "2026-08-14"
 description: "Nine months on messy, real-world codebases. The breakthrough was simple: stop letting AI write code until you have reviewed a written plan."
 sourceUrl: "https://boristane.com/blog/how-i-use-claude-code/"
 sourceTitle: "How I use Claude Code"

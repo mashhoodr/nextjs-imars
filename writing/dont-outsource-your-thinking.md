@@ -1,6 +1,7 @@
 ---
 title: "Don't outsource your thinking"
-date: "2026-08-14"
+date: "2026-03-03"
+updated: "2026-08-14"
 description: "A randomised trial of 52 junior developers found AI assistance cut coding mastery by 17 percent. The ones who did well used it differently, and the difference is teachable."
 sourceUrl: "https://www.anthropic.com/research/AI-assistance-coding-skills"
 sourceTitle: "How AI assistance impacts the formation of coding skills"

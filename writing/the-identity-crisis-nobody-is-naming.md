@@ -1,6 +1,7 @@
 ---
 title: "The identity crisis nobody is naming"
-date: "2026-08-14"
+date: "2026-03-06"
+updated: "2026-08-14"
 description: "Underneath the excitement about agentic coding there is a quieter thing happening: the source of professional meaning is moving, and almost nobody is talking about it."
 tags:
   - engineering leadership

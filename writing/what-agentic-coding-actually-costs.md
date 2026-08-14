@@ -1,6 +1,7 @@
 ---
 title: "What agentic coding actually costs"
-date: "2026-08-14"
+date: "2026-02-20"
+updated: "2026-08-14"
 description: "A $100 seat can consume $2,000 of value, Anthropic burns $19bn against $9bn of revenue, and the cost of generating code is approaching zero. What a CTO should do about all three."
 sourceUrl: "https://papercompute.com"
 sourceTitle: "The True Cost of Claude Code"

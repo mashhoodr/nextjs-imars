@@ -1,6 +1,7 @@
 ---
 title: "Code review when the agent wrote the code"
-date: "2026-08-14"
+date: "2026-04-15"
+updated: "2026-08-14"
 description: "Clean code, passing tests, and a linear scan where a binary search belonged. What actually changes about code review when an agent writes the code, and what to look at instead."
 tags:
   - agentic engineering

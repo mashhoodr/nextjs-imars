@@ -1,6 +1,7 @@
 ---
 title: "Skillify: turning agent failures into skills you can test"
-date: "2026-08-14"
+date: "2026-04-01"
+updated: "2026-08-14"
 description: "Every AI framework promises reliability and gives you dashboards. The tools exist; the workflow doesn't. A ten-step checklist for making a failure impossible to repeat."
 tags:
   - agentic engineering
