@@ -3,6 +3,13 @@ title: "Skillify: turning agent failures into skills you can test"
 date: "2026-04-01"
 updated: "2026-08-14"
 description: "Every AI framework promises reliability and gives you dashboards. The tools exist; the workflow doesn't. A ten-step checklist for making a failure impossible to repeat."
+references:
+  - url: "https://builder.aws.com/content/39qVvXF9Bu8U5NwPF5d5n25VEZI/automating-your-workflow-with-claude-code-hooks"
+    title: "Automating your workflow with Claude Code hooks"
+    host: "builder.aws.com"
+  - url: "https://x.com/garrytan/status/2046876981711769720"
+    title: "Garry Tan on agent reliability"
+    host: "x.com"
 tags:
   - agentic engineering
   - AI reliability

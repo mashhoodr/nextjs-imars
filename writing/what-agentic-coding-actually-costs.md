@@ -3,9 +3,19 @@ title: "What agentic coding actually costs"
 date: "2026-02-20"
 updated: "2026-08-14"
 description: "A $100 seat can consume $2,000 of value, Anthropic burns $19bn against $9bn of revenue, and the cost of generating code is approaching zero. What a CTO should do about all three."
-sourceUrl: "https://papercompute.com"
+sourceUrl: "https://papercompute.com/blog/true-cost-of-claude-code/"
 sourceTitle: "The True Cost of Claude Code"
 sourceHost: "papercompute.com"
+references:
+  - url: "https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents"
+    title: "Minions: Stripe's one-shot, end-to-end coding agents"
+    host: "stripe.dev"
+  - url: "https://www.anthropic.com/engineering/building-c-compiler"
+    title: "Building a C compiler with a team of parallel Claudes"
+    host: "anthropic.com"
+  - url: "https://creators.spotify.com/pod/profile/mashhoodr/episodes/Stop-Reviewing-Code--Start-Reviewing-Tests-TDD-in-the-Age-of-AI-e3hlndt"
+    title: "Stop Reviewing Code, Start Reviewing Tests — Karachi Wala Developer"
+    host: "creators.spotify.com"
 tags:
   - AI transformation
   - engineering leadership

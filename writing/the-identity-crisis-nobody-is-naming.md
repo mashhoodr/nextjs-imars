@@ -3,6 +3,10 @@ title: "The identity crisis nobody is naming"
 date: "2026-03-06"
 updated: "2026-08-14"
 description: "Underneath the excitement about agentic coding there is a quieter thing happening: the source of professional meaning is moving, and almost nobody is talking about it."
+references:
+  - url: "https://open.spotify.com/episode/4ljRD5viVk0fzwrnfAIyUz"
+    title: "Agentic Transformation: My Story — Karachi Wala Developer"
+    host: "open.spotify.com"
 tags:
   - engineering leadership
   - agentic engineering

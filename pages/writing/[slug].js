@@ -44,6 +44,17 @@ export default function Article({ article }) {
                   },
                 }
               : {}),
+            // Distinct from isBasedOn: these are works the article draws on
+            // rather than the one it responds to.
+            ...(article.references.length
+              ? {
+                  citation: article.references.map((r) => ({
+                    "@type": "CreativeWork",
+                    name: r.title,
+                    url: r.url,
+                  })),
+                }
+              : {}),
           },
           breadcrumb([
             { name: "Writing", path: "/writing" },
@@ -84,6 +95,26 @@ export default function Article({ article }) {
           className={utilStyles.prose}
           dangerouslySetInnerHTML={{ __html: article.contentHtml }}
         />
+
+        {/* Everything else the original posts pointed at. Kept at the end
+            rather than inline, so the argument reads uninterrupted but the
+            evidence is still one scroll away. */}
+        {article.references.length > 0 && (
+          <>
+            <hr className={utilStyles.articleRule} />
+            <h2 className={utilStyles.referencesHeading}>References</h2>
+            <ul className={utilStyles.references}>
+              {article.references.map((r) => (
+                <li key={r.url}>
+                  <a href={r.url} target="_blank" rel="noopener noreferrer">
+                    {r.title}
+                  </a>
+                  <span className={utilStyles.sourceHost}>{r.host}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
         <hr className={utilStyles.articleRule} />
 
