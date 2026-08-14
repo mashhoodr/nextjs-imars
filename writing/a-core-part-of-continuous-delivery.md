@@ -1,7 +1,7 @@
 ---
 title: "A Core Part of Continuous Delivery"
 date: "2022-07-25"
-description: "Yesterday Cloudflare (worlds largest CDN) suffered an outage while deploying some enhancements to their network. We at Sastaticket.pk were also impacted in…"
+description: "Yesterday Cloudflare suffered an outage while deploying some enhancements to their network. We at Sastaticket.pk, find and fix the issue (30 mins) and recover…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/a-core-part-of-continuous-delivery"
 tags:
   - engineering leadership
@@ -18,7 +18,3 @@ This is a core part of Continuous Delivery - having the correct observability to
 Strongly recommend reading the post mortem for better understanding of how things are done at Cloudflare.
 
 https://blog.cloudflare.com/cloudflare-outage-on-june-21-2022/
-
-[Share](https://mashhoodr.substack.com/p/a-core-part-of-continuous-delivery?utm_source=substack&utm_medium=email&utm_content=share&action=share)
-
-Thanks for reading KarachiWalaDeveloper! Subscribe for free to receive new posts and support my work.

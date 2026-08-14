@@ -17,6 +17,4 @@ From the video, Steve Jobs says:
 
 So should startups not use consultancies at all? I think they can - but the real value to a startup is only generated when you have someone in house who knows how to use that talent. If you expect to “outsource” everything - then you have no idea what you are getting in return, and usually one finds out about this towards the end of the project.
 
-[Share](https://mashhoodr.substack.com/p/why-consultancies-lack-ownership?utm_source=substack&utm_medium=email&utm_content=share&action=share)
-
 Please consider subscribing.

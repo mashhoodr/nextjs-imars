@@ -3,11 +3,12 @@ title: "Should I use microservices?"
 date: "2023-09-21"
 description: "While #microservices have their place in this world I personally feel they are one technology which have been greatly misunderstood. Microservices has always…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/should-i-use-microservices"
+sourceUrl: "https://renegadeotter.com/2023/09/10/death-by-a-thousand-microservices.html"
+sourceTitle: "Death by a thousand microservices"
+sourceHost: "renegadeotter.com"
 tags:
   - engineering leadership
 ---
-
-https://renegadeotter.com/2023/09/10/death-by-a-thousand-microservices.html
 
 While **#microservices** have their place in this world - I personally feel they are one technology which have been greatly mis-understood. Microservices has always been a people problem - having hundreds of engineers working on a single codebase slows down the pace of development. However most folks now days opt for microservices just to have the the keyword on their CVs.
 

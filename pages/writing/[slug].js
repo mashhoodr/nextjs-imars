@@ -33,6 +33,17 @@ export default function Article({ article }) {
             inLanguage: "en-GB",
             timeRequired: `PT${article.readingMinutes}M`,
             ...(article.tags.length ? { keywords: article.tags.join(", ") } : {}),
+            // Declares the conversation this piece sits in. Answer engines use
+            // it to relate sources rather than treating the page as isolated.
+            ...(article.source
+              ? {
+                  isBasedOn: {
+                    "@type": "CreativeWork",
+                    name: article.source.title,
+                    url: article.source.url,
+                  },
+                }
+              : {}),
           },
           breadcrumb([
             { name: "Writing", path: "/writing" },
@@ -57,6 +68,18 @@ export default function Article({ article }) {
           )}
         </p>
 
+        {/* The thing being responded to, before the response. Placed above the
+            body because it is context the reader needs first, not a footnote. */}
+        {article.source && (
+          <p className={utilStyles.sourceNote}>
+            <span className={utilStyles.sourceLabel}>In response to</span>
+            <a href={article.source.url} target="_blank" rel="noopener noreferrer">
+              {article.source.title}
+            </a>
+            <span className={utilStyles.sourceHost}>{article.source.host}</span>
+          </p>
+        )}
+
         <div
           className={utilStyles.prose}
           dangerouslySetInnerHTML={{ __html: article.contentHtml }}
@@ -68,6 +91,15 @@ export default function Article({ article }) {
           Written by Mashhood Rastgar, who helps engineering organisations become agent-native.
           If this is your situation,{" "}
           <a href={`mailto:${contactEmail}`}>tell me where your team sits</a>.
+          {article.originallyPublishedAt && (
+            <>
+              {" "}
+              <a href={article.originallyPublishedAt} target="_blank" rel="noopener noreferrer">
+                Also on the newsletter
+              </a>
+              .
+            </>
+          )}
         </p>
 
         <p>

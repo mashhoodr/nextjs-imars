@@ -3,13 +3,16 @@ title: "How many engineers do I need for my tech team?"
 date: "2022-08-14"
 description: "With all the companies around me downsizing and / or freezing hiring now a days one does start wondering about team sizing and the optimal team size. A sample…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/how-many-engineers-do-i-need-for"
+sourceUrl: "https://www.theverge.com/2022/7/12/23206113/google-ceo-sundar-pichai-memo-hiring-slowdown-2022"
+sourceTitle: "Google ceo sundar pichai memo hiring slowdown 2022"
+sourceHost: "theverge.com"
 tags:
   - engineering leadership
 ---
 
 With all the companies around me downsizing and / or freezing hiring now a days - one does start wondering about team sizing and the optimal team size. A sample from the posts:
 
-https://www.theverge.com/2022/7/12/23206113/google-ceo-sundar-pichai-memo-hiring-slowdown-2022
+
 
 Now Google and Facebook are large organisations and one can forgive them if they hired a dozen more engineers (to better manage turnover may be) - but there looks to be a concern where it is felt that the teams are generally not fully optimised, and are being pushed to more efficient and “do more with less”. Zuckerberg is heard saying out right that some folks are not working at all. Now this is a pretty expected response to a global economic slow down - but it does make one think if their teams are at an optimal limit or not.
 

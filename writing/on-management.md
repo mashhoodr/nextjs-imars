@@ -1,15 +1,18 @@
 ---
 title: "On Management."
 date: "2022-10-08"
-description: "One of my most important tasks is to work on mentorship for our leaders at Sastaticket and coming across such guides such as this are always a welcome.…"
+description: "One of my most important tasks is to work on mentorship for our leaders at Sastaticket and coming across such guides such as this are always a welcome. It is…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/on-management"
+sourceUrl: "https://review.firstround.com/stop-overcomplicating-it-the-simple-guidebook-to-upping-your-management-game"
+sourceTitle: "Stop overcomplicating it the simple guidebook to upping your management game"
+sourceHost: "review.firstround.com"
 tags:
   - engineering leadership
 ---
 
 One of my most important tasks is to work on mentorship for our leaders at Sastaticket - and coming across such guides such as this are always a welcome.
 
-https://review.firstround.com/stop-overcomplicating-it-the-simple-guidebook-to-upping-your-management-game
+
 
 It is a false understanding that management is about “getting work done”. And even when one is told and guided about this, we often fall into this trap again and again. Only with time, training and perseverance do we start climbing out of this pit of micro-management and deadlines and start to understand the values of trust, vision, inspiration and helping the team in order to achieve the goals set.
 

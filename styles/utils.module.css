@@ -419,6 +419,35 @@
   text-underline-offset: 0.18em;
 }
 
+/* "In response to <article>" — the piece being reacted to, above the body. */
+.sourceNote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.6rem;
+  max-width: 36rem;
+  margin: 2.25rem 0 0;
+  padding: 0.85rem 1rem;
+  background: #fafafa;
+  border-left: 2px solid var(--accent);
+  border-radius: 0 3px 3px 0;
+  font-size: 0.92rem;
+}
+
+.sourceLabel {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.sourceHost {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+
 .articleRule {
   margin: 3.5rem 0 1.5rem;
   border: 0;

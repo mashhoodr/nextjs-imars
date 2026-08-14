@@ -20,7 +20,7 @@ const OUT = path.join(process.cwd(), "writing");
 const WRITE = process.argv.includes("--write");
 
 /** Posts too short to stand as an article — link notes, one-liners. */
-const MIN_CHARS = 900;
+const MIN_CHARS = 700;
 
 const decode = (s) =>
   s
@@ -114,6 +114,60 @@ function describe(md, limit = 158) {
 
 const yamlStr = (s) => `"${s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 
+/** Links that are plumbing rather than the subject of the post. */
+const NOT_A_SOURCE =
+  /substack\.com|linkedin\.com\/feed\/hashtag|linkedin\.com\/company|linkedin\.com\/in\/|karachiwala\.dev|twitter\.com|x\.com/i;
+
+/**
+ * Most of these posts are a response to something someone else wrote, and open
+ * by linking it. Surfacing that link is the difference between a page that
+ * looks like an orphaned opinion and one that reads as part of a conversation.
+ */
+function findSource(md) {
+  // Only look at the opening: a link in the closing paragraph is usually an
+  // aside, not the thing being discussed.
+  const opening = md.slice(0, 1200);
+  const candidates = [
+    ...[...opening.matchAll(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g)].map((m) => ({
+      title: m[1].trim(),
+      url: m[2],
+    })),
+    ...[...opening.matchAll(/(?<!\()\bhttps?:\/\/[^\s)\]]+/g)].map((m) => ({
+      title: null,
+      url: m[0],
+    })),
+  ];
+
+  const hit = candidates.find((c) => !NOT_A_SOURCE.test(c.url));
+  if (!hit) return null;
+
+  const url = hit.url.replace(/[.,)]+$/, "");
+  let { host, pathname } = new URL(url);
+  host = host.replace(/^www\./, "");
+
+  // Prefer the anchor text; otherwise de-slugify the last path segment, which
+  // for the blogs linked here is nearly always the headline.
+  let title = hit.title;
+  if (!title || /^https?:/.test(title)) {
+    const seg = pathname.split("/").filter(Boolean).pop() || "";
+    const words = seg.replace(/\.\w+$/, "").replace(/[-_]+/g, " ").trim();
+    title = words.split(" ").length >= 3
+      ? words.charAt(0).toUpperCase() + words.slice(1)
+      : host;
+  }
+  return { url, title, host };
+}
+
+/** Substack appends share/subscribe furniture to every emailed post. */
+function stripPlatformFurniture(md) {
+  return md
+    .replace(/\[[^\]]*\]\(https:\/\/[^)]*substack\.com\/(subscribe|p\/[^)]*action=share)[^)]*\)/gi, "")
+    .replace(/\[([^\]]+)\]\(https:\/\/www\.linkedin\.com\/feed\/hashtag[^)]*\)/gi, "$1")
+    .replace(/^\s*(Share|Leave a comment|Subscribe now|Thanks for reading[^\n]*)\s*$/gim, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 /**
  * Collects remote image URLs during conversion and downloads them afterwards.
  *
@@ -165,7 +219,8 @@ for (const item of feed.items) {
   const title = (item.title || "").trim();
   const slug = slugify(title);
   const images = imageCollector(slug);
-  const md = toMarkdown(item.full || item.content || "", images);
+  const md = stripPlatformFurniture(toMarkdown(item.full || item.content || "", images));
+  const source = findSource(md);
 
   if (md.length < MIN_CHARS) {
     console.log(`  skip (${md.length} chars, too short): ${title.slice(0, 60)}`);
@@ -183,6 +238,12 @@ for (const item of feed.items) {
   if (WRITE && images.pending.length) await download(images.pending, IMG_DIR);
 
   const date = new Date(item.pubDate).toISOString().slice(0, 10);
+  // The source URL usually opens the post as a bare link. It moves into the
+  // header, so remove the duplicate from the body.
+  const bodyMd = source
+    ? md.replace(source.url, "").replace(/^\s*\n/, "").trim()
+    : md;
+
   const body = [
     "---",
     `title: ${yamlStr(title)}`,
@@ -191,11 +252,14 @@ for (const item of feed.items) {
     // Recorded so the syndication relationship stays visible. These posts were
     // published on Substack first, so its canonical needs repointing here.
     `originallyPublishedAt: "${item.link}"`,
+    ...(source
+      ? [`sourceUrl: "${source.url}"`, `sourceTitle: ${yamlStr(source.title)}`, `sourceHost: "${source.host}"`]
+      : []),
     "tags:",
     "  - engineering leadership",
     "---",
     "",
-    md,
+    bodyMd,
     "",
   ].join("\n");
 

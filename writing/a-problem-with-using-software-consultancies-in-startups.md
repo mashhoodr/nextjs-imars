@@ -1,8 +1,11 @@
 ---
 title: "A problem with using software consultancies in startups"
 date: "2022-08-06"
-description: "An interesting discussion (and a good article to read as well) on how big consultancies can fail some times. https://news.ycombinator.com/item?id=32184183 One…"
+description: "An interesting discussion (and a good article to read as well) on how big consultancies can fail some times. One of the biggest challenges with any…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/a-problem-with-using-software-consultancies"
+sourceUrl: "https://news.ycombinator.com/item?id=32184183"
+sourceTitle: "news.ycombinator.com"
+sourceHost: "news.ycombinator.com"
 tags:
   - engineering leadership
 ---
@@ -11,7 +14,7 @@ tags:
 
 An interesting discussion (and a good article to read as well) on how big consultancies can fail some times.
 
-https://news.ycombinator.com/item?id=32184183
+
 
 One of the biggest challenges with any consultancy is **domain knowledge** - thats the one thing I have learnt after joining Sastaticket. Domain knowledge is so critical (along with its documentation and communication) that a simple feature can become a nightmare due to mis-communication. Bringing all stakeholders to use the same language and the same perspective is a very hard problem to solve.
 

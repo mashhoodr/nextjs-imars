@@ -52,7 +52,7 @@ Don't try to make everything time efficient - some things like spending time on 
 
 ---
 
-[#timemanagement](https://www.linkedin.com/feed/hashtag/?keywords=timemanagement&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7095246410819731456) is probably one of the most important things to do in our lives - but very few people actually do it. My fav bit from this is that we have 168 hours per week, and even if we sleep for 8 hours every day, and work 50 hours per week - we are left with 62 hours every week to do other things. How do you spend these 62 hours every week?
+#timemanagement is probably one of the most important things to do in our lives - but very few people actually do it. My fav bit from this is that we have 168 hours per week, and even if we sleep for 8 hours every day, and work 50 hours per week - we are left with 62 hours every week to do other things. How do you spend these 62 hours every week?
 
 Some nice insights in this podcast episode - including planning on Friday for next week helps reduce anxious Mondays, how to use exercise during the day as a reset button and most importantly why creating a habit doesn’t have to mean doing it everyday (3 days a week is a good target).
 

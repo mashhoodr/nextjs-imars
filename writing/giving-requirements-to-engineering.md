@@ -3,6 +3,9 @@ title: "Giving Requirements to Engineering."
 date: "2022-09-14"
 description: "When starting or working in a product company, one of the most common questions I get is around how to build the engineering team most feel that it is one of…"
 originallyPublishedAt: "https://mashhoodr.substack.com/p/giving-requirements-to-engineering"
+sourceUrl: "https://martinfowler.com/articles/product-backlog-building-canvas.html"
+sourceTitle: "Product backlog building canvas"
+sourceHost: "martinfowler.com"
 tags:
   - engineering leadership
 ---
@@ -11,7 +14,7 @@ When starting or working in a product company, one of the most common questions 
 
 If you are looking to understand on how to write user stories, then this blog post (and the associated book) are an excellent resource to start off from.
 
-https://martinfowler.com/articles/product-backlog-building-canvas.html
+
 
 ### We are not trying to document *every* detail
 
