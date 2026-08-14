@@ -29,6 +29,10 @@ The cost of *generating* code is approaching zero. The cost of the *tools* that 
 
 If you are planning an engineering budget more than a year out, you need a position on both.
 
+![Two lines on a chart moving in opposite directions: the cost of generating code falling toward zero, and the cost of the tooling rising as subsidies end.](/writing-images/cost-curves.png)
+
+*The falling curve is a permanent change in the economics. The rising one is a subsidy ending.*
+
 ## The subsidy phase
 
 Here is the uncomfortable arithmetic. Some of you are paying around $100 a month. If you are using the tool properly, you are consuming closer to $2,000 in value. Anthropic is burning roughly $19bn a year while making $9bn.

@@ -38,6 +38,10 @@ It is surely not syntax errors and style changes. That is a solved problem, and 
 
 The focus shifts to **solution correctness** and **mental alignment**.
 
+![Two columns comparing what code review used to catch, such as syntax and style, with what it must catch now, such as solution correctness and mental alignment.](/writing-images/review-shift.png)
+
+*The left column was automated years ago. The right column is what is left.*
+
 Solution correctness is the binary search question. Does this implementation actually satisfy the constraint I care about, which may never have been written down? Mental alignment is the quieter one: does this code do what I thought I was asking for? An agent will resolve an ambiguous instruction confidently and silently. A junior engineer would have asked. That question the junior would have asked is now your job to ask, after the fact, while reading.
 
 So spend the review on the important bits rather than on everything. In practice, for me, that means going straight to the parts of a diff where a *decision* was made — a data structure chosen, a boundary drawn, an error swallowed, a default picked — and skimming the parts where the work was mechanical.

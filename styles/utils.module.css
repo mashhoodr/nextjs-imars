@@ -411,6 +411,14 @@
 
 .prose img {
   border-radius: 4px;
+  /* The width/height attributes stamped at build time reserve the box; these
+     two rules let it scale down without reintroducing a shift. */
+  height: auto;
+  max-width: 100%;
+}
+
+.prose figure {
+  margin: 2rem 0;
 }
 
 .prose a {

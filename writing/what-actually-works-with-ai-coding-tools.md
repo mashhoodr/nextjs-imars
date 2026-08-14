@@ -21,6 +21,10 @@ Not a verbal summary. Not a plan it holds in its head for the length of a sessio
 
 The loop has a name now — **RPI: Research, Plan, Implement** — and the part everyone skips is the one in the middle.
 
+![The research, plan, annotate, implement loop, with the annotate step cycling one to six times before implementation begins.](/writing-images/rpi-loop.png)
+
+*The annotation cycle is where the thinking happens, and it is the step teams drop first.*
+
 ## Why the plan has to be a file
 
 There are two failure modes with coding agents, and they look nothing alike.

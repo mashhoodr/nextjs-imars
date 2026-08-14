@@ -46,6 +46,10 @@ So here is what I call **skillify**: when your agent fails, don't just log it. T
 
 Then audit that the skill is reachable, testable, and won't rot.
 
+![A closed loop: a failure becomes a skill, deterministic code, tests, evals and a trigger, which returns to the agent so the same failure cannot repeat.](/writing-images/skillify-loop.png)
+
+*A failure only has to be handled once, if it is handled as infrastructure.*
+
 That is a checklist. Ten steps, one workflow. Step five is the one people skip and the one that matters: a skill the agent has but does not reach for is not a fix, it is a decoration.
 
 The tools for all of this already exist. What is missing is the opinionated checklist that says: *this is what permanent means.* Not a prompt tweak. Not a bigger system message. A skill with tests that run daily, forever.

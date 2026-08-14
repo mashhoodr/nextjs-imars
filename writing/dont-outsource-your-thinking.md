@@ -31,6 +31,10 @@ The trial did not find that everyone got worse. It found that the *same tool* pr
 
 The split is stark enough to be worth stating precisely: developers who used AI for **conceptual questions** scored 65% or higher. Those who **delegated code generation** to it scored below 40%. Same tool, same task, opposite outcomes.
 
+![A bar comparison from the Anthropic study: developers who asked conceptual questions scored 65 percent or higher, those who delegated code generation scored below 40 percent.](/writing-images/skill-split.png)
+
+*The tool did not decide the outcome. How it was held did.*
+
 The biggest gap between the two groups was **debugging** — the ability to identify that code is wrong and understand why it fails.
 
 That is not an incidental finding. Debugging is precisely the skill that agentic workflows depend on most, because reviewing generated code *is* debugging code you did not write. The study found the mode of AI use that feels most efficient is the one that erodes the exact capability the future of the job requires.
