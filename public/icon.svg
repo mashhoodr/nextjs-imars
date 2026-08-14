@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="karachiwala.dev">
+  <!-- The bracket is the site's signature device: [write me a short note],
+       [all writing], [video]. Drawn as rectangles on a 32-unit grid rather than
+       set in a typeface, so it stays crisp when a browser rasterises it at 16px. -->
+  <rect width="32" height="32" rx="7" fill="#1D4ED8"/>
+  <g fill="#FFFFFF">
+    <rect x="6.4"   y="8.32"  width="2.72" height="15.36"/>
+    <rect x="6.4"   y="8.32"  width="5.12" height="2.72"/>
+    <rect x="6.4"   y="20.96" width="5.12" height="2.72"/>
+    <rect x="22.88" y="8.32"  width="2.72" height="15.36"/>
+    <rect x="20.48" y="8.32"  width="5.12" height="2.72"/>
+    <rect x="20.48" y="20.96" width="5.12" height="2.72"/>
+  </g>
+</svg>

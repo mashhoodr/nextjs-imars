@@ -86,8 +86,15 @@ export default function Layout({ children, home }) {
           page renders with its own title, description and canonical. Keeping it
           out of here is what stopped /blog and /talks sharing one title. */}
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* SVG first: modern browsers prefer it and it stays sharp on any
+            display. The .ico remains because crawlers and older browsers
+            request /favicon.ico by path regardless of what is declared. */}
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#1d4ed8" />
         <link rel="alternate" type="application/rss+xml" title="Harness Engineering — Substack" href="https://mashhoodr.substack.com/feed" />
       </Head>
 

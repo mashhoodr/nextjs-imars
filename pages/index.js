@@ -5,7 +5,6 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { getPodcastData } from "../lib/podcast";
 import { getGoodReadsData } from "../lib/goodreads";
-import { getSubstackData } from "../lib/substack";
 import { getAllWriting } from "../lib/writing";
 import allTalksData from "../lib/talks.json";
 import DateUtil from "../components/date";
@@ -109,7 +108,6 @@ export default function Home({
   allPostsData,
   allPodcastData,
   allBooksReadData,
-  allBlogData,
   ownWriting,
   recentTalks,
   earlierTalks,
@@ -207,42 +205,27 @@ export default function Home({
         </ul>
       </Section>
 
+      {/* Own articles only. The newsletter feed used to live here, but every
+          post it listed now exists on this domain, so the feed was duplicating
+          the section beneath it and sending readers away. Subscribing moved to
+          the tail of #about, next to the archive. */}
       <Section id="writing" label="Writing" title="What I am thinking about.">
-        {/* Own articles first. The homepage is the strongest page on the site,
-            so these internal links are also how /writing gets discovered and
-            gets its share of authority. The newsletter feed sits below. */}
-        {ownWriting.length > 0 && (
-          <>
-            <ul className={utilStyles.list}>
-              {ownWriting.map(({ slug, title, date, description }) => (
-                <li className={utilStyles.listItem} key={slug}>
-                  <Link className={utilStyles.itemTitle} href={`/writing/${slug}`}>
-                    {title}
-                  </Link>
-                  <small className={utilStyles.meta}>
-                    {date && <DateUtil dateString={date} />}
-                  </small>
-                  {description && <p className={utilStyles.excerpt}>{description}</p>}
-                </li>
-              ))}
-            </ul>
-            <p>
-              <Link className={utilStyles.more} href="/writing">
-                [all writing]
+        <ul className={utilStyles.list}>
+          {ownWriting.map(({ slug, title, date, description }) => (
+            <li className={utilStyles.listItem} key={slug}>
+              <Link className={utilStyles.itemTitle} href={`/writing/${slug}`}>
+                {title}
               </Link>
-            </p>
-            <p className={utilStyles.subheading}>From the newsletter</p>
-          </>
-        )}
-        <FeedList items={allBlogData} />
-        <a
-          className={utilStyles.more}
-          href="https://mashhoodr.substack.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          [read everything on Substack]
-        </a>
+              <small className={utilStyles.meta}>
+                {date && <DateUtil dateString={date} />}
+              </small>
+              {description && <p className={utilStyles.excerpt}>{description}</p>}
+            </li>
+          ))}
+        </ul>
+        <Link className={utilStyles.more} href="/writing">
+          [all writing]
+        </Link>
       </Section>
 
       <Section id="podcast" label="Podcast" title="KarachiWalaDeveloper.">
@@ -356,6 +339,19 @@ export default function Home({
         <Link className={utilStyles.more} href="/blog">
           [older posts, 2009 to 2013]
         </Link>
+
+        <p className={utilStyles.subheading}>Newsletter</p>
+        <p>
+          Everything above goes out by email first. No schedule, no filler.
+        </p>
+        <a
+          className={utilStyles.more}
+          href="https://mashhoodr.substack.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          [subscribe]
+        </a>
       </Section>
     </Layout>
   );
@@ -365,8 +361,7 @@ export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const allPodcastData = await getPodcastData();
   const allBooksReadData = await getGoodReadsData();
-  const allBlogData = await getSubstackData();
-  const ownWriting = getAllWriting().slice(0, 3);
+  const ownWriting = getAllWriting().slice(0, 5);
 
   // Filter before slicing. The previous order sliced first, so only featured
   // talks that happened to fall in the first 8 entries could ever be shown.
@@ -381,8 +376,7 @@ export async function getStaticProps() {
       allPostsData,
       allPodcastData,
       allBooksReadData,
-      allBlogData,
-      ownWriting,
+          ownWriting,
       recentTalks,
       earlierTalks,
     },
