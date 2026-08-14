@@ -35,12 +35,9 @@ The focus shifts to **solution correctness** and **mental alignment**.
 
 Solution correctness is the binary search question. Does this implementation actually satisfy the constraint I care about, which may never have been written down? Mental alignment is the quieter one: does this code do what I thought I was asking for? An agent will resolve an ambiguous instruction confidently and silently. A junior engineer would have asked. That question the junior would have asked is now your job to ask, after the fact, while reading.
 
-So spend the review on the important bits rather than on everything. In practice, for me, that means the parts of a diff where a decision was made — a data structure chosen, a boundary drawn, an error swallowed — and skimming the parts where the work was mechanical.
+So spend the review on the important bits rather than on everything. In practice, for me, that means going straight to the parts of a diff where a *decision* was made — a data structure chosen, a boundary drawn, an error swallowed, a default picked — and skimming the parts where the work was mechanical.
 
-<!-- TODO (Mashhood): your LinkedIn post referenced "3 questions I ask to understand
-     agent changes and where to focus my review" but never listed them. They belong
-     right here, and they are the most quotable thing in the piece. Send them over
-     and I will write the section. I have deliberately not invented them. -->
+A useful filter: for each decision point, ask what the agent could not have known. It did not know your latency budget, your traffic shape, which of two similar-looking services is the one that is actually load-bearing, or that the previous team tried this and reverted it. Those gaps are where the plausible-but-wrong lives, and they are invisible if you read the diff line by line instead of decision by decision.
 
 ## Give the agent something to verify against
 
