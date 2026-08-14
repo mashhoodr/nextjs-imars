@@ -24,6 +24,7 @@ const OFFERS = [
   {
     name: "Team workshops",
     body: "Three days, hands on, with your codebase and your tickets.",
+    href: "/workshops",
   },
   {
     name: "Advisory",
@@ -171,9 +172,11 @@ export default function Home({
         </p>
 
         <ul className={utilStyles.offerList}>
-          {OFFERS.map(({ name, body }) => (
+          {OFFERS.map(({ name, body, href }) => (
             <li className={utilStyles.offer} key={name}>
-              <div className={utilStyles.offerName}>{name}</div>
+              <div className={utilStyles.offerName}>
+                {href ? <Link href={href}>{name}</Link> : name}
+              </div>
               <p className={utilStyles.offerBody}>{body}</p>
             </li>
           ))}

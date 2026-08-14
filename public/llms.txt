@@ -45,6 +45,10 @@ Enquiries: hello@karachiwala.dev
 
 - [Homepage](https://karachiwala.dev/): positioning, offers, track record, writing,
   podcast, talks and background on one page.
+- [Workshops](https://karachiwala.dev/workshops): the three-day team workshop in detail —
+  what happens each day, outcomes, format, and the practical questions an L&D buyer asks.
+- [Writing](https://karachiwala.dev/writing): essays on agentic engineering, AI transformation
+  and engineering leadership.
 - [Talks](https://karachiwala.dev/talks): conference and community talks, with slides and
   video where available.
 - [Blog archive](https://karachiwala.dev/blog): early engineering posts, 2009–2015. Kept

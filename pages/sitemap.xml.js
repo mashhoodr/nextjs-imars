@@ -38,6 +38,8 @@ export async function getServerSideProps({ res }) {
     // needs a high priority. Anchors themselves are deliberately not listed:
     // duplicate URLs for one document dilute rather than help.
     { loc: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
+    // The conversion page for the L&D buyer, so it sits just under the homepage.
+    { loc: "/workshops", lastmod: today, changefreq: "monthly", priority: "0.9" },
     // Current writing ranks above the archive deliberately: /blog is 2009–2015
     // and exists for the record, not for discovery.
     { loc: "/writing", lastmod: today, changefreq: "weekly", priority: "0.9" },
