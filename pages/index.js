@@ -88,7 +88,12 @@ function TalkItem({ title, location, created, slides, video }) {
         {title}
       </a>{" "}
       {video && (
-        <a href={video} target="_blank" rel="noopener noreferrer">
+        <a
+          className={utilStyles.videoLink}
+          href={video}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <small>[video]</small>
         </a>
       )}

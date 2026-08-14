@@ -294,6 +294,16 @@
   text-decoration: none;
 }
 
+/* `[video]` sits next to a talk title and was a 20px tap target. WCAG 2.5.8
+   wants 24px, so the padding is doing real work rather than decoration. */
+.videoLink {
+  display: inline-block;
+  min-height: 24px;
+  padding: 0 0.25rem;
+  line-height: 24px;
+  text-decoration: none;
+}
+
 /* Row of standalone links (the "Elsewhere" profiles). A list, not prose, so it
    is marked up as one and keeps the underline off. */
 .inlineList {

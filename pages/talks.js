@@ -53,7 +53,12 @@ export default function Talks() {
               <li className={utilStyles.listItem} key={id}>
                 <a href={slides} target="_blank" rel="noopener noreferrer">{title}</a>{" "}
                 {video ? (
-                  <a href={video} target="_blank" rel="noopener noreferrer">
+                  <a
+                    className={utilStyles.videoLink}
+                    href={video}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <small>[Video]</small>
                   </a>
                 ) : null}
