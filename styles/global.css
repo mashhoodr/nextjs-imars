@@ -1,13 +1,32 @@
 :root {
   /* r4b palette: white, near-black, exactly one accent. */
   --bg: #ffffff;
-  --ink: #18181b;
-  --ink-soft: #52525b;
-  /* Was #a1a1aa, which is 2.56:1 on white and failed WCAG AA for the dates and
-     mono labels it is used on. #71717a is 4.83:1 and reads almost identically. */
-  --ink-faint: #71717a;
+
+  /* Ink is neutral alpha-black, not a grey ramp. --ink-soft and --ink-faint
+     were #52525b and #71717a — Tailwind Zinc, which carries 9 points of channel
+     spread and reads cool beside white. The threshold for correcting a cast is
+     8, and spread is far more visible in light ink than in a dark surface, so
+     --ink-faint (the lighter one, used on every date and mono label) was the
+     worst offender. Alpha also composites correctly over the section fill and
+     the code block without a second set of tokens.
+
+     Contrast on white is preserved or improved:
+       --ink-soft   7.73:1 -> 7.81:1
+       --ink-faint  4.83:1 -> 4.95:1
+     The generic 44% tertiary rung is not used: it reaches 3.23:1, and dates,
+     venues and source hosts are real reading, not optional metadata. */
+  --ink: #18181b; /* spread 3, below the correction threshold */
+  --ink-soft: rgb(0 0 0 / 68%);
+  --ink-faint: rgb(0 0 0 / 56%);
+
+  /* Reserved for interaction: links, active nav marker, focus ring. Not section
+     labels, not ratings, not decorative borders. An accent spent everywhere
+     marks nothing — and one repeated at the same x down a page stops reading as
+     a mark and starts reading as a rule the length of the page. */
   --accent: #1d4ed8;
+
   --rule: #e4e4e7;
+  --radius: 4px;
 
   --rail-width: 15rem;
   --measure: 42rem;
@@ -57,7 +76,7 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: var(--radius);
 }
 
 img {

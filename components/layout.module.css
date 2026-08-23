@@ -35,8 +35,14 @@
   line-height: 1.3;
 }
 
+/* The wordmark sits in a <p>, so the global `p a` underline was catching it and
+   styling the site's own name as a run of prose. That rule exists because a
+   prose link is otherwise distinguished by colour alone; this link inherits ink
+   rather than taking the accent, so there is no colour cue to back up and
+   nothing for the underline to fix. Hover still turns it accent. */
 .wordmark a {
   color: inherit;
+  text-decoration: none;
 }
 
 .wordmark a:hover {
@@ -65,10 +71,11 @@
   color: var(--accent);
 }
 
+/* Accent colour plus the accent left border are two signals; weight was a third,
+   and it was the one that did not survive off macOS anyway. */
 .navLinkActive {
   color: var(--accent);
   border-left-color: var(--accent);
-  font-weight: 500;
 }
 
 .railFoot {
