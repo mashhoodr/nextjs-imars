@@ -318,6 +318,78 @@
   text-decoration: none;
 }
 
+/* Talks: thumbnail beside the record
+   ---------------------------------------------------------------------------
+   Same structure as .book — media left, meta right — because they are the same
+   kind of record and peers should be rendered identically. The proportions
+   differ only because event photography is landscape and a book cover is not.
+
+   No border. The quiet fill is the boundary, and it is also the box that
+   reserves the slot while the image loads, so an unloaded photo never collapses
+   the row and drags the title up. Same reasoning as .bookCover. */
+
+.talk {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.talkThumb {
+  display: block;
+  width: 160px;
+  /* Reserved by aspect-ratio as well as by the width/height attributes on the
+     <img>. The attributes stop the reflow before CSS loads; this keeps the box
+     correct when the column is narrower than 160px. */
+  aspect-ratio: 16 / 9;
+  background: rgb(0 0 0 / 4%);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.talkThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder while there is no photograph for a talk. It carries the year
+   rather than sitting empty: ten blank grey rectangles down a page read as a
+   broken image, which is a different message from "not filled in yet". The
+   year is repeated in the meta line below, so it is hidden from assistive
+   technology — it is here to give the eye an anchor, not to inform. */
+.talkThumbFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.talkBody {
+  min-width: 0;
+}
+
+/* Below the rail breakpoint the thumbnail shrinks rather than stacking. A
+   full-width 16:9 image per talk would push a ten-item list to several screens
+   of scrolling, and the photograph is supporting evidence here, not the point
+   of the record. */
+@media (max-width: 700px) {
+  .talk {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+  .talkThumb {
+    width: 104px;
+  }
+  .talkThumbFallback {
+    font-size: 0.72rem;
+  }
+}
+
 /* Row of standalone links (the "Elsewhere" profiles). A list, not prose, so it
    is marked up as one and keeps the underline off. */
 .inlineList {

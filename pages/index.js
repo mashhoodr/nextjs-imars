@@ -9,6 +9,7 @@ import { getGoodReadsData } from "../lib/goodreads";
 import { getAllWriting } from "../lib/writing";
 import allTalksData from "../lib/talks.json";
 import DateUtil from "../components/date";
+import TalkItem from "../components/talk-item";
 
 // Talks before this date are framework/web-performance era. Splitting them keeps
 // the older catalogue visible without it arguing against the current positioning.
@@ -80,29 +81,6 @@ function FeedList({ items, limit = 3 }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-function TalkItem({ title, location, created, slides, video }) {
-  return (
-    <li className={utilStyles.listItem}>
-      <a className={utilStyles.itemTitle} href={slides} target="_blank" rel="noopener noreferrer">
-        {title}
-      </a>{" "}
-      {video && (
-        <a
-          className={utilStyles.videoLink}
-          href={video}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <small>[video]</small>
-        </a>
-      )}
-      <small className={utilStyles.meta}>
-        {location} · <DateUtil dateString={created} />
-      </small>
-    </li>
   );
 }
 
