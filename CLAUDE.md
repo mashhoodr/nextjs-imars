@@ -5,10 +5,18 @@ Guidance for Claude Code working in this repository. Deployed to karachiwala.dev
 ## Commands
 
 ```bash
-npm run dev      # Dev server
-npm run build    # Production build
-npm start        # Serve the production build
+npm run dev             # Dev server
+npm run build           # Production build
+npm start               # Serve the production build
+npm run talks:images    # Process talks-inbox/ into public/talks/ + lib/talks.json
+npm run talks:missing   # List talks that still have no photo
 ```
+
+**Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
+(`2025-05-24.jpg`), or its id where two talks share a date (`62.jpg`), then run
+`npm run talks:images`. It crops square at 256px, re-encodes, writes the file and
+sets the `image` key. Accepts HEIC straight off a phone. `talks-inbox/` is
+gitignored — empty it once the run is done.
 
 `node`/`npm` are not on the non-interactive PATH. Prefix commands with:
 `export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"`

@@ -34,3 +34,6 @@ yarn-error.log*
 # design/ is ~100MB of generated mockups.
 notes/
 design/
+
+# talk photos waiting to be processed by scripts/talk-images.py
+/talks-inbox/

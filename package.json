@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "talks:images": "python3 scripts/talk-images.py",
+    "talks:missing": "python3 scripts/talk-images.py --list"
   },
   "dependencies": {
     "date-fns": "^3.6.0",
