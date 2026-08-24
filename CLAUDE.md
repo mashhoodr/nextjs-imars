@@ -10,11 +10,13 @@ npm run build           # Production build
 npm start               # Serve the production build
 npm run talks:images    # Process talks-inbox/ into public/talks/ + lib/talks.json
 npm run talks:missing   # List talks that still have no photo
+npm run talks:find -- <words>   # Search all talks; prints the filename to use
 ```
 
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
 (`2025-05-24.jpg`), or its id where two talks share a date (`62.jpg`), then run
-`npm run talks:images`. It crops square at 256px, re-encodes, writes the file and
+`npm run talks:images`. `talks:missing` and `talks:find` both print the exact
+filename to use, so the id never needs looking up by hand. It crops square at 256px, re-encodes, writes the file and
 sets the `image` key. Accepts HEIC straight off a phone. `talks-inbox/` is
 gitignored — empty it once the run is done.
 

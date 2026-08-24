@@ -16,7 +16,14 @@ Every photo goes through the same crop and re-encode as the ones imported from
 the Google Developer Expert export, so a picture added by hand cannot end up a
 different size, shape or weight from the rest.
 
-    --list    show which talks still have no photo, and change nothing
+    --list            show which talks still have no photo, and change nothing
+    --find <words>    search every talk and print the filename to use for each
+
+Search matches the title, date or venue, and covers talks that already have a
+photo — which --list deliberately does not, since it is a to-do list. Use it when
+you want to replace one:
+
+    npm run talks:find -- gemini cli
 """
 import json
 import pathlib
@@ -78,6 +85,28 @@ def report_missing(talks):
         print(f"  {hint:<34} {t['title'][:58]}")
 
 
+def search(terms, talks):
+    """Print id, date, photo status and the filename to use, for talks matching
+    every search term. Includes talks that already have a photo, so an existing
+    one can be found and replaced."""
+    q = [t.lower() for t in terms]
+    hits = [t for t in talks
+            if all(w in f"{t['title']} {t['created']} {t.get('location','')}".lower() for w in q)]
+    if not hits:
+        print(f"{YELLOW}Nothing matches {' '.join(terms)!r}{OFF}")
+        return
+    print(f"\n{BOLD}{len(hits)} match{'es' if len(hits) > 1 else ''}{OFF}")
+    print(f"{DIM}{'name the file':<16}{'photo':<8}{'when':<14}title{OFF}\n")
+    for t in sorted(hits, key=lambda t: t['created'], reverse=True):
+        same_date = [x for x in talks if x['created'] == t['created']]
+        # The date is the friendlier filename, so prefer it and fall back to the
+        # id only where the date would be ambiguous.
+        name = t['created'] if len(same_date) == 1 else t['id']
+        photo = f"{GREEN}yes{OFF}" if t.get('image') else f"{DIM}--{OFF} "
+        print(f"  {name:<14}{photo:<17}{t['created']:<14}{t['title'][:52]}")
+    print(f"\n{DIM}drop the photo in talks-inbox/ under that name, then: npm run talks:images{OFF}")
+
+
 def find_target(stem, talks):
     """A filename stem is either a date or a talk id. Returns (talk, error)."""
     stem = stem.strip()
@@ -131,6 +160,13 @@ def main():
 
     if "--list" in sys.argv:
         report_missing(talks)
+        return
+
+    if "--find" in sys.argv:
+        terms = sys.argv[sys.argv.index("--find") + 1:]
+        if not terms:
+            die("give me something to search for, e.g.  npm run talks:find -- gemini")
+        search(terms, talks)
         return
 
     INBOX.mkdir(exist_ok=True)
