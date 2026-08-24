@@ -25,7 +25,7 @@ The only non-static route is `/sitemap.xml`, which is edge-cached for a day.
 |---|---|---|
 | **Current writing** | `writing/*.md` | The active corpus. Frontmatter contract is documented in `lib/writing.js` |
 | **Blog archive** | `posts/*.md` | 2009–2015, kept for the record. Deliberately low priority in the sitemap |
-| **Talks** | `lib/talks.json` | ⚠️ Ends Feb 2023; the AI-era talks are still missing |
+| **Talks** | `lib/talks.json` | 75 entries, newest first. The 2023–2026 AI sessions were imported from the Google Developer Expert activity export; frontmatter contract is in `components/talk-item.js` |
 | **Podcast / Books / Newsletter** | RSS at build time | Anchor.fm, Goodreads, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
 
 Markdown is parsed by a small local `matter()` (regex + the `yaml` package) rather than
@@ -58,8 +58,9 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 ## Known issues
 
 - `lib/goodreads.js` has an API key in the feed URL, in a public repo. Worth rotating.
-- `lib/talks.json` ends Feb 2023, so the talks section argues against the current positioning.
 - The site says "led engineering" at Sastaticket; LinkedIn says CTO. Pick one.
+- No talk carries an `image` yet, so every one renders the year placeholder. Advocu holds
+  photos for 11 of the imported sessions; they need pulling out by hand.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

@@ -11,15 +11,21 @@ import DateUtil from "./date";
  *
  * Talk shape in `lib/talks.json`:
  *
- *   id        string, unique
- *   title     string
- *   created   YYYY-MM-DD
- *   location  string — venue and city, or "Online"
- *   slides    optional URL
- *   video     optional URL
- *   featured  optional boolean, controls whether it appears on the homepage
- *   image     optional path under /public, e.g. "/talks/tedx-2026.jpg"
- *   imageAlt  optional string; falls back to the title and location
+ *   id            string, unique
+ *   title         string
+ *   created       YYYY-MM-DD
+ *   location      optional string — venue and city, or "Online"
+ *   description   optional one-line write-up
+ *   audience      optional number
+ *   audienceType  "attended" | "trained" — a workshop is not a talk, and the
+ *                 distinction is real information rather than a label choice
+ *   slides        optional URL
+ *   link          optional URL — event page or recap, used when there are no
+ *                 slides to link to
+ *   video         optional URL
+ *   featured      optional boolean, controls whether it appears on the homepage
+ *   image         optional path under /public, e.g. "/talks/tedx-2026.jpg"
+ *   imageAlt      optional string; falls back to the title and location
  *
  * `image` is not yet set on any entry, so every talk currently renders the
  * placeholder. Adding the key is all that is needed to light one up.
@@ -33,11 +39,26 @@ export default function TalkItem({
   title,
   location,
   created,
+  description,
+  audience,
+  audienceType,
   slides,
+  link,
   video,
   image,
   imageAlt,
 }) {
+  // Slides where they exist, otherwise the event page or recap. Older entries
+  // carry slides; the ones imported from the GDE record carry a recap link.
+  const href = slides || link;
+  // Built as a list so a missing venue or audience does not leave a stray
+  // separator behind.
+  const meta = [
+    location || null,
+    created ? <DateUtil key="d" dateString={created} /> : null,
+    audience ? `${audience.toLocaleString("en-GB")} ${audienceType || "attended"}` : null,
+  ].filter(Boolean);
+
   return (
     <li className={`${utilStyles.listItem} ${utilStyles.talk}`}>
       <div className={utilStyles.talkThumb}>
@@ -60,13 +81,13 @@ export default function TalkItem({
       </div>
 
       <div className={utilStyles.talkBody}>
-        {/* Not every talk has slides. Without this the title became an anchor
-            with no href, which is focusable, announced as a link, and goes
-            nowhere. */}
-        {slides ? (
+        {/* Not every talk has somewhere to link to. Without this the title
+            became an anchor with no href, which is focusable, announced as a
+            link, and goes nowhere. */}
+        {href ? (
           <a
             className={utilStyles.itemTitle}
-            href={slides}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -86,10 +107,14 @@ export default function TalkItem({
           </a>
         )}
         <small className={utilStyles.meta}>
-          {location}
-          {location && created ? " · " : ""}
-          {created && <DateUtil dateString={created} />}
+          {meta.map((part, i) => (
+            <span key={i}>
+              {i > 0 ? " · " : ""}
+              {part}
+            </span>
+          ))}
         </small>
+        {description && <p className={utilStyles.excerpt}>{description}</p>}
       </div>
     </li>
   );

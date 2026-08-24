@@ -1,5 +1,401 @@
 [
   {
+    "title": "Agentic Engineering using Antigravity",
+    "id": "39",
+    "created": "2026-08-22",
+    "location": "Peshawar, Pakistan",
+    "description": "How agentic systems actually work, what it takes to build an agent, and where agentic engineering holds up once it meets real work.",
+    "audience": 100,
+    "audienceType": "attended",
+    "link": "https://linkedin.com/posts/gdgpeshawar_gdgpeshawar-buildwithai-agenticai-activity-7496250336442064896-uDKs",
+    "featured": true
+  },
+  {
+    "title": "Automating Your Startup with Loop Engineering and Antigravity",
+    "id": "40",
+    "created": "2026-08-08",
+    "location": "Karachi, Pakistan",
+    "description": "Building loops with Antigravity, and handing them the most tedious part of the work.",
+    "audience": 120,
+    "audienceType": "attended",
+    "link": "https://ai.gdgkolachi.com/",
+    "featured": true
+  },
+  {
+    "title": "Harness Engineering using Gemini CLI",
+    "id": "41",
+    "created": "2026-06-23",
+    "location": "Islamabad, Pakistan",
+    "description": "The scaffolding, guardrails and feedback loops that let an agent do work a team would put its name on, built live in Gemini CLI.",
+    "audience": 100,
+    "audienceType": "attended",
+    "link": "https://linkedin.com/posts/gdgcloudislamabad_a-glimpse-into-an-exciting-session-with-mashhood-activity-7463159119529582592-Qhv7",
+    "featured": true
+  },
+  {
+    "title": "Harness Engineering with Gemini CLI",
+    "id": "42",
+    "created": "2026-05-17",
+    "location": "Lahore, Pakistan",
+    "description": "A workshop at Arbisoft on putting Gemini CLI to work on real engineering tasks rather than on demos.",
+    "audience": 120,
+    "audienceType": "attended",
+    "link": "https://linkedin.com/posts/gdgcloudlahore_buildwithai-gdgcloudlahore-arbisoft-activity-7454914518222077953-DPLh",
+    "featured": true
+  },
+  {
+    "title": "Vibecoding for Startups",
+    "id": "43",
+    "created": "2026-05-09",
+    "location": "Lahore, Pakistan",
+    "description": "An hour with founders and students on setting up a working environment of their own in Gemini CLI.",
+    "audience": 120,
+    "audienceType": "attended",
+    "link": "https://linkedin.com/events/7457761134004060160/",
+    "featured": false
+  },
+  {
+    "title": "Harness Engineering with Gemini CLI",
+    "id": "44",
+    "created": "2026-04-25",
+    "location": "Lahore, Pakistan",
+    "description": "Using Gemini CLI to build engineering workflows that are quicker and that hold up better.",
+    "audience": 100,
+    "audienceType": "attended",
+    "link": "https://linkedin.com/feed/update/urn:li:activity:7453296575533166592",
+    "featured": false
+  },
+  {
+    "title": "AI Seekho 2026: Vibe Coding with Real Deployment Workflows",
+    "id": "45",
+    "created": "2026-04-17",
+    "location": "",
+    "description": "Vibe coding taken past the demo and through to a deployment workflow that actually ships.",
+    "audience": 200,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
+    "title": "Agentic Coding with Gemini CLI",
+    "id": "46",
+    "created": "2026-02-13",
+    "location": "Lahore, Pakistan",
+    "description": "A hands-on workshop working through agentic coding in Gemini CLI.",
+    "audience": 45,
+    "audienceType": "trained",
+    "featured": true
+  },
+  {
+    "title": "AI Reshaping Software Engineering",
+    "id": "47",
+    "created": "2026-02-04",
+    "location": "Islamabad, Pakistan",
+    "description": "What is genuinely changing in software engineering, and what it means for the people doing the work.",
+    "audience": 200,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
+    "title": "Mastering Advanced Context: Engineering For Your AI-Driven Coding",
+    "id": "48",
+    "created": "2025-12-20",
+    "location": "Karachi, Pakistan",
+    "description": "Engineering context for precision, reliability and scale, rather than hoping a longer prompt will do it.",
+    "audience": 120,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
+    "title": "Accelerating Product Journey with Gemini & Firebase",
+    "id": "49",
+    "created": "2025-12-13",
+    "location": "Karachi, Pakistan",
+    "description": "A workshop for founders and developers on getting from concept to a working prototype.",
+    "audience": 25,
+    "audienceType": "trained",
+    "featured": false
+  },
+  {
+    "title": "Accelerated Prototyping Using Firebase Studio",
+    "id": "50",
+    "created": "2025-12-06",
+    "location": "Lahore, Pakistan",
+    "description": "Prototyping faster and shipping with less ceremony, using Firebase Studio workflows.",
+    "audience": 500,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
+    "title": "What to Learn in This Changing World of AI",
+    "id": "51",
+    "created": "2025-11-11",
+    "location": "Khanpur, Pakistan",
+    "description": "At Pak-Austria Fachhochschule: how engineers stay relevant, learn faster and build better in the AI era.",
+    "audience": 60,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Accelerated Prototyping using Firebase Studio",
+    "id": "52",
+    "created": "2025-10-22",
+    "location": "Lahore, Pakistan",
+    "description": "An hour on setting up the context that makes vibe coding work at all.",
+    "audience": 50,
+    "audienceType": "trained",
+    "featured": false
+  },
+  {
+    "title": "Beyond the IDE - Unlocking Productivity with AI Agents and Gemini CLI",
+    "id": "53",
+    "created": "2025-08-02",
+    "location": "Pakistan",
+    "description": "AI code assistants — Gemini Code Assist, GitHub Copilot — and the Model Context Protocol underneath them.",
+    "audience": 100,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Beyond the IDE - Unlocking Productivity with AI Agents and Gemini CLI",
+    "id": "54",
+    "created": "2025-07-26",
+    "location": "Lahore, Pakistan",
+    "description": "Google I/O Extended Lahore: what AI code assistants can do once you stop treating them as autocomplete.",
+    "audience": 200,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Gen AI on Production",
+    "id": "55",
+    "created": "2025-07-19",
+    "location": "Islamabad, Pakistan",
+    "description": "Generative AI in production at Taleemabad, and the education problems it is actually pointed at.",
+    "audience": 80,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
+    "title": "Deep Dive into Gemini",
+    "id": "56",
+    "created": "2025-07-12",
+    "location": "Karachi, Pakistan",
+    "description": "A hands-on walk through the Gemini SDK.",
+    "audience": 100,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Unlocking Productivity with AI Agents and Gemini CLI",
+    "id": "57",
+    "created": "2025-07-12",
+    "location": "Karachi, Pakistan",
+    "description": "AI code assistants and the Model Context Protocol, to the largest room of the year.",
+    "audience": 500,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
+    "title": "Navigating the future of Software and Engineering",
+    "id": "58",
+    "created": "2025-06-15",
+    "location": "",
+    "description": "An hour on the shift AI is forcing through the industry.",
+    "audience": 60,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini (Hackathon)",
+    "id": "59",
+    "created": "2025-06-14",
+    "location": "Karachi, Pakistan",
+    "description": "Two hours inside the Gemini SDK with the hackathon teams.",
+    "audience": 100,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini - GDG Cloud Lahore",
+    "id": "60",
+    "created": "2025-05-24",
+    "location": "Lahore, Pakistan",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "audience": 80,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini - GDG Lahore",
+    "id": "61",
+    "created": "2025-05-23",
+    "location": "Lahore, Pakistan",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "audience": 80,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini - NUST",
+    "id": "62",
+    "created": "2025-05-03",
+    "location": "Islamabad, Pakistan",
+    "description": "Ninety minutes at NUST on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "audience": 100,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini",
+    "id": "63",
+    "created": "2025-05-03",
+    "location": "Islamabad, Pakistan",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "audience": 80,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini - IST",
+    "id": "64",
+    "created": "2025-04-30",
+    "location": "Islamabad, Pakistan",
+    "description": "Ninety minutes at IST on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "audience": 100,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini",
+    "id": "65",
+    "created": "2025-04-30",
+    "location": "Islamabad, Pakistan",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "audience": 50,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Deep Dive into Gemini",
+    "id": "66",
+    "created": "2025-04-26",
+    "location": "Islamabad, Pakistan",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "audience": 200,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Handson - Deep Dive into Gemini",
+    "id": "67",
+    "created": "2025-04-24",
+    "location": "Islamabad, Pakistan",
+    "description": "A hands-on session on large language models, then straight into the Gemini SDK.",
+    "audience": 80,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "BuildWithAI - Gemini 101",
+    "id": "68",
+    "created": "2025-02-27",
+    "location": "",
+    "description": "A hands-on Gemini workshop worked through end to end in a Colab notebook.",
+    "audience": 24,
+    "audienceType": "trained",
+    "featured": false
+  },
+  {
+    "title": "Solving Educational Challenges through Engineering and AI",
+    "id": "69",
+    "created": "2024-12-08",
+    "location": "Karachi, Pakistan",
+    "description": "Twenty-five minutes on the state of education in Pakistan, and where engineering and AI genuinely help.",
+    "audience": 400,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
+    "title": "Harnessing the Power of Gemini: Building AI-Driven Applications",
+    "id": "70",
+    "created": "2024-12-07",
+    "location": "Karachi, Pakistan",
+    "description": "A deep dive into the Gemini API: basic generation through to multimodal input and caching.",
+    "audience": 25,
+    "audienceType": "trained",
+    "featured": false
+  },
+  {
+    "title": "Techniques for making AI models interpretable",
+    "id": "71",
+    "created": "2024-07-20",
+    "location": "Islamabad, Pakistan",
+    "description": "Back to first principles on what learning is, and on what makes a model interpretable.",
+    "audience": 25,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "BuildWithAI - Latest Updates",
+    "id": "72",
+    "created": "2024-07-06",
+    "location": "Lahore, Pakistan",
+    "description": "Twenty minutes on the latest in Gemini and Gemma.",
+    "audience": 200,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Build with AI - Gemini 101",
+    "id": "73",
+    "created": "2024-05-25",
+    "location": "Islamabad, Pakistan",
+    "description": "A hands-on pass through the Gemini API in a Colab workbook.",
+    "audience": 40,
+    "audienceType": "trained",
+    "featured": false
+  },
+  {
+    "title": "Build With AI - Gemini 101 Workshop",
+    "id": "74",
+    "created": "2024-05-16",
+    "location": "Karachi, Pakistan",
+    "description": "Two hours, from what a large language model is through to real work in the Gemini API.",
+    "audience": 100,
+    "audienceType": "attended",
+    "featured": false
+  },
+  {
+    "title": "Build with AI - GDG Kolachi",
+    "id": "75",
+    "created": "2024-05-11",
+    "location": "Islamabad, Pakistan",
+    "description": "Two hands-on hours on the fundamentals of large language models.",
+    "audience": 40,
+    "audienceType": "trained",
+    "featured": false
+  },
+  {
+    "title": "BuildWithAI - Gemini 101",
+    "id": "76",
+    "created": "2024-04-24",
+    "location": "Islamabad, Pakistan",
+    "description": "The basics of Gemini and prompt engineering, worked through in Google Colab.",
+    "audience": 40,
+    "audienceType": "trained",
+    "featured": false
+  },
+  {
+    "title": "Performing effective book mapping using PaLM API Embeddings",
+    "id": "77",
+    "created": "2023-09-15",
+    "location": "Karachi, Pakistan",
+    "description": "An introduction to embeddings, then a real problem: mapping books to a curriculum with the PaLM 2 API.",
+    "audience": 70,
+    "audienceType": "attended",
+    "featured": true
+  },
+  {
     "title": "Optimizing Core Web Vitals for your WordPress website",
     "id": "36",
     "created": "2023-02-21",
@@ -7,7 +403,8 @@
     "slides": "https://docs.google.com/presentation/d/1G4tPMg5eIjdgCR-7TcNiNdMjQvP5nJVa2UEXP7-GUMo/edit?usp=sharing&resourcekey=0-YTu2g3-LOBCS9M5UZkQeDw",
     "featured": true,
     "video": "https://www.youtube.com/live/t4p8luk54fk?feature=share&t=15644"
-  },{
+  },
+  {
     "title": "Webinar: Remote vs in-office: Managing the transition in a post covid world",
     "id": "35",
     "created": "2022-11-25",
@@ -15,14 +412,15 @@
     "slides": "https://www.linkedin.com/feed/update/urn:li:activity:7001860273301065728/",
     "featured": true,
     "video": "https://www.linkedin.com/feed/update/urn:li:activity:7001860273301065728/"
-  },  {
+  },
+  {
     "title": "Workshop: Digital Tools for Techpreneurs",
     "id": "34",
     "created": "2022-11-20",
     "location": "Lincoln Corner Karachi",
     "slides": "https://docs.google.com/presentation/d/16wzF1hIfA5k9SXIkUAQtNJYAY3cF4oofkOaqHM6P0jA/edit?usp=sharing",
     "featured": true
-  },  
+  },
   {
     "title": "Workshop: How do apps read your mind?",
     "id": "33",
@@ -62,7 +460,7 @@
     "slides": "https://docs.google.com/presentation/d/1tTPeuyYfFIokxJLjbwCjt20OJlAvDN26KbdyN1_JehE/edit?usp=sharing",
     "featured": true
   },
-    {
+  {
     "title": "React 101",
     "id": "27",
     "created": "2022-01-18",
@@ -70,21 +468,20 @@
     "slides": "https://docs.google.com/presentation/d/19bfI8UMnq_8KZh0oRflF2W2lYKwtqTvsy8ATZiqMUT4/edit?usp=sharing",
     "featured": true
   },
-    {
-    "title": "Scaling frontend developement using Nx",
-    "id": "29",
-    "created": "2021-11-18",
-    "location": "GDG Kolachi DevFest 21, Karachi",
-    "slides": "https://docs.google.com/presentation/d/1dQ3EIr0Oyo2dv3UrYdXTdjI1Yt0eHUN_xdGcJ2pZrAY/edit?usp=sharing",
-    "featured": false
-  },
-  
-   {
+  {
     "title": "What makes Angular awesome.",
     "id": "30",
     "created": "2021-12-18",
     "location": "GDG Islamabad DevFest 21, Karachi",
     "slides": "https://docs.google.com/presentation/d/1tydVzz7WDvMkBVPWzKAfcqEPBN-OqO-5JzvfQxWdgVg/edit?usp=sharing",
+    "featured": false
+  },
+  {
+    "title": "Scaling frontend developement using Nx",
+    "id": "29",
+    "created": "2021-11-18",
+    "location": "GDG Kolachi DevFest 21, Karachi",
+    "slides": "https://docs.google.com/presentation/d/1dQ3EIr0Oyo2dv3UrYdXTdjI1Yt0eHUN_xdGcJ2pZrAY/edit?usp=sharing",
     "featured": false
   },
   {
@@ -94,24 +491,6 @@
     "location": "Karachi.AI Guest Speaker, Karachi",
     "slides": "https://docs.google.com/presentation/d/12do2V7QynyLjhaYN1BGgIzvXabX6uJfB8PSmqL5egq4/edit?usp=sharing",
     "video": "https://www.youtube.com/watch?v=9RldUxVvgpU",
-    "featured": true
-  },
-  {
-    "title": "Optimizing Core Web Vitals for Angular Apps",
-    "id": "26",
-    "created": "2020-06-01",
-    "location": "Global Angular Conference, Online",
-    "slides": "https://docs.google.com/presentation/d/1QyQS6C3DbXOM7tJ85AaD4lFyrpRozOmYlvlQsdLqjL0/edit?usp=sharing",
-    "video": "https://youtu.be/NTGtbbFG2SM?t=3828",
-    "featured": true
-  },
-  {
-    "title": "Is NoCode replacing Software Development?",
-    "id": "25",
-    "created": "2020-12-05",
-    "location": "021Disrupt 2020, Online",
-    "slides": "https://docs.google.com/presentation/d/1U8S7CHzsL-EL4gdomL3juFhgtEr2ZMPyQb76NTIS9G0/edit?usp=sharing",
-    "video": "https://www.youtube.com/watch?v=sdoXenAr0VM",
     "featured": true
   },
   {
@@ -130,6 +509,15 @@
     "location": "DevCon5, Online",
     "slides": "https://docs.google.com/presentation/d/14iOSaC6ku-IGb99GxfWdilVqeFOSS0JEGabVVDT-rDI/edit?usp=sharing",
     "featured": false
+  },
+  {
+    "title": "Is NoCode replacing Software Development?",
+    "id": "25",
+    "created": "2020-12-05",
+    "location": "021Disrupt 2020, Online",
+    "slides": "https://docs.google.com/presentation/d/1U8S7CHzsL-EL4gdomL3juFhgtEr2ZMPyQb76NTIS9G0/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=sdoXenAr0VM",
+    "featured": true
   },
   {
     "title": "Understanding Core Web Vitals",
@@ -157,16 +545,6 @@
     "video": "https://web.facebook.com/NICKarachi/videos/3568092613250986/",
     "featured": true
   },
-
-  {
-    "title": "Right Mobile Strategy For Your Product",
-    "id": "1",
-    "created": "2020-06-27",
-    "location": "Agile Pakistan (Online)",
-    "slides": "https://docs.google.com/presentation/d/1Z7r9382jSUQNde94nc0UKGy0G408TjfHgFgXQjG6ZoQ/edit?usp=sharing",
-    "video": "https://www.facebook.com/watch/live/?v=506867229987882"
-  },
-
   {
     "title": "Google Cloud Run LiveClass",
     "id": "2",
@@ -176,7 +554,6 @@
     "video": "https://www.facebook.com/watch/live/?v=728193967992015",
     "featured": true
   },
-
   {
     "title": "Using GraphQL with Django",
     "id": "3",
@@ -185,7 +562,23 @@
     "slides": "https://docs.google.com/presentation/d/1hGzjlxubfyDMiPB0UKf7D4wyoO40hvQDPe3dsuFH0e0/edit?usp=sharing",
     "video": "https://www.youtube.com/watch?v=6AwMSu2m5iw&feature=youtu.be"
   },
-
+  {
+    "title": "Right Mobile Strategy For Your Product",
+    "id": "1",
+    "created": "2020-06-27",
+    "location": "Agile Pakistan (Online)",
+    "slides": "https://docs.google.com/presentation/d/1Z7r9382jSUQNde94nc0UKGy0G408TjfHgFgXQjG6ZoQ/edit?usp=sharing",
+    "video": "https://www.facebook.com/watch/live/?v=506867229987882"
+  },
+  {
+    "title": "Optimizing Core Web Vitals for Angular Apps",
+    "id": "26",
+    "created": "2020-06-01",
+    "location": "Global Angular Conference, Online",
+    "slides": "https://docs.google.com/presentation/d/1QyQS6C3DbXOM7tJ85AaD4lFyrpRozOmYlvlQsdLqjL0/edit?usp=sharing",
+    "video": "https://youtu.be/NTGtbbFG2SM?t=3828",
+    "featured": true
+  },
   {
     "title": "Strategies for learning the tech skills you always wanted",
     "id": "4",
@@ -194,7 +587,6 @@
     "slides": "https://docs.google.com/presentation/d/1ht0hEnV5E4ozICFbencgxbJyJBApuriJPRCSDGmw9Ek/edit?usp=sharing",
     "video": "https://www.facebook.com/watch/live/?v=506867229987882&ref=watch_permalink"
   },
-
   {
     "title": "Testing Angular Apps using Karate",
     "id": "5",
@@ -203,7 +595,6 @@
     "slides": "https://docs.google.com/presentation/d/1hVcQ4Qqi_8lr11H9EX6tk8u8ujWEigwr3MbbWxNUeow/edit?usp=sharing",
     "video": "https://www.youtube.com/watch?v=N_XlBIFMdlg"
   },
-
   {
     "title": "Introduction to Docker - MasterClass",
     "id": "6",
@@ -212,7 +603,6 @@
     "slides": "https://docs.google.com/presentation/d/1TP_k41vnTYlarznpNCvrEjSMtjHtlppdb2uOsN8PPz0/edit?usp=sharing",
     "video": "https://www.youtube.com/watch?v=mDrzbcdqjNE&t=1s"
   },
-
   {
     "title": "Introduction to Application Perfomance Management using Elastic Stack",
     "id": "7",
@@ -220,7 +610,6 @@
     "location": "Elastic Meetup, Karachi",
     "slides": "https://docs.google.com/presentation/d/1JdgTSKY56XLyWEQjiFwwOCBHto9EucGlCRHG3B6-dwk/edit?usp=sharing"
   },
-
   {
     "title": "Blazingly Fast Websites using AMP",
     "id": "8",
@@ -229,7 +618,6 @@
     "slides": "https://docs.google.com/presentation/d/1ys411WZswkiG7ofORKXk_CEX3jykjlsr63cdTc8zsv4/edit?usp=sharing",
     "featured": true
   },
-
   {
     "title": "Advanced Interactions using AMP",
     "id": "19",
@@ -237,7 +625,6 @@
     "location": "Wordcamp Islamabad",
     "slides": "https://docs.google.com/presentation/d/1viaUYZTbVGhO42fhurJWrD8hgCGsavrIURA_pOPjidw/edit?usp=sharing"
   },
-
   {
     "title": "Mistakes while making PWAs",
     "id": "9",
@@ -246,7 +633,6 @@
     "slides": "https://developers.google.com/community/experts",
     "featured": true
   },
-
   {
     "title": "Instant Deploys for Django Apps using Cloud Run",
     "id": "10",
@@ -256,7 +642,6 @@
     "video": "https://www.youtube.com/watch?v=IROpl7WdvL8",
     "featured": true
   },
-
   {
     "title": "Rapid Prototyping Python Services using AWS Chalice",
     "id": "12",
@@ -264,16 +649,6 @@
     "location": "Pycon UK, Cardiff",
     "slides": "https://docs.google.com/presentation/d/1eOANLxmvakXh-0BOgpajocojXaTR3AjSGm9IrVaKork/edit?usp=sharing",
     "video": "https://www.youtube.com/watch?v=kDHu6oarH1Y",
-    "featured": true
-  },
-
-  {
-    "title": "Scaling Frontend Development using Microfrontends",
-    "id": "13",
-    "created": "2019-08-15",
-    "location": "ng-my KL, Malaysia",
-    "slides": "https://docs.google.com/presentation/d/1ggotsSdh3ZEiXxGam_-Fri6IYpth8H1yzGO0Zvd2C5k/edit?usp=sharing",
-    "video": "https://www.youtube.com/watch?v=WXbD4HMwVAc",
     "featured": true
   },
   {
@@ -284,6 +659,15 @@
     "slides": "https://docs.google.com/presentation/d/1Z7r9382jSUQNde94nc0UKGy0G408TjfHgFgXQjG6ZoQ/edit?usp=sharing"
   },
   {
+    "title": "Scaling Frontend Development using Microfrontends",
+    "id": "13",
+    "created": "2019-08-15",
+    "location": "ng-my KL, Malaysia",
+    "slides": "https://docs.google.com/presentation/d/1ggotsSdh3ZEiXxGam_-Fri6IYpth8H1yzGO0Zvd2C5k/edit?usp=sharing",
+    "video": "https://www.youtube.com/watch?v=WXbD4HMwVAc",
+    "featured": true
+  },
+  {
     "title": "PWAs: Mobile for the next billion users",
     "id": "14",
     "created": "2018-08-05",
@@ -292,7 +676,6 @@
     "video": "https://www.youtube.com/watch?v=lDKul6ymD34&",
     "featured": true
   },
-
   {
     "title": "A Guide to Instant Loading Angular Apps",
     "id": "17",
@@ -302,7 +685,6 @@
     "video": "https://www.youtube.com/watch?v=OigaRuQrkFs",
     "featured": true
   },
-
   {
     "title": "Rapid Prototyping using Anglar and Firebase",
     "id": "16",

@@ -13,9 +13,8 @@ import TalkItem from "../components/talk-item";
 
 // Talks before this date are framework/web-performance era. Splitting them keeps
 // the older catalogue visible without it arguing against the current positioning.
-// TODO: talks.json currently ends at Feb 2023. The recent AI talks (Harness
-// Engineering, Future of Software Engineering, Loop Engineering, LUMS CS4602,
-// TEDx 2026) still need dates, venues and links before the Recent group appears.
+// The AI-era sessions were imported from the Google Developer Expert activity
+// record in Aug 2026, so the Recent group now carries 2023 onwards.
 const RECENT_TALKS_FROM = "2023-06-01";
 
 const OFFERS = [
