@@ -89,7 +89,7 @@ export default function Home({
   allBooksReadData,
   ownWriting,
   recentTalks,
-  earlierTalks,
+  totalTalks,
 }) {
   return (
     <Layout home>
@@ -221,33 +221,18 @@ export default function Home({
         </a>
       </Section>
 
+      {/* Recent sessions only. The frontend and web-performance catalogue is
+          real history and keeps its place on /talks, but on a page arguing for
+          agentic engineering it argued the other way. With one group left the
+          "Recent" subheading was labelling nothing, so it went too. */}
       <Section id="talks" label="Talks" title="Conferences and community events.">
-        {recentTalks.length > 0 && (
-          <>
-            <p className={utilStyles.subheading}>Recent</p>
-            <ul className={utilStyles.list}>
-              {recentTalks.map((talk) => (
-                <TalkItem key={talk.id} {...talk} />
-              ))}
-            </ul>
-          </>
-        )}
-
-        {earlierTalks.length > 0 && (
-          <>
-            <p className={utilStyles.subheading}>
-              {recentTalks.length > 0 ? "Earlier — web performance and frontend" : "Selected"}
-            </p>
-            <ul className={utilStyles.list}>
-              {earlierTalks.map((talk) => (
-                <TalkItem key={talk.id} {...talk} />
-              ))}
-            </ul>
-          </>
-        )}
-
+        <ul className={utilStyles.list}>
+          {recentTalks.map((talk) => (
+            <TalkItem key={talk.id} {...talk} />
+          ))}
+        </ul>
         <Link className={utilStyles.more} href="/talks">
-          [all the talks]
+          [all {totalTalks} talks, 2018 onwards]
         </Link>
       </Section>
 
@@ -380,11 +365,9 @@ export async function getStaticProps() {
 
   // Filter before slicing. The previous order sliced first, so only featured
   // talks that happened to fall in the first 8 entries could ever be shown.
-  const featured = allTalksData.filter(({ featured }) => featured);
-  const recentTalks = featured.filter(({ created }) => created >= RECENT_TALKS_FROM).slice(0, 6);
-  const earlierTalks = featured
-    .filter(({ created }) => created < RECENT_TALKS_FROM)
-    .slice(0, recentTalks.length > 0 ? 4 : 6);
+  const recentTalks = allTalksData
+    .filter(({ featured, created }) => featured && created >= RECENT_TALKS_FROM)
+    .slice(0, 6);
 
   return {
     props: {
@@ -393,7 +376,9 @@ export async function getStaticProps() {
       allBooksReadData,
           ownWriting,
       recentTalks,
-      earlierTalks,
+      // Rendered in the "all N talks" link, so the count cannot drift from the
+      // catalogue the way a hardcoded number would.
+      totalTalks: allTalksData.length,
     },
     // External feeds are fetched at build time, so without this the podcast and
     // newsletter lists freeze at whenever the site was last deployed.
