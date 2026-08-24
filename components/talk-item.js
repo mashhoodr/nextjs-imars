@@ -27,13 +27,14 @@ import DateUtil from "./date";
  *   image         optional path under /public, e.g. "/talks/tedx-2026.jpg"
  *   imageAlt      optional string; falls back to the title and location
  *
- * `image` is not yet set on any entry, so every talk currently renders the
- * placeholder. Adding the key is all that is needed to light one up.
+ * Photos come from the Google Developer Expert activity export, cropped square
+ * at 256px into public/talks/. Entries without one fall back to the year
+ * placeholder; adding the key is all that is needed to light one up.
  */
 
-/** 16:9. Stated on the element so the box is reserved before CSS arrives. */
-const THUMB_W = 160;
-const THUMB_H = 90;
+/** Square. Stated on the element so the box is reserved before CSS arrives. */
+const THUMB_W = 128;
+const THUMB_H = 128;
 
 export default function TalkItem({
   title,

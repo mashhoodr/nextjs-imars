@@ -330,18 +330,22 @@
 
 .talk {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
+  grid-template-columns: 128px minmax(0, 1fr);
   gap: 1rem;
   align-items: start;
 }
 
+/* Square, not 16:9. The event photographs are mostly portrait — they are phone
+   shots from a room, 1080x1440 and the like — and a landscape crop takes a thin
+   band through the middle of each one and cuts the heads off. A square crop
+   biased slightly up the frame keeps the speaker and the room in shot. */
 .talkThumb {
   display: block;
-  width: 160px;
+  width: 128px;
   /* Reserved by aspect-ratio as well as by the width/height attributes on the
      <img>. The attributes stop the reflow before CSS loads; this keeps the box
-     correct when the column is narrower than 160px. */
-  aspect-ratio: 16 / 9;
+     correct when the column is narrower than 128px. */
+  aspect-ratio: 1 / 1;
   background: rgb(0 0 0 / 4%);
   border-radius: var(--radius);
   overflow: hidden;
@@ -379,11 +383,11 @@
    of the record. */
 @media (max-width: 700px) {
   .talk {
-    grid-template-columns: 104px minmax(0, 1fr);
+    grid-template-columns: 88px minmax(0, 1fr);
     gap: 0.8rem;
   }
   .talkThumb {
-    width: 104px;
+    width: 88px;
   }
   .talkThumbFallback {
     font-size: 0.72rem;

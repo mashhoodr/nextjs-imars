@@ -4,10 +4,11 @@
     "id": "39",
     "created": "2026-08-22",
     "location": "Peshawar, Pakistan",
-    "description": "How agentic systems actually work, what it takes to build an agent, and where agentic engineering holds up once it meets real work.",
+    "description": "How agentic systems actually work, what it takes to build an agent, and where the practice holds up once it meets real work. For people already building with agents and for people trying to see where this goes next.",
     "audience": 100,
     "audienceType": "attended",
-    "link": "https://linkedin.com/posts/gdgpeshawar_gdgpeshawar-buildwithai-agenticai-activity-7496250336442064896-uDKs",
+    "link": "https://www.linkedin.com/posts/gdgpeshawar_gdgpeshawar-buildwithai-agenticai-activity-7496250336442064896-uDKs",
+    "image": "/talks/2026-08-22-agentic-engineering-using-antigravity.jpg",
     "featured": true
   },
   {
@@ -19,6 +20,7 @@
     "audience": 120,
     "audienceType": "attended",
     "link": "https://ai.gdgkolachi.com/",
+    "image": "/talks/2026-08-08-automating-your-startup-with-loop-engineering-and-an.jpg",
     "featured": true
   },
   {
@@ -26,10 +28,11 @@
     "id": "41",
     "created": "2026-06-23",
     "location": "Islamabad, Pakistan",
-    "description": "The scaffolding, guardrails and feedback loops that let an agent do work a team would put its name on, built live in Gemini CLI.",
+    "description": "Harness engineering in Gemini CLI, through live demos and real workflows rather than slides — what it looks like when AI sits inside the development process instead of beside it.",
     "audience": 100,
     "audienceType": "attended",
-    "link": "https://linkedin.com/posts/gdgcloudislamabad_a-glimpse-into-an-exciting-session-with-mashhood-activity-7463159119529582592-Qhv7",
+    "link": "https://www.linkedin.com/posts/gdgcloudislamabad_a-glimpse-into-an-exciting-session-with-mashhood-activity-7463159119529582592-Qhv7",
+    "image": "/talks/2026-06-23-harness-engineering-using-gemini-cli.jpg",
     "featured": true
   },
   {
@@ -37,21 +40,22 @@
     "id": "42",
     "created": "2026-05-17",
     "location": "Lahore, Pakistan",
-    "description": "A workshop at Arbisoft on putting Gemini CLI to work on real engineering tasks rather than on demos.",
+    "description": "A workshop at Arbisoft on putting Gemini CLI to work on real engineering tasks, with a room that pushed hard on where it holds and where it does not.",
     "audience": 120,
     "audienceType": "attended",
-    "link": "https://linkedin.com/posts/gdgcloudlahore_buildwithai-gdgcloudlahore-arbisoft-activity-7454914518222077953-DPLh",
-    "featured": true
+    "link": "https://www.linkedin.com/posts/gdgcloudlahore_buildwithai-gdgcloudlahore-arbisoft-activity-7454914518222077953-DPLh",
+    "image": "/talks/2026-05-17-harness-engineering-with-gemini-cli.jpg",
+    "featured": false
   },
   {
     "title": "Vibecoding for Startups",
     "id": "43",
     "created": "2026-05-09",
     "location": "Lahore, Pakistan",
-    "description": "An hour with founders and students on setting up a working environment of their own in Gemini CLI.",
+    "description": "An hour with founders and students on building a Gemini CLI workspace of their own: curating organisational context, then progressive disclosure, agents, skills and hooks as the guardrails that let the system run on its own.",
     "audience": 120,
     "audienceType": "attended",
-    "link": "https://linkedin.com/events/7457761134004060160/",
+    "link": "https://www.linkedin.com/events/7457761134004060160/",
     "featured": false
   },
   {
@@ -59,20 +63,23 @@
     "id": "44",
     "created": "2026-04-25",
     "location": "Lahore, Pakistan",
-    "description": "Using Gemini CLI to build engineering workflows that are quicker and that hold up better.",
+    "description": "Three hours cutting through the noise on what actually works in harness engineering — skills, hooks, progressive disclosure, and the feedback loops that make the output improve rather than merely arrive faster.",
     "audience": 100,
     "audienceType": "attended",
-    "link": "https://linkedin.com/feed/update/urn:li:activity:7453296575533166592",
-    "featured": false
+    "link": "https://www.linkedin.com/feed/update/urn:li:activity:7453296575533166592",
+    "image": "/talks/2026-04-25-harness-engineering-with-gemini-cli.jpg",
+    "featured": true
   },
   {
     "title": "AI Seekho 2026: Vibe Coding with Real Deployment Workflows",
     "id": "45",
     "created": "2026-04-17",
     "location": "",
-    "description": "Vibe coding taken past the demo and through to a deployment workflow that actually ships.",
+    "description": "Vibe coding taken past the demo and through to a real deployment workflow, with a deep dive into AI Studio and context engineering.",
     "audience": 200,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/gdglivepakistan_gde-ai-buildwithai-activity-7450603315446521856-Spxz",
+    "image": "/talks/2026-04-17-ai-seekho-2026-vibe-coding-with-real-deployment-work.jpg",
     "featured": true
   },
   {
@@ -80,9 +87,11 @@
     "id": "46",
     "created": "2026-02-13",
     "location": "Lahore, Pakistan",
-    "description": "A hands-on workshop working through agentic coding in Gemini CLI.",
+    "description": "A hands-on workshop: agentic coding in Gemini CLI, the patterns that go with it, then applying them to mini-projects rather than reading about them.",
     "audience": 45,
     "audienceType": "trained",
+    "link": "https://www.linkedin.com/feed/update/urn:li:activity:7428067617325805568/",
+    "image": "/talks/2026-02-13-agentic-coding-with-gemini-cli.jpg",
     "featured": true
   },
   {
@@ -90,9 +99,10 @@
     "id": "47",
     "created": "2026-02-04",
     "location": "Islamabad, Pakistan",
-    "description": "What is genuinely changing in software engineering, and what it means for the people doing the work.",
+    "description": "Abstraction layers, agent orchestration, context engineering, and what happens to the junior developer role — with the argument that human judgement, architectural thinking and fundamentals matter more now, not less.",
     "audience": 200,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/feed/update/urn:li:activity:7427712714577408001/",
     "featured": true
   },
   {
@@ -100,9 +110,11 @@
     "id": "48",
     "created": "2025-12-20",
     "location": "Karachi, Pakistan",
-    "description": "Engineering context for precision, reliability and scale, rather than hoping a longer prompt will do it.",
+    "description": "Engineering context for precision, reliability and scale: structuring prompts and memory, and domain-specific context strategies, rather than hoping a longer prompt will do it.",
     "audience": 120,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/gdgkolachi_devfestkarachi-devfest2025-gdgkolachi-activity-7404508945110880256-T46s",
+    "image": "/talks/2025-12-20-mastering-advanced-context-engineering-for-your-ai-d.jpg",
     "featured": true
   },
   {
@@ -110,29 +122,34 @@
     "id": "49",
     "created": "2025-12-13",
     "location": "Karachi, Pakistan",
-    "description": "A workshop for founders and developers on getting from concept to a working prototype.",
+    "description": "Turning design sketches into working Gemini-powered prototypes, ready for real testing and market validation, deployed on Firebase.",
     "audience": 25,
     "audienceType": "trained",
-    "featured": false
+    "link": "https://www.linkedin.com/posts/katalyst-labs-pk_92disrupt2025-92d25-92disrupt-activity-7405955111128231936-8I3t",
+    "image": "/talks/2025-12-13-accelerating-product-journey-with-gemini-firebase.jpg",
+    "featured": true
   },
   {
     "title": "Accelerated Prototyping Using Firebase Studio",
     "id": "50",
     "created": "2025-12-06",
     "location": "Lahore, Pakistan",
-    "description": "Prototyping faster and shipping with less ceremony, using Firebase Studio workflows.",
+    "description": "Sixty minutes starting with how to frame the problem, then a live run through Stitch, Firebase Studio and AI Studio.",
     "audience": 500,
     "audienceType": "attended",
-    "featured": true
+    "link": "https://gdg.community.dev/events/details/google-gdg-cloud-lahore-presents-devfest-amplifai-2025/",
+    "featured": false
   },
   {
     "title": "What to Learn in This Changing World of AI",
     "id": "51",
     "created": "2025-11-11",
     "location": "Khanpur, Pakistan",
-    "description": "At Pak-Austria Fachhochschule: how engineers stay relevant, learn faster and build better in the AI era.",
+    "description": "At Pak-Austria Fachhochschule: how engineers stay relevant and learn faster in the AI era, working through Gemini, Firebase Studio and ADK.",
     "audience": 60,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/gdgocpafiast_googledevelopergroups-gdgpafiast-ai-activity-7391782733263368192-y3TJ",
+    "image": "/talks/2025-11-11-what-to-learn-in-this-changing-world-of-ai.jpg",
     "featured": false
   },
   {
@@ -140,19 +157,22 @@
     "id": "52",
     "created": "2025-10-22",
     "location": "Lahore, Pakistan",
-    "description": "An hour on setting up the context that makes vibe coding work at all.",
+    "description": "Planning an app with Gemini, designing it in Stitch, then building it view by view in Firebase Studio — prompt engineering through to production deployment.",
     "audience": 50,
     "audienceType": "trained",
+    "link": "https://rsvp.withgoogle.com/events/think-apps-2025",
     "featured": false
   },
   {
     "title": "Beyond the IDE - Unlocking Productivity with AI Agents and Gemini CLI",
     "id": "53",
     "created": "2025-08-02",
-    "location": "Pakistan",
-    "description": "AI code assistants — Gemini Code Assist, GitHub Copilot — and the Model Context Protocol underneath them.",
+    "location": "",
+    "description": "AI code assistants, the Model Context Protocol underneath them, and how CLI tools like Gemini CLI and Claude Code are changing what the command line is for.",
     "audience": 100,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-live-pakistan-presents-google-io-extended-pakistan-2025/",
+    "image": "/talks/2025-08-02-beyond-the-ide-unlocking-productivity-with-ai-agents.jpg",
     "featured": false
   },
   {
@@ -160,9 +180,11 @@
     "id": "54",
     "created": "2025-07-26",
     "location": "Lahore, Pakistan",
-    "description": "Google I/O Extended Lahore: what AI code assistants can do once you stop treating them as autocomplete.",
+    "description": "Google I/O Extended Lahore: code assistants, the Model Context Protocol, and the move back out of the IDE to the command line.",
     "audience": 200,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-lahore-presents-google-io-extended-lahore-2025/",
+    "image": "/talks/2025-07-26-beyond-the-ide-unlocking-productivity-with-ai-agents.jpg",
     "featured": false
   },
   {
@@ -173,6 +195,8 @@
     "description": "Generative AI in production at Taleemabad, and the education problems it is actually pointed at.",
     "audience": 80,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/flutterisb_wrapping-up-flutter-with-ai-2025-thank-activity-7352597488110862337-OuTJ",
+    "image": "/talks/2025-07-19-gen-ai-on-production.jpg",
     "featured": true
   },
   {
@@ -180,9 +204,11 @@
     "id": "56",
     "created": "2025-07-12",
     "location": "Karachi, Pakistan",
-    "description": "A hands-on walk through the Gemini SDK.",
+    "description": "A hands-on walk through the Gemini SDK and how to use it in a real codebase.",
     "audience": 100,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-kolachi-presents-gdg-kolachis-google-io-extended-2025/",
+    "image": "/talks/2025-07-12-deep-dive-into-gemini.jpg",
     "featured": false
   },
   {
@@ -190,9 +216,11 @@
     "id": "57",
     "created": "2025-07-12",
     "location": "Karachi, Pakistan",
-    "description": "AI code assistants and the Model Context Protocol, to the largest room of the year.",
+    "description": "Code assistants, the Model Context Protocol and CLI-based agents — to the largest room of the year.",
     "audience": 500,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-kolachi-presents-gdg-kolachis-google-io-extended-2025/",
+    "image": "/talks/2025-07-12-unlocking-productivity-with-ai-agents-and-gemini-cli.jpg",
     "featured": true
   },
   {
@@ -200,19 +228,23 @@
     "id": "58",
     "created": "2025-06-15",
     "location": "",
-    "description": "An hour on the shift AI is forcing through the industry.",
+    "description": "An hour on the shift AI is forcing through the industry, with live demos of the Gemini API, AI Studio, NotebookLM and Firebase Studio.",
     "audience": 60,
     "audienceType": "attended",
+    "link": "https://www.commudle.com/communities/TFUGIslamabad/events/the-ai-revolution-navigating-the-future-of-software-and-engineering-build-with-ai-session-5",
+    "image": "/talks/2025-06-15-navigating-the-future-of-software-and-engineering.jpg",
     "featured": false
   },
   {
-    "title": "Deep Dive into Gemini (Hackathon)",
+    "title": "Deep Dive into Gemini",
     "id": "59",
     "created": "2025-06-14",
     "location": "Karachi, Pakistan",
-    "description": "Two hours inside the Gemini SDK with the hackathon teams.",
+    "description": "Two hours inside the Gemini SDK with the hackathon teams, warming up on exercises before the event proper.",
     "audience": 100,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-kolachi-presents-build-with-ai-karachi-hackathon/",
+    "image": "/talks/2025-06-14-deep-dive-into-gemini.jpg",
     "featured": false
   },
   {
@@ -220,9 +252,11 @@
     "id": "60",
     "created": "2025-05-24",
     "location": "Lahore, Pakistan",
-    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then a hands-on Colab session through the APIs.",
     "audience": 80,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-cloud-lahore-presents-build-with-ai-2025-daftarkhwan-boulevard/",
+    "image": "/talks/2025-05-24-deep-dive-into-gemini-gdg-cloud-lahore.jpg",
     "featured": false
   },
   {
@@ -230,9 +264,11 @@
     "id": "61",
     "created": "2025-05-23",
     "location": "Lahore, Pakistan",
-    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then a hands-on Colab session through the APIs.",
     "audience": 80,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-lahore-presents-build-with-ai-deep-diving-into-gemini-api-workshop-4-arbisoft/",
+    "image": "/talks/2025-05-23-deep-dive-into-gemini-gdg-lahore.jpg",
     "featured": false
   },
   {
@@ -240,9 +276,10 @@
     "id": "62",
     "created": "2025-05-03",
     "location": "Islamabad, Pakistan",
-    "description": "Ninety minutes at NUST on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "description": "Ninety minutes at NUST on large language models and the change they are forcing through every field, then a hands-on Colab session through the APIs.",
     "audience": 100,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-national-university-of-sciences-and-technology-islamabad-pakistan-presents-tech-avant-garde-25/",
     "featured": false
   },
   {
@@ -250,9 +287,10 @@
     "id": "63",
     "created": "2025-05-03",
     "location": "Islamabad, Pakistan",
-    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then a hands-on Colab session through the APIs.",
     "audience": 80,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-national-university-of-sciences-and-technology-islamabad-pakistan-presents-tech-avant-garde-25/",
     "featured": false
   },
   {
@@ -260,9 +298,10 @@
     "id": "64",
     "created": "2025-04-30",
     "location": "Islamabad, Pakistan",
-    "description": "Ninety minutes at IST on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "description": "Ninety minutes at IST on large language models and the change they are forcing through every field, then a hands-on Colab session through the APIs.",
     "audience": 100,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-institute-of-space-technology-islamabad-pakistan-presents-build-with-ai-with-google-developer-expert-mashhood-rastgar/",
     "featured": false
   },
   {
@@ -270,9 +309,10 @@
     "id": "65",
     "created": "2025-04-30",
     "location": "Islamabad, Pakistan",
-    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then a hands-on Colab session through the APIs.",
     "audience": 50,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-institute-of-space-technology-islamabad-pakistan-presents-build-with-ai-with-google-developer-expert-mashhood-rastgar/",
     "featured": false
   },
   {
@@ -280,9 +320,10 @@
     "id": "66",
     "created": "2025-04-26",
     "location": "Islamabad, Pakistan",
-    "description": "Ninety minutes on large language models and the change they are forcing through every field, then straight into the Gemini SDK.",
+    "description": "Ninety minutes on large language models and the change they are forcing through every field, then a hands-on Colab session through the APIs.",
     "audience": 200,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-bahria-university-islamabad-campus-islamabad-pakistan-presents-dev-summit-2025/",
     "featured": false
   },
   {
@@ -290,9 +331,10 @@
     "id": "67",
     "created": "2025-04-24",
     "location": "Islamabad, Pakistan",
-    "description": "A hands-on session on large language models, then straight into the Gemini SDK.",
+    "description": "A hands-on session on large language models, then straight into the Gemini APIs in Colab.",
     "audience": 80,
     "audienceType": "attended",
+    "link": "https://gdg.community.dev/events/details/google-gdg-cloud-islamabad-presents-build-with-ai-telenor/",
     "featured": false
   },
   {
@@ -300,99 +342,226 @@
     "id": "68",
     "created": "2025-02-27",
     "location": "",
-    "description": "A hands-on Gemini workshop worked through end to end in a Colab notebook.",
+    "description": "A Colab notebook worked end to end: the basics first, then caching and function calling, then putting it together.",
     "audience": 24,
     "audienceType": "trained",
+    "link": "https://gdg.community.dev/events/details/google-gdg-on-campus-fast-national-university-of-computer-and-emerging-sciences-islamabad-pakistan-presents-buildwithai-workshop/",
+    "image": "/talks/2025-02-27-buildwithai-gemini-101.jpg",
     "featured": false
   },
   {
-    "title": "Solving Educational Challenges through Engineering and AI",
+    "title": "Shaping the Future of Learning using AI and Engineering",
     "id": "69",
+    "created": "2024-12-20",
+    "location": "",
+    "description": "AI in education, and what a personalised and genuinely accessible learning platform takes to build.",
+    "audience": 50,
+    "audienceType": "attended",
+    "link": "https://www.commudle.com/communities/TFUGIslamabad/events/shaping-the-future-of-ai-driven-education-and-engineering-ml-study-jams-day-13",
+    "image": "/talks/2024-12-20-shaping-the-future-of-learning-using-ai-and-engineer.jpg",
+    "featured": false
+  },
+  {
+    "title": "Shaping the Future of Learning using AI and Engineering",
+    "id": "70",
+    "created": "2024-12-14",
+    "location": "Islamabad, Pakistan",
+    "description": "The problems facing Pakistan's education system, and where Gemini, on-device ML and a fine-tuned Gemma actually help with them.",
+    "audience": 250,
+    "audienceType": "attended",
+    "link": "https://www.linkedin.com/events/devfest-24islamabad7265049097642856448/comments/",
+    "image": "/talks/2024-12-14-shaping-the-future-of-learning-using-ai-and-engineer.jpg",
+    "featured": true
+  },
+  {
+    "title": "Solving Educational Challenges through Engineering and AI",
+    "id": "71",
     "created": "2024-12-08",
     "location": "Karachi, Pakistan",
-    "description": "Twenty-five minutes on the state of education in Pakistan, and where engineering and AI genuinely help.",
+    "description": "Twenty-five minutes on the state of education in Pakistan, and on using generative AI, on-device models and Gemma to raise learning levels in public schools.",
     "audience": 400,
     "audienceType": "attended",
+    "link": "https://docs.google.com/presentation/d/1oOEPR_olwUq3iDICVXjGZbv5Ay5v0QneJV-b9MLZnlE/edit",
+    "image": "/talks/2024-12-08-solving-educational-challenges-through-engineering-a.jpg",
     "featured": true
   },
   {
     "title": "Harnessing the Power of Gemini: Building AI-Driven Applications",
-    "id": "70",
+    "id": "72",
     "created": "2024-12-07",
     "location": "Karachi, Pakistan",
     "description": "A deep dive into the Gemini API: basic generation through to multimodal input and caching.",
     "audience": 25,
     "audienceType": "trained",
+    "link": "https://github.com/mashhoodr/gemini-cookbook/blob/main/workshops/gemini101-workshop.ipynb",
+    "image": "/talks/2024-12-07-harnessing-the-power-of-gemini-building-ai-driven-ap.jpg",
     "featured": false
   },
   {
     "title": "Techniques for making AI models interpretable",
-    "id": "71",
+    "id": "73",
     "created": "2024-07-20",
     "location": "Islamabad, Pakistan",
-    "description": "Back to first principles on what learning is, and on what makes a model interpretable.",
+    "description": "From what learning actually is, through how neural networks borrow the same idea, up to how large language models work — and why their future is on-device.",
     "audience": 25,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/googledevsisb_exciting-speaker-announcement-we-activity-7218166082799337472-wj6n",
+    "image": "/talks/2024-07-20-techniques-for-making-ai-models-interpretable.jpg",
     "featured": false
   },
   {
     "title": "BuildWithAI - Latest Updates",
-    "id": "72",
+    "id": "74",
     "created": "2024-07-06",
     "location": "Lahore, Pakistan",
-    "description": "Twenty minutes on the latest in Gemini and Gemma.",
+    "description": "Twenty minutes on the latest in Gemini and Gemma, from the basics through to running on-device.",
     "audience": 200,
     "audienceType": "attended",
+    "link": "https://docs.google.com/presentation/d/1zNlTjt97850cFnaEgz8ETS2zSFXhj6gB3-Tjzw03K0I/edit",
+    "image": "/talks/2024-07-06-buildwithai-latest-updates.jpg",
     "featured": false
   },
   {
     "title": "Build with AI - Gemini 101",
-    "id": "73",
+    "id": "75",
     "created": "2024-05-25",
     "location": "Islamabad, Pakistan",
     "description": "A hands-on pass through the Gemini API in a Colab workbook.",
     "audience": 40,
     "audienceType": "trained",
+    "link": "https://www.linkedin.com/posts/gdgcloudislamabad_gdgcloudislamabad-buildwitha-techevents-activity-7201240756307607552-4EXW",
+    "image": "/talks/2024-05-25-build-with-ai-gemini-101.jpg",
     "featured": false
   },
   {
     "title": "Build With AI - Gemini 101 Workshop",
-    "id": "74",
+    "id": "76",
     "created": "2024-05-16",
     "location": "Karachi, Pakistan",
     "description": "Two hours, from what a large language model is through to real work in the Gemini API.",
     "audience": 100,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/dscneduet_buildwithgemini-mashhoodrastgar-softwaredevelopment-activity-7194730807494639616-ejay",
+    "image": "/talks/2024-05-16-build-with-ai-gemini-101-workshop.jpg",
     "featured": false
   },
   {
     "title": "Build with AI - GDG Kolachi",
-    "id": "75",
+    "id": "77",
     "created": "2024-05-11",
     "location": "Islamabad, Pakistan",
     "description": "Two hands-on hours on the fundamentals of large language models.",
     "audience": 40,
     "audienceType": "trained",
+    "link": "https://www.linkedin.com/posts/googledevsisb_explore-the-frontiers-of-technology-at-build-activity-7192800322099015680-DYcz",
+    "image": "/talks/2024-05-11-build-with-ai-gdg-kolachi.jpg",
+    "featured": false
+  },
+  {
+    "title": "Gemini 101",
+    "id": "78",
+    "created": "2024-05-04",
+    "location": "Peshawar, Pakistan",
+    "description": "A hands-on Gemini 101 workshop.",
+    "audience": 20,
+    "audienceType": "trained",
+    "link": "https://gdsc.community.dev/events/details/developer-student-clubs-national-university-of-computer-and-emerging-sciences-peshawar-pakistan-presents-build-with-ai-hackathon/",
     "featured": false
   },
   {
     "title": "BuildWithAI - Gemini 101",
-    "id": "76",
+    "id": "79",
     "created": "2024-04-24",
     "location": "Islamabad, Pakistan",
     "description": "The basics of Gemini and prompt engineering, worked through in Google Colab.",
     "audience": 40,
     "audienceType": "trained",
+    "link": "https://www.linkedin.com/posts/gdscnust_techavantgarde-googlefordevelopers-nust-activity-7190009591584161792-UWob",
+    "image": "/talks/2024-04-24-buildwithai-gemini-101.jpg",
+    "featured": false
+  },
+  {
+    "title": "BuildWithAI - Gemini 101",
+    "id": "80",
+    "created": "2024-04-17",
+    "location": "Karachi, Pakistan",
+    "description": "A Gemini 101 session, part of the Build with AI series.",
+    "audience": 200,
+    "audienceType": "attended",
+    "link": "https://github.com/mashhoodr/gemini-cookbook",
+    "image": "/talks/2024-04-17-buildwithai-gemini-101.jpg",
+    "featured": false
+  },
+  {
+    "title": "BuildWithAI - GIKI visits Taleemabad",
+    "id": "81",
+    "created": "2024-02-16",
+    "location": "Islamabad, Pakistan",
+    "description": "A hands-on session for GIKI students visiting Taleemabad.",
+    "audience": 10,
+    "audienceType": "trained",
+    "link": "https://docs.google.com/presentation/d/1vr_ToXVNTlAL_aq7zHRMQf70VThHlbe5kElcQj0S9d4/edit",
+    "image": "/talks/2024-02-16-buildwithai-giki-visits-taleemabad.jpg",
+    "featured": false
+  },
+  {
+    "title": "Gen AI Workshop",
+    "id": "82",
+    "created": "2024-02-02",
+    "location": "",
+    "description": "A hands-on generative AI workshop.",
+    "audience": 30,
+    "audienceType": "trained",
+    "link": "https://www.linkedin.com/feed/update/urn:li:activity:7157731478330650624/",
+    "image": "/talks/2024-02-02-gen-ai-workshop.jpg",
+    "featured": false
+  },
+  {
+    "title": "Google AI Studio DeepDive",
+    "id": "83",
+    "created": "2023-12-30",
+    "location": "Karachi, Pakistan",
+    "description": "A deep dive into Google AI Studio.",
+    "audience": 30,
+    "audienceType": "trained",
+    "link": "https://www.linkedin.com/posts/gdgkolachi_devfestsindh-devfest2023-devfest-activity-7145745132548509696-cVAD",
+    "image": "/talks/2023-12-30-google-ai-studio-deepdive.jpg",
+    "featured": false
+  },
+  {
+    "title": "Using Google AI Studio and Gemini to make next generation apps",
+    "id": "84",
+    "created": "2023-12-23",
+    "location": "Lahore, Pakistan",
+    "description": "Building a new generation of applications on Google AI Studio and Gemini.",
+    "audience": 220,
+    "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/gdglahore_devfest2023-googleexpert-appdevelopment-activity-7142093034535522304-k2t1",
+    "image": "/talks/2023-12-23-using-google-ai-studio-and-gemini-to-make-next-gener.jpg",
+    "featured": true
+  },
+  {
+    "title": "Book Mapping using PaLM Embeddings",
+    "id": "85",
+    "created": "2023-12-02",
+    "location": "Topi, Pakistan",
+    "description": "Mapping books to a curriculum using PaLM embeddings.",
+    "audience": 500,
+    "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/gdglivepakistan_gdglivepakistan-gdscgiki-devfest-activity-7133356084685078528-KRI-",
+    "image": "/talks/2023-12-02-book-mapping-using-palm-embeddings.jpg",
     "featured": false
   },
   {
     "title": "Performing effective book mapping using PaLM API Embeddings",
-    "id": "77",
+    "id": "86",
     "created": "2023-09-15",
     "location": "Karachi, Pakistan",
     "description": "An introduction to embeddings, then a real problem: mapping books to a curriculum with the PaLM 2 API.",
     "audience": 70,
     "audienceType": "attended",
+    "link": "https://www.linkedin.com/feed/update/urn:li:activity:7108531086187520000",
+    "image": "/talks/2023-09-15-performing-effective-book-mapping-using-palm-api-emb.jpg",
     "featured": true
   },
   {
