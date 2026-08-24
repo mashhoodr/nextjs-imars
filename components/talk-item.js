@@ -2,7 +2,7 @@ import utilStyles from "../styles/utils.module.css";
 import DateUtil from "./date";
 
 /**
- * One talk, rendered identically on the homepage and on /talks.
+ * One mediaRow, rendered identically on the homepage and on /talks.
  *
  * The two pages used to hand-roll their own markup — the homepage with
  * `.itemTitle` and `.meta`, /talks with a `<br>` and `.lightText` — so the same
@@ -17,7 +17,7 @@ import DateUtil from "./date";
  *   location      optional string — venue and city, or "Online"
  *   description   optional one-line write-up
  *   audience      optional number
- *   audienceType  "attended" | "trained" — a workshop is not a talk, and the
+ *   audienceType  "attended" | "trained" — a workshop is not a mediaRow, and the
  *                 distinction is real information rather than a label choice
  *   slides        optional URL
  *   link          optional URL — event page or recap, used when there are no
@@ -61,8 +61,8 @@ export default function TalkItem({
   ].filter(Boolean);
 
   return (
-    <li className={`${utilStyles.listItem} ${utilStyles.talk}`}>
-      <div className={utilStyles.talkThumb}>
+    <li className={`${utilStyles.listItem} ${utilStyles.mediaRow}`}>
+      <div className={utilStyles.mediaThumb}>
         {image ? (
           <img
             src={image}
@@ -75,14 +75,14 @@ export default function TalkItem({
             decoding="async"
           />
         ) : (
-          <span className={utilStyles.talkThumbFallback} aria-hidden="true">
+          <span className={utilStyles.mediaThumbFallback} aria-hidden="true">
             {(created || "").slice(0, 4)}
           </span>
         )}
       </div>
 
-      <div className={utilStyles.talkBody}>
-        {/* Not every talk has somewhere to link to. Without this the title
+      <div className={utilStyles.mediaBody}>
+        {/* Not every mediaRow has somewhere to link to. Without this the title
             became an anchor with no href, which is focusable, announced as a
             link, and goes nowhere. */}
         {href ? (

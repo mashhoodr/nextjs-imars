@@ -59,6 +59,15 @@
     "featured": false
   },
   {
+    "title": "TEDxPunjabUniversity 2026: Carpe Diem",
+    "id": "87",
+    "created": "2026-04-27",
+    "location": "Punjab University, Lahore",
+    "description": "TEDxPunjabUniversity 2026, on the theme “Carpe Diem: Seize the Day”. One of six speakers, alongside researchers, medical doctors and a wildlife conservationist.",
+    "link": "https://www.linkedin.com/posts/muneeza-wasim_ted-tedxpunjabuniversity-carpediem-ugcPost-7454966205452271616-qNon",
+    "featured": true
+  },
+  {
     "title": "Harness Engineering with Gemini CLI",
     "id": "44",
     "created": "2026-04-25",

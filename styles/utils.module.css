@@ -308,7 +308,7 @@
   text-decoration: none;
 }
 
-/* `[video]` sits next to a talk title and was a 20px tap target. WCAG 2.5.8
+/* `[video]` sits next to a mediaRow title and was a 20px tap target. WCAG 2.5.8
    wants 24px, so the padding is doing real work rather than decoration. */
 .videoLink {
   display: inline-block;
@@ -318,17 +318,17 @@
   text-decoration: none;
 }
 
-/* Talks: thumbnail beside the record
+/* Media row: a square thumbnail beside a record
    ---------------------------------------------------------------------------
-   Same structure as .book — media left, meta right — because they are the same
-   kind of record and peers should be rendered identically. The proportions
-   differ only because event photography is landscape and a book cover is not.
+   Used by talks and by podcast episodes. Same structure as .book — media left,
+   meta right — because they are the same kind of record, and peers should be
+   rendered identically wherever they appear.
 
    No border. The quiet fill is the boundary, and it is also the box that
    reserves the slot while the image loads, so an unloaded photo never collapses
    the row and drags the title up. Same reasoning as .bookCover. */
 
-.talk {
+.mediaRow {
   display: grid;
   grid-template-columns: 128px minmax(0, 1fr);
   gap: 1rem;
@@ -339,7 +339,7 @@
    shots from a room, 1080x1440 and the like — and a landscape crop takes a thin
    band through the middle of each one and cuts the heads off. A square crop
    biased slightly up the frame keeps the speaker and the room in shot. */
-.talkThumb {
+.mediaThumb {
   display: block;
   width: 128px;
   /* Reserved by aspect-ratio as well as by the width/height attributes on the
@@ -351,18 +351,18 @@
   overflow: hidden;
 }
 
-.talkThumb img {
+.mediaThumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Placeholder while there is no photograph for a talk. It carries the year
+/* Placeholder while there is no photograph for a mediaRow. It carries the year
    rather than sitting empty: ten blank grey rectangles down a page read as a
    broken image, which is a different message from "not filled in yet". The
    year is repeated in the meta line below, so it is hidden from assistive
    technology — it is here to give the eye an anchor, not to inform. */
-.talkThumbFallback {
+.mediaThumbFallback {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -373,23 +373,23 @@
   color: var(--ink-faint);
 }
 
-.talkBody {
+.mediaBody {
   min-width: 0;
 }
 
 /* Below the rail breakpoint the thumbnail shrinks rather than stacking. A
-   full-width 16:9 image per talk would push a ten-item list to several screens
+   full-width 16:9 image per mediaRow would push a ten-item list to several screens
    of scrolling, and the photograph is supporting evidence here, not the point
    of the record. */
 @media (max-width: 700px) {
-  .talk {
+  .mediaRow {
     grid-template-columns: 88px minmax(0, 1fr);
     gap: 0.8rem;
   }
-  .talkThumb {
+  .mediaThumb {
     width: 88px;
   }
-  .talkThumbFallback {
+  .mediaThumbFallback {
     font-size: 0.72rem;
   }
 }

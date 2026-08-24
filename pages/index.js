@@ -63,20 +63,34 @@ const SOCIALS = [
 function FeedList({ items, limit = 3 }) {
   return (
     <ul className={utilStyles.list}>
-      {items.slice(0, limit).map(({ id, created, title, link, description }) => (
-        <li className={utilStyles.listItem} key={id}>
-          <a className={utilStyles.itemTitle} href={link} target="_blank" rel="noopener noreferrer">
-            {title}
-          </a>
-          <small className={utilStyles.meta}>
-            <DateUtil dateString={new Date(created).toISOString()} />
-          </small>
-          {description && (
-            <div
-              className={utilStyles.excerpt}
-              dangerouslySetInnerHTML={{ __html: description }}
-            />
-          )}
+      {items.slice(0, limit).map(({ id, created, title, link, description, image }) => (
+        <li className={`${utilStyles.listItem} ${utilStyles.mediaRow}`} key={id}>
+          {/* Episode artwork, proxied and resized by next/image so the browser
+              still only ever talks to this origin. The quiet fill underneath is
+              the placeholder while it loads. */}
+          <div className={utilStyles.mediaThumb}>
+            {image ? (
+              <Image src={image} alt="" width={128} height={128} loading="lazy" />
+            ) : (
+              <span className={utilStyles.mediaThumbFallback} aria-hidden="true">
+                {new Date(created).getFullYear()}
+              </span>
+            )}
+          </div>
+          <div className={utilStyles.mediaBody}>
+            <a className={utilStyles.itemTitle} href={link} target="_blank" rel="noopener noreferrer">
+              {title}
+            </a>
+            <small className={utilStyles.meta}>
+              <DateUtil dateString={new Date(created).toISOString()} />
+            </small>
+            {description && (
+              <div
+                className={utilStyles.excerpt}
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+            )}
+          </div>
         </li>
       ))}
     </ul>

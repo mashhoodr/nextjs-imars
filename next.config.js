@@ -12,6 +12,12 @@ const nextConfig = {
         hostname: "i.gr-assets.com",
         pathname: "/images/**",
       },
+      // Podcast episode artwork, served by Anchor's CDN.
+      {
+        protocol: "https",
+        hostname: "d3t3ozftmdmh3i.cloudfront.net",
+        pathname: "/**",
+      },
     ],
   },
 
