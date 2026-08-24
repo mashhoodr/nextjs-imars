@@ -291,6 +291,20 @@
   color: var(--ink-soft);
 }
 
+/* Podcast blurbs are full show notes — two hundred words each — and at full
+   length one episode filled the viewport, leaving the artwork stranded at the
+   top of a column of text. Clamped to three lines, the row reads as a record
+   again: art, title, date, a taste of the episode. The full text is one click
+   away and this is a feed, not the page itself. */
+.excerptClamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+
 .excerpt p {
   margin: 0;
 }
@@ -393,6 +407,28 @@
     font-size: 0.72rem;
   }
 }
+/* A square thumbnail against three lines of text left the row bottom-heavy at
+   128px. Podcast artwork is also the one image here made to be looked at
+   rather than evidence of an event, so it earns more room than a talk photo. */
+.mediaRowLarge {
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.mediaRowLarge .mediaThumb {
+  width: 168px;
+}
+
+@media (max-width: 700px) {
+  .mediaRowLarge {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+  .mediaRowLarge .mediaThumb {
+    width: 104px;
+  }
+}
+
 
 /* Row of standalone links (the "Elsewhere" profiles). A list, not prose, so it
    is marked up as one and keeps the underline off. */

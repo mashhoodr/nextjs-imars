@@ -64,13 +64,13 @@ function FeedList({ items, limit = 3 }) {
   return (
     <ul className={utilStyles.list}>
       {items.slice(0, limit).map(({ id, created, title, link, description, image }) => (
-        <li className={`${utilStyles.listItem} ${utilStyles.mediaRow}`} key={id}>
+        <li className={`${utilStyles.listItem} ${utilStyles.mediaRow} ${utilStyles.mediaRowLarge}`} key={id}>
           {/* Episode artwork, proxied and resized by next/image so the browser
               still only ever talks to this origin. The quiet fill underneath is
               the placeholder while it loads. */}
           <div className={utilStyles.mediaThumb}>
             {image ? (
-              <Image src={image} alt="" width={128} height={128} loading="lazy" />
+              <Image src={image} alt="" width={168} height={168} loading="lazy" />
             ) : (
               <span className={utilStyles.mediaThumbFallback} aria-hidden="true">
                 {new Date(created).getFullYear()}
@@ -86,7 +86,7 @@ function FeedList({ items, limit = 3 }) {
             </small>
             {description && (
               <div
-                className={utilStyles.excerpt}
+                className={`${utilStyles.excerpt} ${utilStyles.excerptClamp}`}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
             )}
