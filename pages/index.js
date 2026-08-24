@@ -190,6 +190,12 @@ export default function Home({
                     className={`${utilStyles.logoImg} ${tall ? utilStyles.logoImgTall : ""}`}
                     src={logo}
                     alt={name}
+                    // Two sections below the fold, so nothing here should cost
+                    // a request before it is scrolled to. The rail avatar is
+                    // deliberately left eager: it is above the fold and is the
+                    // LCP candidate, and lazy-loading it would delay paint.
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <span className={utilStyles.logoWordmark}>{name}</span>

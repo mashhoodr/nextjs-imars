@@ -395,16 +395,31 @@
    full-width 16:9 image per mediaRow would push a ten-item list to several screens
    of scrolling, and the photograph is supporting evidence here, not the point
    of the record. */
+/* Below the breakpoint the row stacks rather than shrinking. Side by side at
+   390px the text column measured 230px — 28 characters, against the 45 to 75
+   a line wants — so titles ran to three lines while 137px sat empty beside the
+   thumbnail. Stacking costs about 20px of height per row and gives the text
+   the full width back, so it is close to free. Stack and simplify; do not
+   merely shrink the desktop composition. */
 @media (max-width: 700px) {
   .mediaRow {
-    grid-template-columns: 88px minmax(0, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
   }
   .mediaThumb {
     width: 88px;
   }
   .mediaThumbFallback {
     font-size: 0.72rem;
+  }
+  /* Unclamped, a two-sentence talk description runs to five lines at this
+     measure. Three is enough to tell whether the talk is worth opening. */
+  .mediaRow .excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
   }
 }
 /* A square thumbnail against three lines of text left the row bottom-heavy at
@@ -421,11 +436,19 @@
 
 @media (max-width: 700px) {
   .mediaRowLarge {
-    grid-template-columns: 104px minmax(0, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
   }
+  /* Larger than a talk photo for the same reason it is larger on desktop: the
+     artwork is made to be looked at, and only three episodes are listed. */
   .mediaRowLarge .mediaThumb {
-    width: 104px;
+    width: 112px;
+  }
+  /* Two lines rather than three: the title already wraps here, so the row
+     needs less blurb to stay legible as one record. */
+  .mediaRowLarge .excerpt {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 }
 
