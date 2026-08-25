@@ -453,72 +453,103 @@
 }
 
 
-/* Talk row: the title laid over the image below 700px
-   ---------------------------------------------------------------------------
-   Desktop is unchanged — thumbnail left, title/meta/excerpt right. What changed
-   is the DOM underneath it. The head and the excerpt used to sit inside a
-   `.mediaBody` wrapper; they are now siblings of the thumb, because two boxes
-   can only share a grid cell if they belong to the same grid, and on mobile the
-   head has to land on top of the image. Desktop puts the two columns back by
-   hand, immediately below.
+/* Overlay cards: the caption laid over the media below 700px
+   ===========================================================================
+   Shared by talks, podcast episodes and books. Stacked, each of these rows put
+   a small square alone on its line with most of the width empty beside it, so
+   the image read as an orphaned stamp above the record rather than part of it.
+   Below 700px the media becomes a full-width card and the caption sits on it.
 
-   Stacked, the row left an 88px square alone on its line with ~290px of empty
-   space beside it: the photo read as an orphaned stamp above the record rather
-   than part of it, and on the 47 talks carrying no photo that orphan was a
-   blank grey box. Laying the head over the card makes the image the record. */
+   Three things are defined once, here: the grid mechanics that let a caption
+   occupy the same cell as its image, the scrim that keeps white text legible
+   over an arbitrary photograph, and the ink that goes with it. What each
+   consumer sets for itself is the aspect ratio, because that follows the shape
+   of its source:
 
-.talkRow {
-  /* `.mediaRow` sets a single `gap`, which starts applying to rows too once
-     `.mediaBody` is no longer collapsing the excerpt into one box. The excerpt
-     brings its own 0.5rem top margin, so an inherited row gap double-spaces it. */
-  column-gap: 1rem;
+     talks     3:2  event photos, already square-cropped to 256px
+     podcast   1:1  episode artwork is square, so a square card crops nothing
+     books     1:1  covers are 2:3, and 1:1 keeps the top two thirds — where a
+                    cover puts its title and its art
+
+   DOM CONTRACT. The media, the caption and the excerpt must be SIBLINGS in one
+   grid. Two boxes can only share a grid cell if they belong to the same grid,
+   which is why `.mediaBody` was unwrapped and why the book review moved out of
+   `.bookMeta`. Desktop puts the columns back explicitly, immediately below.
+
+   `.scrim` marks a media box that actually has an image. Everything keyed off
+   `:not(.scrim)` is therefore the no-image case, and does not need a second
+   class to say so. */
+
+.mediaCard,
+.bookCard {
+  /* A single `gap` on the parent starts applying to rows once the excerpt
+     becomes a grid item of its own. It carries a top margin already, so an
+     inherited row gap double-spaces it. Column gaps stay with each consumer —
+     talks, podcast and books all set different ones. */
   row-gap: 0;
+  /* Both auto rows would share the surplus whenever the media is taller than
+     the text beside it, which silently pushes the excerpt away from the meta it
+     belongs to — a 110x165 cover against ~150px of caption moved a book review
+     down by nearly 40px. Pinning row 1 to its content and letting row 2 absorb
+     the remainder keeps the excerpt directly under the line above it, and drops
+     the leftover height at the foot of the row where it is invisible. */
+  grid-template-rows: auto 1fr;
 }
 
-.talkRow .mediaThumb {
+.mediaCard .mediaThumb {
   grid-column: 1;
-  /* Spans both rows so a long excerpt does not leave the thumbnail hanging
-     against the title alone. */
+  /* Spans both rows so a long excerpt does not leave the media hanging against
+     the title alone. */
   grid-row: 1 / span 2;
 }
 
-.talkRow .mediaHead {
+.mediaCard .mediaHead {
   grid-column: 2;
   grid-row: 1;
   min-width: 0;
 }
 
-.talkRow .excerpt {
+.mediaCard .excerpt {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.bookCard .bookCover {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.bookCard .bookMeta {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.bookCard .bookReview {
   grid-column: 2;
   grid-row: 2;
 }
 
 @media (max-width: 700px) {
-  /* One column, and the head moves into the image's cell instead of below it. */
-  .mediaRow.talkRow {
+  /* One column, and the caption moves into the media's cell instead of below. */
+  .mediaRow.mediaCard,
+  .book.bookCard {
     grid-template-columns: minmax(0, 1fr);
+    /* Nothing spans two rows here — the caption shares the media's cell — so
+       the desktop `1fr` would only stretch the excerpt's row for no reason. */
+    grid-template-rows: auto auto;
     row-gap: 0;
   }
 
-  /* 3:2, not the square desktop uses. The sources are 256x256 and the originals
-     are gone, so width is the only dimension still available to spend: a square
-     card at this measure would be ~300px tall, and 85 of them would treble the
-     page. `object-position` pulls the visible band up the frame — the square
-     crop already sits high, so this keeps heads in shot and drops the text over
-     floor and chairs rather than over faces. */
-  .talkRow .mediaThumb {
+  .mediaCard .mediaThumb,
+  .bookCard .bookCover {
     grid-column: 1;
     grid-row: 1;
     width: 100%;
-    aspect-ratio: 3 / 2;
     position: relative;
   }
 
-  .talkRow .mediaThumb img {
-    object-position: 50% 38%;
-  }
-
-  .talkRow .mediaHead {
+  .mediaCard .mediaHead,
+  .bookCard .bookMeta {
     grid-column: 1;
     grid-row: 1;
     align-self: end;
@@ -527,10 +558,39 @@
     padding: 0 0.85rem 0.7rem;
   }
 
-  .talkRow .excerpt {
+  .mediaCard .excerpt,
+  .bookCard .bookReview {
     grid-column: 1;
     grid-row: 2;
     margin-top: 0.75rem;
+  }
+
+  /* Ratios, and where each crop is taken from.
+     Talks: the square crop already sits high in the frame, so pulling the band
+     up keeps heads in shot and drops the text over floor and chairs.
+     Books: `contain` is right at 110px, where letterboxing is invisible and no
+     cover loses its title. Filling a card is a different job — the bars would
+     sit under the scrim as grey slabs — so the card crops instead, biased hard
+     to the top because that is where a cover carries its title. */
+  .talkCard .mediaThumb {
+    aspect-ratio: 3 / 2;
+  }
+
+  .talkCard .mediaThumb img {
+    object-position: 50% 38%;
+  }
+
+  .podcastCard .mediaThumb {
+    aspect-ratio: 1 / 1;
+  }
+
+  .bookCard .bookCover {
+    aspect-ratio: 1 / 1;
+  }
+
+  .bookCard .bookCover img {
+    object-fit: cover;
+    object-position: 50% 12%;
   }
 
   /* The scrim. A legibility mechanism, not ornament, and the only gradient on
@@ -539,11 +599,11 @@
 
      The stops are arithmetic, not taste. White text needs the composited
      surface at or below sRGB 119 to clear 4.5:1, which takes a black scrim of
-     at least 54% over the worst case — a blown-out white photo. The head sits
-     in the bottom 55% of the card, where this ramp never falls below 70%, or
-     8.5:1 against that same white. Lower the floor and you may cross the line:
-     re-measure rather than eyeball it. */
-  .talkRow .talkThumbPhoto::after {
+     at least 54% over the worst case: a blown-out white photo. The caption
+     sits in the bottom 55% of the card, where this ramp never falls below 70%,
+     or 8.5:1 against that same white. Lower the floor and you may cross the
+     line — re-measure rather than eyeball it. */
+  .scrim::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -556,67 +616,87 @@
     );
   }
 
-  /* Ink follows the surface it lands on, which is the one place the two card
-     types diverge. Over a photo the accent cannot be used — #1d4ed8 is measured
-     against white and fails against the scrim — so the title goes white and the
-     card itself carries the affordance. Over the grey card the accent still
-     measures, and is kept. */
-  .talkThumbPhoto + .mediaHead .itemTitle,
-  .talkThumbPhoto + .mediaHead .videoLink {
+  /* Ink follows the surface it lands on, which is the one place a card with an
+     image and a card without one diverge. Over a photo the accent cannot be
+     used — #1d4ed8 is measured against white and fails against the scrim — so
+     the title goes white and the card itself carries the affordance. Without
+     an image the accent still measures, and is kept. */
+  .onImage .itemTitle,
+  .onImage .videoLink,
+  .onImage .bookTitle {
     color: #fff;
   }
 
-  .talkThumbPhoto + .mediaHead .meta {
+  .onImage .meta,
+  .onImage .bookAuthor,
+  .onImage .bookRating {
     color: rgb(255 255 255 / 88%);
   }
 
+  /* `--rule` is a light grey: on white it reads as an unfilled star, on the
+     scrim it would read as a filled one. Inverted, it keeps saying "empty". */
+  .onImage .bookRatingOff {
+    color: rgb(255 255 255 / 32%);
+  }
+
   /* The global focus ring is `--accent`, which vanishes against the scrim. */
-  .talkThumbPhoto + .mediaHead a:focus-visible {
+  .onImage a:focus-visible {
     outline-color: #fff;
   }
 
-  /* A two-line title is a 56px target inside a 300px-wide card. Stretching the
-     anchor across the head makes the whole caption block tappable, which is
-     what a thumb expects of a card. Only ever on the anchor: talks with nowhere
-     to link render a span, and that must not become a dead hit area.
-     `.videoLink` is lifted above it so the second link stays reachable. */
-  .talkRow .mediaHead a.itemTitle::before {
+  /* A two-line title is a 56px target inside a 348px-wide card. Stretching the
+     anchor across the caption makes the whole block tappable, which is what a
+     thumb expects of a card. Only ever on the anchor: records with nowhere to
+     link render a span, and that must not become a dead hit area. `.videoLink`
+     is lifted above it so the second link stays reachable. */
+  .mediaCard .mediaHead a.itemTitle::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 1;
   }
 
-  .talkRow .mediaHead .videoLink {
+  .mediaCard .mediaHead .videoLink {
     position: relative;
     z-index: 2;
   }
 
-  /* The 47 talks with no photograph. They keep the card — same tint, same
-     radius, same ink — but not the 3:2 box, because there is no image to give
-     it a reason: at this width that reserved ~150px of empty grey above the
-     title, 47 times down the page. Dropping the ratio lets the head, which
-     shares this grid cell, set the height, so the tint shrinks to a plaque
-     around the title and meta and the page keeps its rhythm.
+  /* Books link from the cover itself, which is an anchor already filling the
+     cell underneath this caption. Nothing in the caption is interactive, so
+     letting taps fall through to it makes the whole card one target rather
+     than a live cover with a dead strip across its foot. */
+  .bookCard .bookMeta {
+    pointer-events: none;
+  }
 
-     The year goes with it. It existed so a blank rectangle would not read as a
-     broken image; the rectangle is no longer blank, and the date is in the meta
-     line directly beneath. */
-  .talkRow .talkThumbEmpty {
+  /* No image. The card stays — same tint, same radius, same ink — but loses
+     the ratio, because there is nothing to give it a reason: at this width a
+     3:2 box reserved ~150px of empty grey above the title, and on /talks that
+     is 47 rows of it. Dropping the ratio lets the caption, which shares this
+     cell, set the height, so the tint shrinks to a plaque around the text.
+
+     `.mediaRow` aligns items to the start, and with the placeholder hidden
+     these boxes have no content of their own — left alone they collapse to
+     zero height and the tint disappears entirely. Stretching hands the height
+     back to the cell.
+
+     The placeholder goes because it existed so a blank rectangle would not
+     read as a broken image. The rectangle is no longer blank: the title is on
+     it, and the date is in the line directly beneath. */
+  .mediaCard .mediaThumb:not(.scrim),
+  .bookCard .bookCover:not(.scrim) {
     aspect-ratio: auto;
-    /* `.mediaRow` aligns items to the start, and with the year hidden this box
-       has no content of its own — left alone it collapses to zero height and
-       the tint disappears entirely. Stretching it makes the head, which shares
-       the cell, set the height and the tint follow it. */
     align-self: stretch;
   }
 
-  .talkThumbEmpty + .mediaHead {
-    padding-top: 0.7rem;
+  .mediaCard .mediaThumb:not(.scrim) .mediaThumbFallback,
+  .bookCard .bookCover:not(.scrim) .bookCoverFallback {
+    display: none;
   }
 
-  .talkThumbEmpty .mediaThumbFallback {
-    display: none;
+  .mediaThumb:not(.scrim) + .mediaHead,
+  .bookCover:not(.scrim) + .bookMeta {
+    padding-top: 0.7rem;
   }
 }
 

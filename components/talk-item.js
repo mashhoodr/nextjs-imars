@@ -38,12 +38,12 @@ import DateUtil from "./date";
  * other three. The wrapper is gone because below 700px the head has to sit ON
  * TOP of the image, and two elements can only share a grid cell if they are
  * siblings in the same grid. Desktop places them back into two columns by hand
- * (see `.talkRow` in utils.module.css); mobile drops the head into the image's
- * cell. No absolute positioning is involved on either side.
+ * (see the overlay-card block in utils.module.css); mobile drops the head into
+ * the image's cell. No absolute positioning is involved on either side.
  *
- * `.talkThumbPhoto` / `.talkThumbEmpty` exist so the CSS can tell the two cases
- * apart from the thumb alone: the scrim and the white ink are keyed off the
- * photo variant via a sibling selector, and must never land on the grey one.
+ * `.scrim` and `.onImage` are the shared overlay-card classes, applied only
+ * when there IS a photo. The CSS keys the no-image case off `:not(.scrim)`, so
+ * a talk without one needs no class of its own to say so.
  */
 
 /** Square. Stated on the element so the box is reserved before CSS arrives. */
@@ -75,12 +75,10 @@ export default function TalkItem({
   ].filter(Boolean);
 
   return (
-    <li className={`${utilStyles.listItem} ${utilStyles.mediaRow} ${utilStyles.talkRow}`}>
-      <div
-        className={`${utilStyles.mediaThumb} ${
-          image ? utilStyles.talkThumbPhoto : utilStyles.talkThumbEmpty
-        }`}
-      >
+    <li
+      className={`${utilStyles.listItem} ${utilStyles.mediaRow} ${utilStyles.mediaCard} ${utilStyles.talkCard}`}
+    >
+      <div className={`${utilStyles.mediaThumb} ${image ? utilStyles.scrim : ""}`}>
         {image ? (
           <img
             src={image}
@@ -99,7 +97,7 @@ export default function TalkItem({
         )}
       </div>
 
-      <div className={utilStyles.mediaHead}>
+      <div className={`${utilStyles.mediaHead} ${image ? utilStyles.onImage : ""}`}>
         {/* Not every talk has somewhere to link to. Without this the title
             became an anchor with no href, which is focusable, announced as a
             link, and goes nowhere. */}

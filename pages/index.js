@@ -64,33 +64,48 @@ function FeedList({ items, limit = 3 }) {
   return (
     <ul className={utilStyles.list}>
       {items.slice(0, limit).map(({ id, created, title, link, description, image }) => (
-        <li className={`${utilStyles.listItem} ${utilStyles.mediaRow} ${utilStyles.mediaRowLarge}`} key={id}>
+        <li
+          className={`${utilStyles.listItem} ${utilStyles.mediaRow} ${utilStyles.mediaRowLarge} ${utilStyles.mediaCard} ${utilStyles.podcastCard}`}
+          key={id}
+        >
           {/* Episode artwork, proxied and resized by next/image so the browser
               still only ever talks to this origin. The quiet fill underneath is
-              the placeholder while it loads. */}
-          <div className={utilStyles.mediaThumb}>
+              the placeholder while it loads.
+
+              Requested at 512 rather than the 168 it occupies on desktop: below
+              700px this same file fills a 348px card, and on a 3x phone that
+              wants ~1044 device pixels. next/image emits a 1x/2x srcset from
+              these numbers, so 512 buys a 1024 candidate for the card while
+              desktop still picks the smaller one. Anchor serves the artwork at
+              3000px, so none of this is upscaled — unlike the talk photos.
+
+              Thumb, head and excerpt are siblings, not wrapped in `.mediaBody`:
+              the head has to share the artwork's grid cell on mobile, and grid
+              only positions direct children. See the overlay-card block in
+              utils.module.css. */}
+          <div className={`${utilStyles.mediaThumb} ${image ? utilStyles.scrim : ""}`}>
             {image ? (
-              <Image src={image} alt="" width={168} height={168} loading="lazy" />
+              <Image src={image} alt="" width={512} height={512} loading="lazy" />
             ) : (
               <span className={utilStyles.mediaThumbFallback} aria-hidden="true">
                 {new Date(created).getFullYear()}
               </span>
             )}
           </div>
-          <div className={utilStyles.mediaBody}>
+          <div className={`${utilStyles.mediaHead} ${image ? utilStyles.onImage : ""}`}>
             <a className={utilStyles.itemTitle} href={link} target="_blank" rel="noopener noreferrer">
               {title}
             </a>
             <small className={utilStyles.meta}>
               <DateUtil dateString={new Date(created).toISOString()} />
             </small>
-            {description && (
-              <div
-                className={`${utilStyles.excerpt} ${utilStyles.excerptClamp}`}
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            )}
           </div>
+          {description && (
+            <div
+              className={`${utilStyles.excerpt} ${utilStyles.excerptClamp}`}
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          )}
         </li>
       ))}
     </ul>
@@ -279,26 +294,48 @@ export default function Home({
             as if it were his opinion. */}
         <ul className={utilStyles.bookGrid}>
           {allBooksReadData.slice(0, 6).map(({ id, title, author, cover, rating, review, link }) => (
-            <li className={utilStyles.book} key={id}>
+            <li className={`${utilStyles.book} ${utilStyles.bookCard}`} key={id}>
+              {/* Cover, caption and review are siblings rather than cover +
+                  a wrapper: below 700px the caption has to share the cover's
+                  grid cell, and grid only positions direct children. The review
+                  stays out of the overlay and keeps the full measure beneath
+                  it. See the overlay-card block in utils.module.css. */}
               <a
-                className={utilStyles.bookCover}
+                className={`${utilStyles.bookCover} ${cover ? utilStyles.scrim : ""}`}
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${title}${author ? ` by ${author}` : ""} on Goodreads`}
               >
                 {cover ? (
+                  /* 290x475 is what Goodreads actually holds. Every size
+                     suffix on the URL — _SY475_, _SY1000_, none at all —
+                     returns the same file, so this is a ceiling rather than a
+                     preference, and the mobile card at 348px is above it. The
+                     covers are therefore soft on a retina phone and no request
+                     size can fix that; only a different source could.
+
+                     These numbers are still worth stating truthfully: they
+                     declare the real intrinsic ratio and give next/image an
+                     honest 1x candidate. They do not set the rendered size —
+                     CSS does, 110px on desktop and the full column below 700px.
+
+                     Do not read `naturalWidth` to check any of this. With an
+                     x-descriptor srcset the browser reports the density-
+                     corrected size, so a correctly served 290x475 reads back as
+                     145x237 and looks like a bug that is not there. Fetch the
+                     URL and decode it instead. */
                   <Image
                     src={cover}
                     alt={`Cover of ${title}`}
-                    width={110}
-                    height={165}
+                    width={290}
+                    height={475}
                   />
                 ) : (
                   <span className={utilStyles.bookCoverFallback}>{title}</span>
                 )}
               </a>
-              <div className={utilStyles.bookMeta}>
+              <div className={`${utilStyles.bookMeta} ${cover ? utilStyles.onImage : ""}`}>
                 <div className={utilStyles.bookTitle}>{title}</div>
                 {author && <div className={utilStyles.bookAuthor}>{author}</div>}
                 {rating > 0 && (
@@ -313,8 +350,8 @@ export default function Home({
                     </span>
                   </div>
                 )}
-                {review && <p className={utilStyles.bookReview}>{review}</p>}
               </div>
+              {review && <p className={utilStyles.bookReview}>{review}</p>}
             </li>
           ))}
         </ul>
