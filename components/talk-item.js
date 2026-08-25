@@ -2,7 +2,7 @@ import utilStyles from "../styles/utils.module.css";
 import DateUtil from "./date";
 
 /**
- * One mediaRow, rendered identically on the homepage and on /talks.
+ * One talk row, rendered identically on the homepage and on /talks.
  *
  * The two pages used to hand-roll their own markup — the homepage with
  * `.itemTitle` and `.meta`, /talks with a `<br>` and `.lightText` — so the same
@@ -17,7 +17,7 @@ import DateUtil from "./date";
  *   location      optional string — venue and city, or "Online"
  *   description   optional one-line write-up
  *   audience      optional number
- *   audienceType  "attended" | "trained" — a workshop is not a mediaRow, and the
+ *   audienceType  "attended" | "trained" — a workshop is not a talk, and the
  *                 distinction is real information rather than a label choice
  *   slides        optional URL
  *   link          optional URL — event page or recap, used when there are no
@@ -30,6 +30,20 @@ import DateUtil from "./date";
  * Photos come from the Google Developer Expert activity export, cropped square
  * at 256px into public/talks/. Entries without one fall back to the year
  * placeholder; adding the key is all that is needed to light one up.
+ *
+ * MARKUP CONTRACT — read before rearranging.
+ *
+ * The thumb, the head (title + meta) and the excerpt are DIRECT children of the
+ * <li>, deliberately. They used to be thumb + a `.mediaBody` wrapper holding the
+ * other three. The wrapper is gone because below 700px the head has to sit ON
+ * TOP of the image, and two elements can only share a grid cell if they are
+ * siblings in the same grid. Desktop places them back into two columns by hand
+ * (see `.talkRow` in utils.module.css); mobile drops the head into the image's
+ * cell. No absolute positioning is involved on either side.
+ *
+ * `.talkThumbPhoto` / `.talkThumbEmpty` exist so the CSS can tell the two cases
+ * apart from the thumb alone: the scrim and the white ink are keyed off the
+ * photo variant via a sibling selector, and must never land on the grey one.
  */
 
 /** Square. Stated on the element so the box is reserved before CSS arrives. */
@@ -61,15 +75,19 @@ export default function TalkItem({
   ].filter(Boolean);
 
   return (
-    <li className={`${utilStyles.listItem} ${utilStyles.mediaRow}`}>
-      <div className={utilStyles.mediaThumb}>
+    <li className={`${utilStyles.listItem} ${utilStyles.mediaRow} ${utilStyles.talkRow}`}>
+      <div
+        className={`${utilStyles.mediaThumb} ${
+          image ? utilStyles.talkThumbPhoto : utilStyles.talkThumbEmpty
+        }`}
+      >
         {image ? (
           <img
             src={image}
             alt={imageAlt || `${title}${location ? `, ${location}` : ""}`}
             width={THUMB_W}
             height={THUMB_H}
-            // Talks run to 36 entries on /talks. Nothing below the fold should
+            // Talks run to 85 entries on /talks. Nothing below the fold should
             // cost a request until it is scrolled to.
             loading="lazy"
             decoding="async"
@@ -81,8 +99,8 @@ export default function TalkItem({
         )}
       </div>
 
-      <div className={utilStyles.mediaBody}>
-        {/* Not every mediaRow has somewhere to link to. Without this the title
+      <div className={utilStyles.mediaHead}>
+        {/* Not every talk has somewhere to link to. Without this the title
             became an anchor with no href, which is focusable, announced as a
             link, and goes nowhere. */}
         {href ? (
@@ -115,8 +133,9 @@ export default function TalkItem({
             </span>
           ))}
         </small>
-        {description && <p className={utilStyles.excerpt}>{description}</p>}
       </div>
+
+      {description && <p className={utilStyles.excerpt}>{description}</p>}
     </li>
   );
 }

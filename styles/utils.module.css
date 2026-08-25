@@ -453,6 +453,173 @@
 }
 
 
+/* Talk row: the title laid over the image below 700px
+   ---------------------------------------------------------------------------
+   Desktop is unchanged — thumbnail left, title/meta/excerpt right. What changed
+   is the DOM underneath it. The head and the excerpt used to sit inside a
+   `.mediaBody` wrapper; they are now siblings of the thumb, because two boxes
+   can only share a grid cell if they belong to the same grid, and on mobile the
+   head has to land on top of the image. Desktop puts the two columns back by
+   hand, immediately below.
+
+   Stacked, the row left an 88px square alone on its line with ~290px of empty
+   space beside it: the photo read as an orphaned stamp above the record rather
+   than part of it, and on the 47 talks carrying no photo that orphan was a
+   blank grey box. Laying the head over the card makes the image the record. */
+
+.talkRow {
+  /* `.mediaRow` sets a single `gap`, which starts applying to rows too once
+     `.mediaBody` is no longer collapsing the excerpt into one box. The excerpt
+     brings its own 0.5rem top margin, so an inherited row gap double-spaces it. */
+  column-gap: 1rem;
+  row-gap: 0;
+}
+
+.talkRow .mediaThumb {
+  grid-column: 1;
+  /* Spans both rows so a long excerpt does not leave the thumbnail hanging
+     against the title alone. */
+  grid-row: 1 / span 2;
+}
+
+.talkRow .mediaHead {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.talkRow .excerpt {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+@media (max-width: 700px) {
+  /* One column, and the head moves into the image's cell instead of below it. */
+  .mediaRow.talkRow {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+  }
+
+  /* 3:2, not the square desktop uses. The sources are 256x256 and the originals
+     are gone, so width is the only dimension still available to spend: a square
+     card at this measure would be ~300px tall, and 85 of them would treble the
+     page. `object-position` pulls the visible band up the frame — the square
+     crop already sits high, so this keeps heads in shot and drops the text over
+     floor and chairs rather than over faces. */
+  .talkRow .mediaThumb {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    position: relative;
+  }
+
+  .talkRow .mediaThumb img {
+    object-position: 50% 38%;
+  }
+
+  .talkRow .mediaHead {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    position: relative;
+    z-index: 1;
+    padding: 0 0.85rem 0.7rem;
+  }
+
+  .talkRow .excerpt {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0.75rem;
+  }
+
+  /* The scrim. A legibility mechanism, not ornament, and the only gradient on
+     the site — the same class of exception as the 24px padding around
+     `[video]`, which looks like stray space and is really a tap target.
+
+     The stops are arithmetic, not taste. White text needs the composited
+     surface at or below sRGB 119 to clear 4.5:1, which takes a black scrim of
+     at least 54% over the worst case — a blown-out white photo. The head sits
+     in the bottom 55% of the card, where this ramp never falls below 70%, or
+     8.5:1 against that same white. Lower the floor and you may cross the line:
+     re-measure rather than eyeball it. */
+  .talkRow .talkThumbPhoto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgb(0 0 0 / 74%) 0%,
+      rgb(0 0 0 / 70%) 55%,
+      rgb(0 0 0 / 40%) 80%,
+      rgb(0 0 0 / 22%) 100%
+    );
+  }
+
+  /* Ink follows the surface it lands on, which is the one place the two card
+     types diverge. Over a photo the accent cannot be used — #1d4ed8 is measured
+     against white and fails against the scrim — so the title goes white and the
+     card itself carries the affordance. Over the grey card the accent still
+     measures, and is kept. */
+  .talkThumbPhoto + .mediaHead .itemTitle,
+  .talkThumbPhoto + .mediaHead .videoLink {
+    color: #fff;
+  }
+
+  .talkThumbPhoto + .mediaHead .meta {
+    color: rgb(255 255 255 / 88%);
+  }
+
+  /* The global focus ring is `--accent`, which vanishes against the scrim. */
+  .talkThumbPhoto + .mediaHead a:focus-visible {
+    outline-color: #fff;
+  }
+
+  /* A two-line title is a 56px target inside a 300px-wide card. Stretching the
+     anchor across the head makes the whole caption block tappable, which is
+     what a thumb expects of a card. Only ever on the anchor: talks with nowhere
+     to link render a span, and that must not become a dead hit area.
+     `.videoLink` is lifted above it so the second link stays reachable. */
+  .talkRow .mediaHead a.itemTitle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .talkRow .mediaHead .videoLink {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* The 47 talks with no photograph. They keep the card — same tint, same
+     radius, same ink — but not the 3:2 box, because there is no image to give
+     it a reason: at this width that reserved ~150px of empty grey above the
+     title, 47 times down the page. Dropping the ratio lets the head, which
+     shares this grid cell, set the height, so the tint shrinks to a plaque
+     around the title and meta and the page keeps its rhythm.
+
+     The year goes with it. It existed so a blank rectangle would not read as a
+     broken image; the rectangle is no longer blank, and the date is in the meta
+     line directly beneath. */
+  .talkRow .talkThumbEmpty {
+    aspect-ratio: auto;
+    /* `.mediaRow` aligns items to the start, and with the year hidden this box
+       has no content of its own — left alone it collapses to zero height and
+       the tint disappears entirely. Stretching it makes the head, which shares
+       the cell, set the height and the tint follow it. */
+    align-self: stretch;
+  }
+
+  .talkThumbEmpty + .mediaHead {
+    padding-top: 0.7rem;
+  }
+
+  .talkThumbEmpty .mediaThumbFallback {
+    display: none;
+  }
+}
+
 /* Row of standalone links (the "Elsewhere" profiles). A list, not prose, so it
    is marked up as one and keeps the underline off. */
 .inlineList {

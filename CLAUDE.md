@@ -35,7 +35,7 @@ The only non-static route is `/sitemap.xml`, which is edge-cached for a day.
 |---|---|---|
 | **Current writing** | `writing/*.md` | The active corpus. Frontmatter contract is documented in `lib/writing.js` |
 | **Blog archive** | `posts/*.md` | 2009–2015, kept for the record. Deliberately low priority in the sitemap |
-| **Talks** | `lib/talks.json` | 75 entries, newest first. The 2023–2026 AI sessions were imported from the Google Developer Expert activity export; frontmatter contract is in `components/talk-item.js` |
+| **Talks** | `lib/talks.json` | 85 entries, newest first. 38 carry a photo. The 2023–2026 AI sessions were imported from the Google Developer Expert activity export; frontmatter contract is in `components/talk-item.js` |
 | **Podcast / Books / Newsletter** | RSS at build time | Anchor.fm, Goodreads, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
 
 Markdown is parsed by a small local `matter()` (regex + the `yaml` package) rather than
@@ -69,8 +69,11 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 
 - `lib/goodreads.js` has an API key in the feed URL, in a public repo. Worth rotating.
 - The site says "led engineering" at Sastaticket; LinkedIn says CTO. Pick one.
-- No talk carries an `image` yet, so every one renders the year placeholder. Advocu holds
-  photos for 11 of the imported sessions; they need pulling out by hand.
+- Talk photos are 256x256 and the originals are gone (`talks-inbox/` is emptied after each
+  run, and is gitignored). That caps the mobile card: at ~348px wide it upscales and is
+  visibly soft on poster crops. Re-pulling originals from Advocu is the only real fix.
+- 47 of the 85 talks still have no photo. They render the grey card; `npm run talks:missing`
+  lists them.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
