@@ -273,7 +273,7 @@ export default function Home({
 
       <Section id="about" label="About" title="The rest of it.">
         <p>
-          I am an engineering and AI leader based in Karachi. Right now I am helping{" "}
+          I am an engineering and AI leader based in Islamabad. Right now I am helping{" "}
           <a href="http://taleemabad.com/">Taleemabad</a>, the largest ed-tech in Pakistan, scale
           to thousands of schools and millions of children, and rebuilding how the organisation
           itself works around agents.
