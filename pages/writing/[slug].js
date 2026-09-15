@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Layout from "../../components/layout";
 import Seo, { breadcrumb, PERSON_ID } from "../../components/seo";
+import LinkedInVideo from "../../components/linkedin-video";
 import { absoluteUrl, contactEmail } from "../../lib/site";
 import { getWriting, getWritingSlugs } from "../../lib/writing";
 import DateUtil from "../../components/date";
@@ -41,6 +42,23 @@ export default function Article({ article }) {
                     "@type": "CreativeWork",
                     name: article.source.title,
                     url: article.source.url,
+                  },
+                }
+              : {}),
+            // A VideoObject the article carries. Declared rather than left
+            // implicit because the player is loaded on click, so a crawler has
+            // no iframe to discover it from.
+            ...(article.video
+              ? {
+                  video: {
+                    "@type": "VideoObject",
+                    name: article.title,
+                    description: article.video.caption || article.description,
+                    embedUrl: article.video.embedUrl,
+                    uploadDate: article.date,
+                    ...(article.video.poster
+                      ? { thumbnailUrl: absoluteUrl(article.video.poster.src) }
+                      : {}),
                   },
                 }
               : {}),
@@ -95,6 +113,11 @@ export default function Article({ article }) {
           className={utilStyles.prose}
           dangerouslySetInnerHTML={{ __html: article.contentHtml }}
         />
+
+        {/* The recording, after the argument rather than before it — same
+            reasoning as the References block below. It is the artefact the
+            piece came out of, not the thing you need in order to read it. */}
+        {article.video && <LinkedInVideo {...article.video} />}
 
         {/* Everything else the original posts pointed at. Kept at the end
             rather than inline, so the argument reads uninterrupted but the

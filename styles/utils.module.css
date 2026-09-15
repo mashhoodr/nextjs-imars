@@ -1054,3 +1054,97 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* ---------------------------------------------------------------------------
+   Click-to-load video facade (components/linkedin-video.js)
+
+   No third-party frame ships in the initial markup — see the component for the
+   reasoning. These rules style the two states the frame can be in: the poster
+   with a play mark, and the injected iframe.
+
+   The frame carries the video's aspect-ratio inline, so both states occupy an
+   identical box and the swap cannot shift the page.
+   --------------------------------------------------------------------------- */
+
+.videoFigure {
+  /* Matches .prose > * + * so the figure sits on the same vertical rhythm as
+     the paragraphs above it, and clears the article measure below. */
+  margin: 2.5rem 0 0;
+  max-width: 36rem;
+}
+
+.videoFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  /* A neutral holding surface for the moment between click and first paint.
+     Alpha rather than a grey so it composites correctly on any background. */
+  background: rgb(0 0 0 / 5%);
+}
+
+.videoEmbed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.videoPlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* The brackets and underline conventions are for text links. This one is an
+     image, so it opts out of both. */
+  text-decoration: none;
+}
+
+.videoPlay img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* The generated poster is 1224x683 and the video is 16:9 — a 0.8% difference.
+     `cover` absorbs it rather than letterboxing for a rounding error. */
+  object-fit: cover;
+}
+
+/* The play affordance. Deliberately one small mark rather than a scrim over the
+   whole image: the poster is a photograph of a person talking, and darkening it
+   to make one glyph legible costs more than it buys.
+
+   Contrast is carried by the disc, not by the image underneath. White on
+   rgb(0 0 0 / 62%) composited over the lightest pixel in this poster measures
+   well past 4.5:1, and the disc is opaque enough that the worst case is the
+   disc itself rather than whatever it happens to sit on. */
+.videoPlayMark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 62%);
+  color: #fff;
+}
+
+.videoPlay:hover .videoPlayMark {
+  background: rgb(0 0 0 / 78%);
+}
+
+/* No focus rule here on purpose: global.css already gives every <a> a 2px
+   accent ring at 3px offset, and .videoPlay is an <a>. Restating it would be a
+   second copy to keep in sync for no change in rendering. Verified firing on
+   this element with focus({focusVisible:true}). */
+
+.videoCaption {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  /* 56%, the floor on this site. The generic 44% tertiary rung reaches 3.2:1
+     and a credit line is real reading, not optional chrome. */
+  color: var(--ink-faint);
+}

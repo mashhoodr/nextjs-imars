@@ -63,6 +63,11 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 - **No third-party scripts.** The site loads 68 bytes of third-party code and has an LCP of
   ~124ms. Embeds (Instagram, Strava, analytics widgets) would undo that — see
   `notes/seo-geo-strategy.md` §7 for the reasoning and the cheap alternative.
+  The one sanctioned exception is the **click-to-load facade** in
+  `components/linkedin-video.js`: a local poster ships, the third-party iframe is
+  injected on click. Measured on `/writing/what-changed-about-learning` —
+  0 third-party requests on load, CLS 0.00, LCP 110ms, Lighthouse 100 on all four.
+  Any future embed goes through that pattern or not at all.
 - `notes/` and `design/` are gitignored working material and must stay unpublished.
 
 ## Known issues
