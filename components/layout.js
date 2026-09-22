@@ -15,7 +15,7 @@ export {
 } from "../lib/site";
 // `export ... from` re-exports without binding the names locally, so anything
 // this component actually renders has to be imported too.
-import { name, contactEmail } from "../lib/site";
+import { name, contactEmail, socials } from "../lib/site";
 
 // Rail order mirrors the section order on the homepage.
 export const SECTIONS = [
@@ -24,6 +24,7 @@ export const SECTIONS = [
   { id: "writing", label: "Writing" },
   { id: "podcast", label: "Podcast" },
   { id: "talks", label: "Talks" },
+  { id: "mentorship", label: "Mentorship" },
   { id: "about", label: "About" },
 ];
 
@@ -121,6 +122,21 @@ export default function Layout({ children, home }) {
         </nav>
 
         <div className={styles.railFoot}>
+          {/* The same list the About section renders, from lib/site.js. Not
+              nav: these leave the site, so they sit below the rule the nav
+              draws and in the quieter ink, rather than competing with the
+              section links for the same scan. `rel="me"` is what lets these
+              profiles verify back to this domain. */}
+          <ul className={styles.railSocials}>
+            {socials.map(([label, href]) => (
+              <li key={label}>
+                <a href={href} target="_blank" rel="me noopener noreferrer">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
           <a className={styles.noteLink} href={`mailto:${contactEmail}`}>
             [write me a short note]
           </a>

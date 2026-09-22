@@ -6,6 +6,8 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { getPodcastData } from "../lib/podcast";
 import { getGoodReadsData } from "../lib/goodreads";
+import { getAdplistReviews } from "../lib/adplist";
+import { socials as SOCIALS } from "../lib/site";
 import { getAllWriting } from "../lib/writing";
 import allTalksData from "../lib/talks.json";
 import DateUtil from "../components/date";
@@ -50,14 +52,6 @@ const COMPANIES = [
     href: "https://developers.google.com/community/experts",
     logo: "/logos/google-developers.svg",
   },
-];
-
-const SOCIALS = [
-  ["Twitter", "https://twitter.com/mashhoodr"],
-  ["LinkedIn", "http://linkedin.com/in/mashhoodr"],
-  ["GitHub", "https://github.com/mashhoodr"],
-  ["Instagram", "https://instagram.com/mashhoodr"],
-  ["Strava", "https://www.strava.com/athletes/51580844"],
 ];
 
 function FeedList({ items, limit = 3 }) {
@@ -119,6 +113,7 @@ export default function Home({
   ownWriting,
   recentTalks,
   totalTalks,
+  adplist,
 }) {
   return (
     <Layout home>
@@ -271,6 +266,74 @@ export default function Home({
         </Link>
       </Section>
 
+      {/* Mentorship reviews, fetched from ADPList at build time rather than
+          embedded. Their widget is an iframe carrying four webfonts, Amplitude
+          and twenty-odd S3 avatars; see lib/adplist.js. Rendering the text
+          ourselves also means the words are indexable, which iframe content
+          never is.
+
+          No star ratings, deliberately. ADPList's headline `rating` field is a
+          form default that four reviewers left at 3 while scoring every
+          sub-rating 5 — publishing it would misreport what they wrote. */}
+      {adplist.reviews.length > 0 && (
+        <Section
+          id="mentorship"
+          label="Mentorship"
+          title="I mentor engineers, for free."
+        >
+          <ul className={utilStyles.reviewGrid}>
+            {adplist.reviews.map(({ id, quote, trails, name: who, title, organization }) => (
+              <li className={utilStyles.reviewCard} key={id}>
+                <blockquote className={utilStyles.reviewQuote}>
+                  {quote}
+                  {/* Marks a quote that stops mid-sentence in the source. Not
+                      our truncation — see the `trails` note in lib/adplist.js. */}
+                  {trails && "\u2026"}
+                </blockquote>
+                <p className={utilStyles.reviewWho}>
+                  <span className={utilStyles.reviewName}>{who}</span>
+                  {(title || organization) && (
+                    <small className={utilStyles.meta}>
+                      {[title, organization].filter(Boolean).join(" · ")}
+                    </small>
+                  )}
+                </p>
+              </li>
+            ))}
+
+            {/* The invitation, sized and placed as a peer of the reviews so it
+                reads as part of the evidence rather than an advert beside it. */}
+            <li className={`${utilStyles.reviewCard} ${utilStyles.reviewCta}`}>
+              <p className={utilStyles.reviewCtaBody}>
+                Sessions are free and open to anyone — students, career changers,
+                engineers weighing a move. Bring a real problem.
+              </p>
+              <p>
+                <a
+                  className={utilStyles.more}
+                  href={adplist.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  [book a session]
+                </a>
+              </p>
+            </li>
+          </ul>
+
+          {/* Says plainly that this is a selection. Nine of twenty-five shown
+              without saying so would overstate it. The count comes from the
+              feed, so it cannot drift. */}
+          <p className={utilStyles.meta}>
+            Showing {adplist.reviews.length} of {adplist.total} reviews.{" "}
+            <a href={adplist.profileUrl} target="_blank" rel="noopener noreferrer">
+              Read them all on ADPList
+            </a>
+            .
+          </p>
+        </Section>
+      )}
+
       <Section id="about" label="About" title="The rest of it.">
         <p>
           I am an engineering and AI leader based in Islamabad. Right now I am helping{" "}
@@ -418,6 +481,7 @@ export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const allPodcastData = await getPodcastData();
   const allBooksReadData = await getGoodReadsData();
+  const adplist = await getAdplistReviews();
   const ownWriting = getAllWriting().slice(0, 5);
 
   // Filter before slicing. The previous order sliced first, so only featured
@@ -431,6 +495,7 @@ export async function getStaticProps() {
       allPostsData,
       allPodcastData,
       allBooksReadData,
+      adplist,
           ownWriting,
       recentTalks,
       // Rendered in the "all N talks" link, so the count cannot drift from the

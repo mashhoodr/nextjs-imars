@@ -1148,3 +1148,82 @@
      and a credit line is real reading, not optional chrome. */
   color: var(--ink-faint);
 }
+
+/* ---------------------------------------------------------------------------
+   Mentorship reviews (ADPList, fetched in lib/adplist.js)
+
+   A quote wall has a density problem: nine cards of similar length read as one
+   grey mass, and the eye stops finding individual voices. The fixes here are
+   the house ones — space to separate, size to rank — rather than borders on
+   every card, which would add nine rules to a page that is meant to carry about
+   one per viewport.
+
+   Cards get a tinted fill instead of an outline. A fill reads as one surface
+   per card at a glance; nine outlines read as a lattice.
+   --------------------------------------------------------------------------- */
+
+.reviewGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  /* Three up on a wide rail-offset column, two on tablets, one on phones —
+     without a media query per step. 17rem is the narrowest a 460-character
+     quote stays readable at. */
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 16px;
+
+  /* No content-visibility here, deliberately. Ten cards of below-fold prose do
+     cost the hero h1 (the LCP element) about 0.3s on throttled mobile, taking
+     Performance from ~96 to ~94. content-visibility was tried on both the cards
+     and this container and neither produced a gain outside run-to-run variance
+     — the residual cost is hydration and prop parsing, which it cannot touch.
+     An optimisation that cannot be measured is not worth the complexity. */
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: var(--radius);
+  /* 3% alpha, the same surface the code blocks use. Alpha rather than a grey
+     so it composites correctly wherever the card lands. */
+  background: rgb(0 0 0 / 3%);
+}
+
+.reviewQuote {
+  /* Reset the UA blockquote indent — the card padding is the inset. */
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* Pushes the attribution to the bottom of the card, so names line up across a
+   row no matter how long the quotes are. Ragged attributions were the single
+   thing that made the grid look unfinished. */
+.reviewWho {
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reviewName {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* The invitation. It is a peer of the reviews, not a banner: same box, same
+   radius, same grid cell. What separates it is the ink, not a border or an
+   accent fill — an accent spent on a whole card stops being an accent. */
+.reviewCta {
+  background: rgb(0 0 0 / 6%);
+}
+
+.reviewCtaBody {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

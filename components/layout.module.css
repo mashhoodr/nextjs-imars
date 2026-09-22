@@ -174,3 +174,28 @@
     padding: 2.5rem 1.25rem 5rem;
   }
 }
+
+/* Outbound profiles in the rail foot, above the note link.
+
+   Single column, matching the nav above it. The rail is a vertical list of
+   names from top to bottom; a two-column block in the middle of it introduced a
+   second reading direction for no reason, and the rail has the height to spare.
+   Quieter ink than the nav so the eye still reads the sections first — these
+   are a destination you choose, not the page's structure. */
+.railSocials {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.railSocials a {
+  color: var(--ink-faint);
+}
+
+.railSocials a:hover {
+  color: var(--accent);
+}
