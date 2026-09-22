@@ -68,6 +68,14 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
   injected on click. Measured on `/writing/what-changed-about-learning` —
   0 third-party requests on load, CLS 0.00, LCP 110ms, Lighthouse 100 on all four.
   Any future embed goes through that pattern or not at all.
+- **Images ship at the size they render at.** Lighthouse's mobile run simulates
+  slow 4G, so total byte weight sets LCP more than anything on the main thread.
+  The homepage was 485 KiB because `profile.jpg` was 768px for a 144px box and
+  the logos were 24-bit PNGs up to 6x oversized; resizing and palette-quantising
+  took it to 294 KiB and mobile Performance from 93 to 97. Check an asset's
+  pixel size against its rendered size before adding it. Two traps: the logo wall
+  is greyscaled by CSS but `:hover` restores colour, so do **not** bake greyscale
+  in; and `contour.svg` is a base64 raster in an SVG wrapper.
 - `notes/` and `design/` are gitignored working material and must stay unpublished.
 
 ## Known issues
