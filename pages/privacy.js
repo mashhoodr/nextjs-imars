@@ -6,6 +6,7 @@ export default function Privacy() {
   return (
     <Layout>
       <Seo
+        ogKey="privacy"
         title="Privacy policy"
         description="How karachiwala.dev handles the small amount of data it collects."
         path="/privacy"

@@ -11,14 +11,18 @@ npm start               # Serve the production build
 npm run talks:images    # Process talks-inbox/ into public/talks/ + lib/talks.json
 npm run talks:missing   # List talks that still have no photo
 npm run talks:find -- <words>   # Search all talks; prints the filename to use
+npm run og:images       # Rebuild every social preview into public/og/
 ```
 
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
 (`2025-05-24.jpg`), or its id where two talks share a date (`62.jpg`), then run
-`npm run talks:images`. `talks:missing` and `talks:find` both print the exact
-filename to use, so the id never needs looking up by hand. It crops square at 256px, re-encodes, writes the file and
-sets the `image` key. Accepts HEIC straight off a phone. `talks-inbox/` is
-gitignored — empty it once the run is done.
+`npm run talks:images`. It crops square at 256px, re-encodes and sets the `image`
+key. Accepts HEIC. `talks-inbox/` is gitignored — empty it after the run.
+
+**Social previews:** `npm run og:images` rebuilds all 58 into `public/og/` plus
+`lib/og-images.json`, by hand like `talks:images`, and the output is committed.
+Landscape art (ratio 1.5–2.4) is used where a page has it; everything else gets
+a typeset card. Rerun after adding a page or changing a title. Needs `sips`.
 
 `node`/`npm` are not on the non-interactive PATH. Prefix commands with:
 `export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"`
@@ -58,16 +62,13 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 
 - **British English** throughout (`lang="en-GB"`). Em dashes are house style on the site;
   the LinkedIn drafts in `notes/` avoid them on purpose.
-- **Accessibility is a gate, not a nice-to-have.** Every page scores 100 on all four
-  Lighthouse categories. Verify before shipping; do not regress it.
-- **No third-party scripts.** The site loads 68 bytes of third-party code and has an LCP of
-  ~124ms. Embeds (Instagram, Strava, analytics widgets) would undo that — see
-  `notes/seo-geo-strategy.md` §7 for the reasoning and the cheap alternative.
-  The one sanctioned exception is the **click-to-load facade** in
-  `components/linkedin-video.js`: a local poster ships, the third-party iframe is
-  injected on click. Measured on `/writing/what-changed-about-learning` —
-  0 third-party requests on load, CLS 0.00, LCP 110ms, Lighthouse 100 on all four.
-  Any future embed goes through that pattern or not at all.
+- **Accessibility is a gate.** Every page scores 100 on all four Lighthouse categories
+  on desktop (mobile Performance sits at ~93). Verify before shipping.
+- **No third-party scripts.** 68 bytes of third-party code, LCP ~124ms. Embeds would
+  undo that — see `notes/seo-geo-strategy.md` §7. The one sanctioned exception is the
+  **click-to-load facade** in `components/linkedin-video.js`: a local poster ships, the
+  iframe is injected on click (0 third-party requests on load, CLS 0). Any future embed
+  uses that pattern or none.
 - **Images ship at the size they render at.** Lighthouse's mobile run simulates
   slow 4G, so total byte weight sets LCP more than anything on the main thread.
   The homepage was 485 KiB because `profile.jpg` was 768px for a 144px box and
@@ -82,18 +83,17 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 
 - `lib/goodreads.js` has an API key in the feed URL, in a public repo. Worth rotating.
 - The site says "led engineering" at Sastaticket; LinkedIn says CTO. Pick one.
-- Talk photos are 256x256 and the originals are gone (`talks-inbox/` is emptied after each
-  run, and is gitignored). That caps the mobile card: at ~348px wide it upscales and is
-  visibly soft on poster crops. Re-pulling originals from Advocu is the only real fix.
-- 47 of the 85 talks still have no photo. They render the grey card; `npm run talks:missing`
-  lists them.
+- Talk photos are 256x256 and the originals are gone, so mobile cards (~348px) upscale
+  and look soft. Re-pulling from Advocu is the only fix.
+- 47 of the 85 talks still have no photo; `npm run talks:missing` lists them.
+- No `remark-gfm`, so markdown tables in `writing/*.md` render as literal pipes.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+Breaking changes from your training data. Read `node_modules/next/dist/docs/` before writing code.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+Re-added by `next dev` (`node_modules/next/dist/server/lib/generate-agent-files.js`); commit it with your work to keep the tree clean.
 
 <!-- END:nextjs-agent-rules -->

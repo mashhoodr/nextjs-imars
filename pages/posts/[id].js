@@ -11,6 +11,7 @@ export default function Post({ postData }) {
   return (
     <Layout>
       <Seo
+        ogKey={`post-${postData.id}`}
         title={postData.title}
         description={postData.excerpt || undefined}
         path={path}

@@ -17,6 +17,9 @@ export default function Article({ article }) {
         description={article.description}
         path={path}
         type="article"
+        ogKey={article.slug}
+        publishedTime={article.date}
+        modifiedTime={article.updated || article.date}
         jsonLd={[
           {
             "@type": "Article",

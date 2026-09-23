@@ -10,6 +10,7 @@ export default function Talks() {
   return (
     <Layout>
       <Seo
+        ogKey="talks"
         title="Talks and conference appearances"
         description="Every conference keynote, workshop and community talk Mashhood Rastgar has given, with slides and video where available."
         path="/talks"

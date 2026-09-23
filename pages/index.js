@@ -119,6 +119,7 @@ export default function Home({
     <Layout home>
       <Seo
         path="/"
+        ogKey="home"
         jsonLd={[
           {
             "@type": "ProfilePage",

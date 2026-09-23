@@ -84,6 +84,7 @@ export default function Workshops() {
   return (
     <Layout>
       <Seo
+        ogKey="workshops"
         title="AI and agentic engineering workshops for engineering teams"
         description="A three-day hands-on workshop that makes an engineering team agent-native, run on your own codebase and backlog. Remote or in person, customised to your stack."
         path={path}

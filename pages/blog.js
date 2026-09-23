@@ -10,6 +10,7 @@ export default function Blog({ allPostsData }) {
   return (
     <Layout>
       <Seo
+        ogKey="blog"
         title="Blog archive"
         description="An archive of Mashhood Rastgar's early engineering blog posts, 2009 to 2015. Current writing is on the Harness Engineering newsletter."
         path="/blog"

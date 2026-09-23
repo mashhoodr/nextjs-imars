@@ -10,6 +10,7 @@ export default function Writing({ articles }) {
   return (
     <Layout>
       <Seo
+        ogKey="writing"
         title="Writing"
         description="Essays on agentic engineering, AI transformation and what changes in engineering practice when agents write the code."
         path="/writing"
