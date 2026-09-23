@@ -50,18 +50,17 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 - `lib/site.js` — **single source of identity.** Metadata, sitemap and JSON-LD all read from
   it so they cannot drift. Change names, URLs and offers here, nowhere else.
 - `components/seo.js` — per-page title, description, canonical, OG, Twitter, and a linked
-  schema.org `@graph`. `Person` and `WebSite` have stable `@id`s that page nodes reference
-  rather than restate. Every page must render `<Seo>`; `Layout` no longer emits meta.
-- `components/layout.js` — fixed left rail, collapses to a header at 900px. Scroll-spy uses a
-  rAF scroll handler, not IntersectionObserver: sections are taller than the viewport, so
-  several intersect at once and the marker sticks.
+  schema.org `@graph`. `Person`/`WebSite` have stable `@id`s page nodes reference rather
+  than restate. Every page must render `<Seo>` with an `ogKey`; `Layout` emits no meta.
+- `components/layout.js` — fixed left rail, collapses to a header at 900px. Scroll-spy uses
+  rAF, not IntersectionObserver: sections exceed the viewport so several intersect at once.
 - `pages/writing/[slug].js` — articles, with `Article` schema and reading time.
 - `pages/sitemap.xml.js` — generated from `writing/` and `posts/`, never hand-edited.
 
 ## Conventions
 
-- **British English** throughout (`lang="en-GB"`). Em dashes are house style on the site;
-  the LinkedIn drafts in `notes/` avoid them on purpose.
+- **British English** (`lang="en-GB"`). Em dashes are house style here; the LinkedIn
+  drafts in `notes/` avoid them on purpose.
 - **Accessibility is a gate.** Every page scores 100 on all four Lighthouse categories
   on desktop (mobile Performance sits at ~93). Verify before shipping.
 - **No third-party scripts.** 68 bytes of third-party code, LCP ~124ms. Embeds would
@@ -81,7 +80,9 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 
 ## Known issues
 
-- `lib/goodreads.js` has an API key in the feed URL, in a public repo. Worth rotating.
+- `lib/goodreads.js` carries a `key=` in the feed URL. It looks like a secret and is not:
+  the shelves are public, and the feed returns byte-identical bytes with the real key, no
+  key, or a junk key. Nothing to rotate (Goodreads retired its API in Dec 2020).
 - The site says "led engineering" at Sastaticket; LinkedIn says CTO. Pick one.
 - Talk photos are 256x256 and the originals are gone, so mobile cards (~348px) upscale
   and look soft. Re-pulling from Advocu is the only fix.
