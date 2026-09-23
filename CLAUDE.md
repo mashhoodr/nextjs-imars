@@ -62,7 +62,7 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 - **British English** (`lang="en-GB"`). Em dashes are house style here; the LinkedIn
   drafts in `notes/` avoid them on purpose.
 - **Accessibility is a gate.** Every page scores 100 on all four Lighthouse categories
-  on desktop (mobile Performance sits at ~93). Verify before shipping.
+  on desktop; mobile Performance is 97+. Verify before shipping.
 - **No third-party scripts.** 68 bytes of third-party code, LCP ~124ms. Embeds would
   undo that — see `notes/seo-geo-strategy.md` §7. The one sanctioned exception is the
   **click-to-load facade** in `components/linkedin-video.js`: a local poster ships, the
