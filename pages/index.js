@@ -46,6 +46,16 @@ const COMPANIES = [
   { name: "Contour Software", href: "https://contour-software.com/", logo: "/logos/contour.svg" },
   { name: "Arbisoft", href: "https://arbisoft.com/", logo: "/logos/arbisoft.svg" },
   { name: "Metamorphic AI", href: "https://metamorphic-ai.com", logo: "/logos/metamorphic.png" },
+  // Cropped from their co-branded header lockup, which carries "Powered by
+  // Renewables First / New Energy Nexus" beside the CLIP mark. Shipping that
+  // whole file would have put two other organisations' logos in this tile and
+  // implied working relationships that are not being claimed.
+  {
+    name: "Climate Innovation Pakistan (CLIP)",
+    href: "https://climateinnovate.pk/",
+    logo: "/logos/clip.png",
+    tall: true,
+  },
   { name: "LUMS", href: "https://www.lums.edu.pk/", logo: "/logos/lums.png", tall: true },
   {
     name: "Google Developer Expert (GDE)",
