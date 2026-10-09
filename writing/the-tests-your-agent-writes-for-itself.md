@@ -1,13 +1,17 @@
 ---
 title: "The tests your agent writes for itself"
 date: "2026-10-08"
-description: "Banning an agent from writing tests cost nothing on 111 DeepSWE tasks, and saved 6% of the time and 9% of the spend. But a single-task benchmark cannot see what a regression suite is for — and underneath that sits a problem nobody is naming."
+updated: "2026-10-09"
+description: "Banning an agent from writing tests cost nothing across 111 DeepSWE tasks, and saved 6% of the time and 9% of the spend. The finding is narrower than the headline and more uncomfortable than the pushback: it is about the tests nobody asked for."
 sourceUrl: "https://x.com/kunchenguid/status/2108030810691629403"
 sourceTitle: "Kun Chen on agent-written tests, DeepSWE v1.1"
 sourceHost: "x.com"
 references:
   - url: "https://x.com/kunchenguid/status/2108030810691629403"
     title: "Kun Chen: AI-written unit and integration tests are empirically unhelpful"
+    host: "x.com"
+  - url: "https://x.com/kunchenguid/status/2108244512808243470"
+    title: "Kun Chen: answering the pushback, and what a source of truth has to be"
     host: "x.com"
   - url: "https://x.com/julianharris/status/2108111666785198129"
     title: "Julian Harris: a test protects against side effects of previously written code"
@@ -27,7 +31,7 @@ Success went *up* slightly, 65.3% to 66.2%, which he is careful to say is not st
 
 *Taking the tests away cost nothing. That is a finding about the tests, not about testing.*
 
-He went further: on a 44-task subset he disabled running even the tests that already existed. 59% versus 59%. No difference at all.
+He then went further: on a 44-task subset he disabled running even the tests that already existed. 59% versus 59%. No difference at all.
 
 ## Why this is less surprising than it sounds
 
@@ -37,56 +41,63 @@ So the question worth asking is what we were buying with it.
 
 Kun Chen's own read is the sharp one: the implementation and the tests are both the agent's interpretation of your intent. The tests are not more accurate than the implementation, because they come from the same understanding. If that understanding was wrong, you now have a wrong implementation and a passing test suite that agrees with it.
 
-That is the agent marking its own homework. And once you put it that way, a result of "no measurable benefit" stops being a surprise and starts being the obvious outcome.
+That is the agent marking its own homework. Once you put it that way, "no measurable benefit" stops being a surprise and starts being the obvious outcome.
 
-## What I would not conclude
+## The distinction the headline loses
 
-"Stop writing tests" is the wrong lesson to draw from this, and I think it will be the popular one.
+The thread that followed was loud, and most of it argued with a claim nobody made.
 
-What the study shows is that *these* tests, written *this* way, bought nothing. It does not show that testing is dead. It shows that volume is not the thing that was ever working.
+This is not a result about tests. It is a result about **tests nobody asked for** — the ones your agent writes unprompted, as a reflex, when you asked it to make a change.
 
-If we doubled down on making sure the right tests get written, I think there is a much better suite on the other side of this. Two techniques matter more than they currently get credit for:
+Kun Chen draws the line himself using Bun, whose large rewrite leaned heavily on its test suite. That suite was a deliberate human asset, curated over years to encode the desired behaviour of the system. Nothing in this eval touches it. The comparison is not "tests versus no tests"; it is "tests a human specified versus tests a model volunteered."
 
-- **Mutation testing.** Deliberately break the implementation and see whether the suite notices. This measures whether a test can actually detect a fault, which is the only property a test has that matters. A suite that passes a mutation run is doing work; one that does not was always decoration.
-- **Complexity as a guide to coverage.** Point the testing effort at the parts of the system where the logic is genuinely hard, instead of spreading it evenly across code that was never going to break.
+Those two things share a file extension and almost nothing else.
 
-Both of those produce a *smaller* suite that is better integrated with the system. That is a different goal from the one the agent is currently optimising for, which is coverage as a quantity.
+He also dispatches the comfortable objection that this is really a codebase-quality problem. DeepSWE runs on repositories like FastAPI. If the theory is that agents write bad tests because the surrounding code is bad, that theory has to explain FastAPI.
 
-Worth noting what the study explicitly does not cover: the agent wrote almost no end-to-end tests. Seventeen, against more than three thousand unit and integration tests. So none of this says anything about e2e, in either direction.
+## The regression objection, and the answer
 
-## The measurement problem
+Julian Harris raised the strongest challenge: a test protects against the unintended side effects of code you already wrote, so its value shows up on the *next* change. A single-task benchmark would be structurally blind to that.
 
-Julian Harris made the objection that I think lands hardest, and it is not a quibble about methodology — it is about what this kind of benchmark is able to see at all.
+It is the right question, and it turns out it was already covered. The 44-task subset is exactly that experiment — the existing suite disabled wholesale, and the agents caused no more regressions than when it ran.
 
-A test is protection against the unintended side effects of code you already wrote. Its value shows up on the *next* change, and the one after that. It is a claim about the future of a codebase.
+Kun Chen pushes back on the premise too, and I think he is right to. Tests were never only for regressions. TDD was genuinely useful to humans during first-pass development, for years. The interesting thing is not that tests stopped working; it is that **agents do not seem to inherit the benefit humans got from them.** That is worth understanding rather than explaining away.
 
-DeepSWE measures single-task success. Each run is one task, done once. So a regression suite has no opportunity to pay for itself inside the measurement window — not because it is worthless, but because the thing it protects against has not happened yet. You would get this same result from a suite of genuinely excellent tests.
+## Mutation testing is an eval, not a fix
 
-That is not an argument that the finding is wrong. The time and token costs are real, and they are measured correctly. It is an argument about what the finding covers: it tells you what tests cost to produce, and almost nothing about what they save.
+This is where I want to be careful, because Kun Chen pre-empted the move I was about to make — and he is right about the part he is addressing.
 
-Harris is running the benchmark that would actually answer it — an "implement full MVP" setup where the tests run repeatedly across nine stories, with builds that sometimes take more than two days. That shape can see regressions. A single-task eval structurally cannot. His notes are at [boxabirds/awesome-local-ai](https://github.com/boxabirds/awesome-local-ai), and his aside is worth repeating: in his runs, Qwen 3.8 and its peers are the first generation of local models that can hold a job of that length together at all.
+His argument: mutation testing makes your tests sensitive to change, but it cannot tell you whether a change was *intended*. When a test fails, and no human ever asked for that test, you cannot tell whether the code broke the test or the test was wrong. The agent can fix it from either end. Something has to adjudicate, and an LLM-written test is not more trusted than the LLM-written implementation sitting next to it.
 
-## The second-order problem
+That is correct, and it kills mutation testing as a *source of truth*.
 
-Here is the part I have not seen discussed, and I think it matters more than the headline.
+It does not kill it as an **eval**. Those are different jobs.
 
-A test is not only a cost at the moment it is written. It is a cost every time the implementation needs to change.
+Point a mutation run at a suite and it answers one narrow question: if I break the implementation, does anything in here notice? A suite that survives deliberate breakage is provably decoration — it is not testing, it is reassurance. That is worth knowing, cheaply and mechanically, and it is knowable without resolving what the correct behaviour is.
 
-When a change breaks a test, the agent has more work to do. And if the agent is running on a low-effort setting, it will often not do that work. It will look for the shortcut that avoids breaking the test in the first place — a narrower change, a special case, a carve-out — rather than making the correct change and then repairing the test.
+So: mutation testing tells you whether a suite is doing *any* work. It cannot tell you whether the work is the *right* work. Use it to delete, not to trust. Pair it with pointing coverage at genuine complexity rather than spreading it evenly, and you end up with a smaller suite that at least earns its runtime.
 
-So the test did not catch a defect. It *shaped the implementation*, and it shaped it toward the thing that was easiest to leave the suite green. You get a suboptimal result and a passing build, which is the worst available combination because it looks exactly like success.
+Worth noting what none of this covers: the agent wrote almost no end-to-end tests. Seventeen, against more than three thousand unit and integration tests. Kun Chen has an e2e eval running, and until it lands, nobody should claim this says anything about that layer.
 
-Put that next to Harris's point and the pair is more interesting than either alone. He is right that a test earns its keep when the implementation changes. I am saying that is the exact moment a low-effort agent is most likely to subvert it. The payoff and the failure mode arrive on the same event.
+## The real problem is the source of truth
 
-This is a behaviour, not a law. It is the kind of thing we will train and skill our way out of — a model that is better at recognising "this test is now wrong and should be rewritten" rather than treating every red test as an obstacle to route around.
+Strip everything else away and this is what is left.
 
-But that is a future-tense fix, and the behaviour is present-tense.
+A test is an intermediate representation of what you wanted. It is useful precisely to the degree that it encodes an intent that came from somewhere more trustworthy than the code it is checking.
+
+When a human writes the test, that chain holds: intent lives in a person, the test records it, the implementation is measured against it. When the agent writes both halves unprompted, the chain is a loop. You have two artefacts expressing one guess, and a green build that confirms they agree with each other.
+
+Kun Chen's phrasing is blunter than mine: if your source of truth is tests written by agents that nobody asked for or certified, you are in a deep hole.
 
 ## What to do on Monday
 
 Sort your work by what it would cost to be wrong.
 
-For anything genuinely high-risk, the obligation has not changed and the study does not let you off: **understand what the implementation actually does.** Not whether the tests pass — they were written by the same thing that wrote the code. Read the diff. Be able to explain the decision. Treat "I cannot explain this" as the blocker.
+**Stop accepting tests you did not ask for.** If the agent volunteered it, it is not evidence. Either specify the test yourself — because you can articulate the intent better as a case than as a sentence of requirements — or do not carry it.
+
+**For anything high-risk, understand what the implementation does.** Not whether the tests pass; they were written by the same thing that wrote the code. Read the diff. Be able to explain the decision. Treat "I cannot explain this" as the blocker.
+
+**Run mutation testing to find the dead weight**, and delete what it exposes. A smaller suite you trust beats a large one you have never interrogated.
 
 And if you are vibe coding something where the cost of being wrong is an afternoon — just code away. The whole point of sorting by risk is that most work does not need the ceremony, and pretending otherwise is how the ceremony got so expensive in the first place.
 
