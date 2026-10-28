@@ -1,5 +1,28 @@
 [
   {
+    "title": "Software Factories using Google Antigravity",
+    "id": "88",
+    "created": "2026-10-20",
+    "location": "Lahore, Pakistan",
+    "description": "A 20-minute demo: build a simple loop, put skills, hooks, permissions and guardrails around it, then let the harness take one ticket from start to finish.",
+    "audience": 180,
+    "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/gdglahore_pehlaqadam-gdglahore-google-activity-7518907006083276802-Zb3B",
+    "featured": true,
+    "image": "/talks/2026-10-20-software-factories-using-google-antigravity.jpg"
+  },
+  {
+    "title": "Integrating GMA Next Gen SDK",
+    "id": "89",
+    "created": "2026-09-01",
+    "location": "AdMob IgnAiT 2026, Islamabad, Pakistan",
+    "description": "Using Antigravity to wire the AdMob Next Gen SDK into the room's own Android projects, working through the skills the AdMob team ships and what it takes to move an older app onto the new SDK.",
+    "audience": 150,
+    "audienceType": "attended",
+    "slides": "https://docs.google.com/presentation/d/10RlbJ_TxDNBf_kWInsHPwPN_7LO5NPfb/edit",
+    "featured": true
+  },
+  {
     "title": "Agentic Engineering using Antigravity",
     "id": "39",
     "created": "2026-08-22",

@@ -57,6 +57,17 @@ const COMPANIES = [
     tall: true,
   },
   { name: "LUMS", href: "https://www.lums.edu.pk/", logo: "/logos/lums.png", tall: true },
+  // Circle only publishes a white logo for its dark header. The wordmark was
+  // recoloured to near-black so it reads on this canvas; the red ring is theirs.
+  { name: "CIRCLE Women", href: "https://circlewomen.com/", logo: "/logos/circle-women.png" },
+  // No site of their own; the mark is their Instagram avatar, cropped above the
+  // "A project of Safi Benevolent Trust" line, which the square avatar clips.
+  {
+    name: "The Garage School",
+    href: "https://www.instagram.com/thegarageschool_/",
+    logo: "/logos/the-garage-school.png",
+    tall: true,
+  },
   {
     name: "Google Developer Expert (GDE)",
     href: "https://developers.google.com/community/experts",
