@@ -20,7 +20,8 @@
     "audience": 150,
     "audienceType": "attended",
     "slides": "https://docs.google.com/presentation/d/10RlbJ_TxDNBf_kWInsHPwPN_7LO5NPfb/edit",
-    "featured": true
+    "featured": true,
+    "image": "/talks/2026-09-01-integrating-gma-next-gen-sdk.jpg"
   },
   {
     "title": "Agentic Engineering using Antigravity",
