@@ -1,9 +1,22 @@
 [
   {
+    "title": "The Missing Semester for Software 3.0 — The Toolkit",
+    "id": "90",
+    "created": "2026-10-31",
+    "location": "GDG Kolachi, Online",
+    "description": "The tools and workflows shaping Software 3.0, and what it takes to adapt to them. The demo used Antigravity to build a software factory loop, end to end, in 20 minutes.",
+    "audience": 250,
+    "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/forward-deployed-two-part-workshop-2026-ugcPost-7520804041963245568-ebRp",
+    "video": "https://www.youtube.com/watch?v=EsX6MurnkJc",
+    "featured": true,
+    "image": "/talks/2026-10-31-the-missing-semester-for-software-3-0-the-toolkit.jpg"
+  },
+  {
     "title": "Software Factories using Google Antigravity",
     "id": "88",
     "created": "2026-10-20",
-    "location": "Lahore, Pakistan",
+    "location": "Google ThinkApps Pakistan, Lahore, Pakistan",
     "description": "A 20-minute demo: build a simple loop, put skills, hooks, permissions and guardrails around it, then let the harness take one ticket from start to finish.",
     "audience": 180,
     "audienceType": "attended",
