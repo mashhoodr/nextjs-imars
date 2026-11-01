@@ -12,7 +12,8 @@
     "talks:images": "python3 scripts/talk-images.py",
     "talks:missing": "python3 scripts/talk-images.py --list",
     "talks:find": "python3 scripts/talk-images.py --find",
-    "og:images": "node scripts/og-images.mjs"
+    "og:images": "node scripts/og-images.mjs",
+    "adplist:refresh": "node scripts/adplist-refresh.mjs"
   },
   "dependencies": {
     "date-fns": "^3.6.0",

@@ -12,6 +12,7 @@ npm run talks:images    # Process talks-inbox/ into public/talks/ + lib/talks.js
 npm run talks:missing   # List talks that still have no photo
 npm run talks:find -- <words>   # Search all talks; prints the filename to use
 npm run og:images       # Rebuild every social preview into public/og/
+npm run adplist:refresh # Refresh lib/adplist-reviews.json, the committed fallback for the ADPList reviews
 ```
 
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
@@ -40,6 +41,7 @@ The only non-static route is `/sitemap.xml`, which is edge-cached for a day.
 | **Current writing** | `writing/*.md` | The active corpus. Frontmatter contract is documented in `lib/writing.js` |
 | **Blog archive** | `posts/*.md` | 2009–2015, kept for the record. Deliberately low priority in the sitemap |
 | **Talks** | `lib/talks.json` | 85 entries, newest first. 38 carry a photo. The 2023–2026 AI sessions were imported from the Google Developer Expert activity export; frontmatter contract is in `components/talk-item.js` |
+| **Mentorship reviews** | `lib/adplist.js` | Live from ADPList's undocumented API, falling back to the committed `lib/adplist-reviews.json`. The API changed in Oct 2026 and the section vanished until the snapshot was added |
 | **Podcast / Books / Newsletter** | RSS at build time | Anchor.fm, Goodreads, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
 
 Markdown is parsed by a small local `matter()` (regex + the `yaml` package) rather than

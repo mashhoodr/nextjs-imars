@@ -1,0 +1,435 @@
+{
+  "fetchedAt": "2026-11-01T16:25:48.481Z",
+  "reviews": [
+    {
+      "status": "active",
+      "review": "Mashhood gave clear, well-thought-out advice on all my questions and shared great resources to follow up with. Professional, patient, and genuinely helpful. Highly recommended!",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1790188741912,
+      "reviewedBy": "75216e5f761a5a516c346ec2456569ec",
+      "reviewedByUser": {
+        "name": "Abdullah Khali",
+        "title": "Student",
+        "organization": "LUMS"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Mashood has an exceptional grasp of the startup and product ecosystem. Drawing directly from his hands-on experience, he helped me look at my ongoing challenges from an entirely fresh angle. The session provided crucial clarity and truly helped shape my perspective on how to steer this ship forward. I highly recommend booking a session with him",
+      "ratings": {
+        "problemSolving": 5,
+        "subjectKnowledge": 5
+      },
+      "createdOn": 1785925601254,
+      "reviewedBy": "e76a3b09148feaaf0cc74704cb7500f1",
+      "reviewedByUser": {
+        "name": "Hafsa Javed",
+        "title": "Computer System Engineering Student",
+        "organization": "UET Peshawar"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I had an outstanding experience with my mentor, who provided amazing communication and motivation throughout our session. Their deep subject knowledge and exceptional problem-solving skills helped me gain clarity on my questions. I truly appreciate the valuable insights shared, which have significantly enhanced my understanding. I highly recommend booking a session with them if",
+      "ratings": {
+        "problemSolving": 5,
+        "subjectKnowledge": 5
+      },
+      "createdOn": 1779523310432,
+      "reviewedBy": "7c096560c7a354ba31bc39aaa5c77436",
+      "reviewedByUser": {
+        "name": "Muhammad Siraj",
+        "title": "Student",
+        "organization": "Comsats university Islamabad"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I had an outstanding experience with Mashood! His amazing communication skills and deep subject knowledge made our session incredibly valuable. He motivated me throughout our discussion, offering insightful problem-solving strategies that addressed my industry concerns. Mashood's patience and willingness to listen truly set him apart. I highly recommend booking a session",
+      "ratings": {
+        "problemSolving": 5,
+        "subjectKnowledge": 5
+      },
+      "createdOn": 1775038030224,
+      "reviewedBy": "c1e77408f4fd5258ceb1e3d45c11bdb3",
+      "reviewedByUser": {
+        "name": "Nooruddin Bakhtiyar Solangi",
+        "title": "Founder",
+        "organization": "Hexule"
+      }
+    },
+    {
+      "status": "active",
+      "review": "It was an honor speaking with Mr. Mashhood Rastgar.\n\nThank you sincerely for taking the time to share your valuable advice and guidance.\n\nYour insights addressed several challenges we are currently facing in our startup, and helped bring much-needed clarity and direction to our thinking.\n\nWe truly appreciate your openness, practical perspective, and encouragement. \n\nConversations like this are incredibly motivating for early-stage, bootstrap startups like ours.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1770234817995,
+      "reviewedBy": "1626e7a1ed3ce491abeb6607c0bcd64c",
+      "reviewedByUser": {
+        "name": "Meher Ali",
+        "title": "Co-founder",
+        "organization": "Innovation Nexus"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I had another fantastic session with Sir Mashood, whose amazing communication skills truly transformed my perspective on growth and learning. His deep subject knowledge and problem-solving abilities inspired me to push my boundaries and stay motivated. Overall, my experience exceeded all expectations. I highly recommend booking a session with him if you're looking",
+      "ratings": {
+        "problemSolving": 5,
+        "subjectKnowledge": 5
+      },
+      "createdOn": 1763188275060,
+      "reviewedBy": "515c3cd5f2e27f5fade1860232f390da",
+      "reviewedByUser": {
+        "name": "Syed Muhammad Bilal",
+        "title": "Frontend Developer",
+        "organization": "Iqra University"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I appreciate the time spent with my mentor, who offered a unique perspective during our session. Despite some challenges, I gained valuable insights that will support my growth. I recommend considering mentorship with this individual, particularly for those who have clear expectations for an \"Exceed Expectations\" experience. Overall, it was",
+      "ratings": {
+        "problemSolving": 1,
+        "subjectKnowledge": 1
+      },
+      "createdOn": 1754724286057,
+      "reviewedBy": "6f70f4ffcce86fc50dc6ce7364f28a0b",
+      "reviewedByUser": {
+        "name": "MOEED MUGHAL",
+        "title": "Python Developers",
+        "organization": "Zamindar College, GRT"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I had an outstanding session with Mashhood. His amazing communication, motivation, and subject knowledge helped me immensely. I highly recommend booking him if you seek a transformative experience!",
+      "ratings": {
+        "communication": 5,
+        "motivational": 5,
+        "problemSolving": 5,
+        "subjectKnowledge": 5
+      },
+      "createdOn": 1728171703000,
+      "reviewedBy": "d13535ad5ea4f4b746ab73d0b94a4eb8",
+      "reviewedByUser": {
+        "name": "Owais Ahmed",
+        "title": "Student",
+        "organization": "university of London"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Mashood bhae shared his experience and guided me how to approach the problem in a systematic manner. He also gave ideas from his prior experience in working with AI and how far it has evolved.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1741238116941,
+      "reviewedBy": "a113eb1d8f51a542f04a43043f611f19",
+      "reviewedByUser": {
+        "name": "Ashar Haroon",
+        "title": "Lead Enginner",
+        "organization": "Sastaticket.pk"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I attended a session, and it was truly excellent! The instructor explained the concepts clearly, making the session highly engaging and insightful",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1734521566608,
+      "reviewedBy": "c44849ac9ba351e01a9ed88765495814",
+      "reviewedByUser": {
+        "name": "zeeshan yousuf",
+        "title": "Front End Engineer",
+        "organization": "Student"
+      }
+    },
+    {
+      "status": "active",
+      "review": "The mentorship session with Mashood was highly insightful. They offered practical tips on public speaking, emphasized the importance of impactful AI projects and internships, and shared effective networking strategies. The mentor also highlighted key qualities in tech candidates and provided advice on showcasing skills in interviews. Their professional and approachable manner made the session engaging and valuable. Overall, their guidance was outstanding.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1722671676000,
+      "reviewedBy": "1340c1bc0e5e1d450d32551430fc5186",
+      "reviewedByUser": {
+        "name": "Ashhad Ahmed 🇵🇸",
+        "title": "Back-End Developer",
+        "organization": "Tassarct"
+      }
+    },
+    {
+      "status": "active",
+      "review": "My recent ADPList session with Mashhood was incredibly insightful and valuable. Their deep understanding of the tech landscape, particularly in event platforms provided me with a new perspective on the challenges and opportunities I'm facing in my current project. Thanks!",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1718188187000,
+      "reviewedBy": "b5732525ba2a43547a04350db468d22f",
+      "reviewedByUser": {
+        "name": "Melissa Malala",
+        "title": "Data Product Manager",
+        "organization": "Wowzi"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Mashhood is one of the few individuals who deeply understands unit testing, functional testing, ViewModels, and pure functions. He has helped me understand when to mock and when to conduct unit tests. He was very patient and answered all my questions tenfold.\n\n\n\n\n\n\n",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1714815465000,
+      "reviewedBy": "c751f8f162fb5834ea141de4063981b6",
+      "reviewedByUser": {
+        "name": "Abu hasan",
+        "title": "Android Dev",
+        "organization": "UJ"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Mashhood helped me make great choices for my professional journey. He shared advice on expanding my technical knowledge and improving my skill set and points on improving public speaking.\nHigh recommended session. ",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1711533868000,
+      "reviewedBy": "a463cac2327534f6f02563ffbdf92918",
+      "reviewedByUser": {
+        "name": "Muhammad Saad",
+        "title": "Founder",
+        "organization": "Student Abroad"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Amazing class professional and honest mentor\n",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1708762123000,
+      "reviewedBy": "8245a5c2d2215b2ae0241aa938b98b91",
+      "reviewedByUser": {
+        "name": "Haroon Ali",
+        "title": "student",
+        "organization": "school"
+      }
+    },
+    {
+      "status": "active",
+      "review": "In our outstanding online meeting, Mashhood Rastgar, a distinguished Google Developer Expert (GDE) in Angular, provided exceptional guidance throughout the entire process of becoming a GDE. His insights were invaluable, offering a clear roadmap and strategic advice. Mashhood's expertise and commitment were evident as he navigated me through the intricate steps, ensuring a seamless understanding of the GDE journey. His guidance not only demystified the process but also fueled my motivation.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1704277802000,
+      "reviewedBy": "f198d4e32b4c33b9decad35fb55c2812",
+      "reviewedByUser": {
+        "name": "Ali Nawaz",
+        "title": "Software Engineer",
+        "organization": "TensorFlow User Group Islamabad"
+      }
+    },
+    {
+      "status": "active",
+      "review": "This was an amazing session! To begin with, the mentor was super friendly and made me feel at ease to ask even the most basic of questions, while at the same time being extremely proficient in the technical areas we were discussing. In this case, Data Analytics.\n\nAfter demonstrating an issue I wanted help with, we worked our way through the problem together, and even came up with an implemented solution **that was super realistic to the level of scale and complexity that I wanted**\n10/10, easily",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1699256376000,
+      "reviewedBy": "78a44f948b616051b78a96446673284f",
+      "reviewedByUser": {
+        "name": "Brandon Lee",
+        "title": "Software Engineer Intern",
+        "organization": "Tapply"
+      }
+    },
+    {
+      "status": "active",
+      "review": "he's very helpful especially for general mentorship, enjoyed the conversation, hope to connect again :)",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1698478699000,
+      "reviewedBy": "194a1cab54a377cae9cded916a45909b",
+      "reviewedByUser": {
+        "name": "Niko Bellic",
+        "title": "Student",
+        "organization": "Le Wagon"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Mashhood helped me a lot with and helped me see the different angles of my problem.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1697874785000,
+      "reviewedBy": "06a04fafbed46fd869fb6821ba425325",
+      "reviewedByUser": {
+        "name": "Alireza Afzali",
+        "title": "Senior .NET Developer",
+        "organization": "Specific-Group Consulting"
+      }
+    },
+    {
+      "status": "active",
+      "review": "He is an amazing mentor. I scheduled a session about time management. He is very proactive in communication. He gave me a tools, podcasts and really helpful advices.\nThank you.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1693635899000,
+      "reviewedBy": "254b632990a579480a6c99997f899c11",
+      "reviewedByUser": {
+        "name": "Rachel",
+        "title": "Data Driven Solutions Engineer",
+        "organization": "EssilorLuxottica"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I was Confused that Should I Do Degree Or Not. I want to Pursue My Career in Ai. So He Guide Me What Should I Do And What Path I Have to Choose For Becoming Ai Expett. Very Appreciated ",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1692785977000,
+      "reviewedBy": "e0b95ad8be5008bde499e44f88149450",
+      "reviewedByUser": {
+        "name": "Muhammad Wakeel",
+        "title": "Student",
+        "organization": "YouTube"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Really amazing session, Thanks for guiding me, Mashhood!",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1664965011000,
+      "reviewedBy": "a50fc9a107de7c04f13ea86276a596f2",
+      "reviewedByUser": {
+        "name": "Moeed Irfan",
+        "title": "Self-Taught Developer",
+        "organization": "GitHub"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Mashhood is an excellent mentor. He has a wealth of knowledge and experience to share, and he is always willing to help. He is patient and always available to answer any questions I have. I have learned a lot from him, and I really can't thank him enough for all his help and support. and I would highly recommend him to anyone seeking a mentor.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1663762590000,
+      "reviewedBy": "eb777e8677ee384954699fd317baaf8a",
+      "reviewedByUser": {
+        "name": "Ali Muhammad",
+        "title": "Technology Lead",
+        "organization": "Glokals"
+      }
+    },
+    {
+      "status": "active",
+      "review": "Mashood is really active in local tech community and I found the session helpful with respect to clarity he provided me concerning my goals. We discussed about Product Management, Startup Ecosystems and Software Engineering.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1661621305000,
+      "reviewedBy": "cd68913a944e4c1ef8247cdf61ca0d46",
+      "reviewedByUser": {
+        "name": "Mahad Masood Bajwa",
+        "title": "Software Engineering",
+        "organization": "NUST"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I had my first ever mentor call with Mashhood, And there were back to back technical difficulties trying to join the meet which created that nervousness. However Mashhood was calm and forbearing not letting anything affect the \n discussion. He was insightful and shared his wide knowledge base for all the question i had. I understood the things i need to work, practice and learn to move forward. I am grateful for having this highly insightful discussion with him and would highly recommend him.",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1661190668000,
+      "reviewedBy": "be02018c83171d9d0bfaab2b6e2f3704",
+      "reviewedByUser": {
+        "name": "Manikantan Babu",
+        "title": "Sr. Analyst",
+        "organization": "Razorpay"
+      }
+    },
+    {
+      "status": "active",
+      "review": "I just had the session with Mashood bhai. He really helped me out and gave me the exact roadmap on how to start? From where to start? And a lot more. I would highly recommend him 👍. Thanks",
+      "ratings": {
+        "subjectKnowledge": 5,
+        "motivational": 5,
+        "communication": 5,
+        "problemSolving": 5
+      },
+      "createdOn": 1660658426000,
+      "reviewedBy": "666a5ac7730b776e1633e747be0fe2ee",
+      "reviewedByUser": {
+        "name": "Annus Awan",
+        "title": "Student",
+        "organization": null
+      }
+    }
+  ]
+}
