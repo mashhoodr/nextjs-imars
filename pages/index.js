@@ -10,6 +10,7 @@ import { getAdplistReviews } from "../lib/adplist";
 import { socials as SOCIALS } from "../lib/site";
 import { getAllWriting } from "../lib/writing";
 import allTalksData from "../lib/talks.json";
+import linkedinRecs from "../lib/linkedin-recommendations.json";
 import DateUtil from "../components/date";
 import TalkItem from "../components/talk-item";
 
@@ -236,6 +237,31 @@ export default function Home({
             </li>
           ))}
         </ul>
+
+        {/* LinkedIn recommendations, the same card as the mentorship reviews.
+            LinkedIn has no feed to fetch, so lib/linkedin-recommendations.json is
+            a hand-kept copy, verbatim. Only the recent client one is shown: the
+            2013-2016 ones are about earlier work and stay on LinkedIn. The
+            recommender's profile is deliberately not linked, so a client's
+            employer is not one click away. */}
+        {linkedinRecs.recommendations.map(({ id, quote, name: who, title, relationship, date }) => (
+          <figure className={`${utilStyles.reviewCard} ${utilStyles.reviewSolo}`} key={id}>
+            <blockquote className={utilStyles.reviewQuote}>
+              {quote.split("\n\n").map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </blockquote>
+            <figcaption className={utilStyles.reviewWho}>
+              <span className={utilStyles.reviewName}>{who}</span>
+              <small className={utilStyles.meta}>
+                {[title, `${relationship}, ${date.slice(0, 4)}`].join(" · ")} ·{" "}
+                <a href={linkedinRecs.source} target="_blank" rel="noopener noreferrer">
+                  on LinkedIn
+                </a>
+              </small>
+            </figcaption>
+          </figure>
+        ))}
       </Section>
 
       {/* Own articles only. The newsletter feed used to live here, but every

@@ -1210,6 +1210,21 @@
   gap: 2px;
 }
 
+/* A single recommendation outside a grid (#proof). Same card, full column
+   width, with the measure capped so a long line stays readable. */
+.reviewSolo {
+  margin: 24px 0 0;
+  max-width: 44rem;
+}
+
+.reviewSolo .reviewQuote p {
+  margin: 0 0 0.75em;
+}
+
+.reviewSolo .reviewQuote p:last-child {
+  margin-bottom: 0;
+}
+
 .reviewName {
   font-weight: 600;
   font-size: 0.9rem;
