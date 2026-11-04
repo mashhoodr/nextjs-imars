@@ -12,8 +12,8 @@ npm run talks:images    # Process talks-inbox/ into public/talks/ + lib/talks.js
 npm run talks:missing   # List talks that still have no photo
 npm run talks:find -- <words>   # Search all talks; prints the filename to use
 npm run og:images       # Rebuild every social preview into public/og/
-npm run adplist:refresh   # Refresh the committed fallbacks: lib/adplist-reviews.json and
-npm run goodreads:refresh # lib/goodreads-books.json (commit the JSON afterwards)
+npm run adplist:refresh   # Refresh lib/adplist-reviews.json (ADPList fallback)
+npm run goodreads:refresh # Refresh lib/goodreads-books.json (the Reading section; also weekly in CI)
 ```
 
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
@@ -41,7 +41,7 @@ ISR (`revalidate: 3600`) on the homepage so external feeds do not freeze at depl
 | **Blog archive** | `posts/*.md` | 2009–2015, kept for the record. Deliberately low priority in the sitemap |
 | **Talks** | `lib/talks.json` | 85 entries, newest first. 38 carry a photo. The 2023–2026 AI sessions were imported from the Google Developer Expert activity export; frontmatter contract is in `components/talk-item.js` |
 | **Mentorship reviews** | `lib/adplist.js` | Live from ADPList's undocumented API, falling back to the committed `lib/adplist-reviews.json`. The API changed in Oct 2026 and the section vanished until the snapshot was added |
-| **Books** | `lib/goodreads.js` | Goodreads RSS, falling back to the committed `lib/goodreads-books.json`. Goodreads 403s every request since Nov 2026 |
+| **Books** | `lib/goodreads-books.json` | Committed; the site never calls Goodreads (it 403s since Nov 2026). Refreshed weekly by `.github/workflows/refresh-feeds.yml` |
 | **Podcast / Newsletter** | RSS at build time | Anchor.fm, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
 
 Markdown: a small local `matter()` (regex + `yaml`), not gray-matter (pinned a vulnerable js-yaml 3.x); remark + remark-html.

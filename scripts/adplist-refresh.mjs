@@ -29,8 +29,14 @@ const reviews = raw.map((r) => ({
     organization: r.reviewedByUser?.organization || null,
   },
 }));
+const file = new URL("../lib/adplist-reviews.json", import.meta.url);
+// Only rewrite on a real change, so the weekly CI run doesn't commit a new timestamp.
+if (JSON.stringify(JSON.parse(readFileSync(file, "utf8")).reviews) === JSON.stringify(reviews)) {
+  console.log(`lib/adplist-reviews.json: unchanged (${reviews.length} reviews)`);
+  process.exit(0);
+}
 writeFileSync(
-  new URL("../lib/adplist-reviews.json", import.meta.url),
+  file,
   JSON.stringify({ fetchedAt: new Date().toISOString(), reviews }, null, 2) + "\n"
 );
 console.log(`lib/adplist-reviews.json: ${reviews.length} reviews`);

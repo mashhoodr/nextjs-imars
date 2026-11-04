@@ -1,13 +1,16 @@
-// Refresh lib/goodreads-books.json, the committed fallback for the Reading section.
-// Run: npm run goodreads:refresh   (then commit the JSON)
+// Refresh lib/goodreads-books.json, the only source for the Reading section.
+// Run: npm run goodreads:refresh   (weekly by .github/workflows/refresh-feeds.yml)
 //
-// Plain Node can't import lib/goodreads.js (it imports JSON the Next way), so the
-// fetch and mapping are repeated here. Keep them in step with fetchBooks().
+// The site never calls Goodreads; this script is the one place the feed is read.
+// On any failure it exits 1 and leaves the file untouched, so the shelf goes
+// stale rather than empty. It only rewrites the file when the books changed.
 import { readFileSync, writeFileSync } from "node:fs";
 import Parser from "rss-parser";
 
-const lib = readFileSync(new URL("../lib/goodreads.js", import.meta.url), "utf8");
-const feedUrl = lib.match(/"(https:\/\/www\.goodreads\.com\/review\/list_rss\/[^"]+)"/)[1];
+// The shelves are public; the key does not gate anything (see CLAUDE.md, Known issues).
+const feedUrl =
+  "https://www.goodreads.com/review/list_rss/12569798?key=ywAt57wTHuLgaZ2sqPGG4-ZXQoERTHGeDjXaw_3Ewc_moWGp&shelf=read";
+const file = new URL("../lib/goodreads-books.json", import.meta.url);
 const parser = new Parser({
   customFields: {
     item: [
@@ -53,8 +56,13 @@ if (!books.length) {
   console.error("Goodreads returned no books; snapshot left unchanged.");
   process.exit(1);
 }
+const current = JSON.parse(readFileSync(file, "utf8")).books;
+if (JSON.stringify(current) === JSON.stringify(books)) {
+  console.log(`lib/goodreads-books.json: unchanged (${books.length} books)`);
+  process.exit(0);
+}
 writeFileSync(
-  new URL("../lib/goodreads-books.json", import.meta.url),
+  file,
   JSON.stringify({ fetchedAt: new Date().toISOString(), source: "goodreads rss", books }, null, 2) + "\n"
 );
 console.log(`lib/goodreads-books.json: ${books.length} books`);

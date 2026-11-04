@@ -1,0 +1,36 @@
+# Weekly refresh of the committed feed snapshots. A change is committed to
+# master, which Vercel deploys. A blocked or failing feed leaves its file alone.
+name: Refresh feed snapshots
+
+on:
+  schedule:
+    - cron: "17 3 * * 1" # Mondays 03:17 UTC (08:17 PKT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Goodreads
+        run: npm run goodreads:refresh
+        continue-on-error: true
+      - name: ADPList
+        run: npm run adplist:refresh
+        continue-on-error: true
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lib/goodreads-books.json lib/adplist-reviews.json
+          git diff --cached --quiet && { echo "No changes."; exit 0; }
+          git commit -m "chore: refresh feed snapshots"
+          git push
