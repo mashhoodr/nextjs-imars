@@ -12,7 +12,8 @@ npm run talks:images    # Process talks-inbox/ into public/talks/ + lib/talks.js
 npm run talks:missing   # List talks that still have no photo
 npm run talks:find -- <words>   # Search all talks; prints the filename to use
 npm run og:images       # Rebuild every social preview into public/og/
-npm run adplist:refresh # Refresh lib/adplist-reviews.json, the committed fallback for the ADPList reviews
+npm run adplist:refresh   # Refresh the committed fallbacks: lib/adplist-reviews.json and
+npm run goodreads:refresh # lib/goodreads-books.json (commit the JSON afterwards)
 ```
 
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
@@ -25,14 +26,12 @@ key. Accepts HEIC. `talks-inbox/` is gitignored — empty it after the run.
 Landscape art (ratio 1.5–2.4) is used where a page has it; everything else gets
 a typeset card. Rerun after adding a page or changing a title. Needs `sips`.
 
-`node`/`npm` are not on the non-interactive PATH. Prefix commands with:
-`export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"`
+`node`/`npm` are not on the non-interactive PATH. Prefix commands with `export PATH="$HOME/.nvm/versions/node/v24.11.1/bin:$PATH"`
 
 ## Architecture
 
 Next.js 16 (Pages Router) + React 19. Everything is prerendered — SSG for pages,
-ISR (`revalidate: 3600`) on the homepage so external feeds do not freeze at deploy time.
-The only non-static route is `/sitemap.xml`, which is edge-cached for a day.
+ISR (`revalidate: 3600`) on the homepage so external feeds do not freeze at deploy time. The only non-static route is `/sitemap.xml`, edge-cached for a day.
 
 ### Content sources
 
@@ -42,10 +41,10 @@ The only non-static route is `/sitemap.xml`, which is edge-cached for a day.
 | **Blog archive** | `posts/*.md` | 2009–2015, kept for the record. Deliberately low priority in the sitemap |
 | **Talks** | `lib/talks.json` | 85 entries, newest first. 38 carry a photo. The 2023–2026 AI sessions were imported from the Google Developer Expert activity export; frontmatter contract is in `components/talk-item.js` |
 | **Mentorship reviews** | `lib/adplist.js` | Live from ADPList's undocumented API, falling back to the committed `lib/adplist-reviews.json`. The API changed in Oct 2026 and the section vanished until the snapshot was added |
-| **Podcast / Books / Newsletter** | RSS at build time | Anchor.fm, Goodreads, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
+| **Books** | `lib/goodreads.js` | Goodreads RSS, falling back to the committed `lib/goodreads-books.json`. Goodreads 403s every request since Nov 2026 |
+| **Podcast / Newsletter** | RSS at build time | Anchor.fm, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
 
-Markdown is parsed by a small local `matter()` (regex + the `yaml` package) rather than
-gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark-html.
+Markdown: a small local `matter()` (regex + `yaml`), not gray-matter (pinned a vulnerable js-yaml 3.x); remark + remark-html.
 
 ### Key files
 
@@ -88,9 +87,7 @@ gray-matter, which pinned a vulnerable js-yaml 3.x. Rendering is remark + remark
 - The site says "led engineering" at Sastaticket; LinkedIn says CTO. Pick one.
 - Talk photos are 256x256 and the originals are gone, so mobile cards (~348px) upscale
   and look soft. Re-pulling from Advocu is the only fix.
-- 47 of the 85 talks still have no photo; `npm run talks:missing` lists them.
 - No `remark-gfm`, so markdown tables in `writing/*.md` render as literal pipes.
-
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

@@ -1,0 +1,436 @@
+{
+  "fetchedAt": "2026-10-09T20:01:54Z",
+  "source": "web.archive.org snapshot of karachiwala.dev (Goodreads returned 403 on 2026-11-04)",
+  "books": [
+    {
+      "id": "375802",
+      "title": "Ender’s Game (Ender's Saga, #1)",
+      "author": "Orson Scott Card",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802._SY475_.jpg",
+      "rating": 4,
+      "review": "A very interesting story - a bit difficult read if you have kids.",
+      "link": "https://www.goodreads.com/review/show/8863941034",
+      "added": "Sun, 16 Aug 2026 04:34:33 -0700"
+    },
+    {
+      "id": "41804",
+      "title": "I, Robot (Robot, #0.1)",
+      "author": "Isaac Asimov",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1609035271l/41804.jpg",
+      "rating": 5,
+      "review": "An awesome story, a must read for now days - showing how the most intelligent machines could have limitations.",
+      "link": "https://www.goodreads.com/review/show/8863939309",
+      "added": "Sun, 16 Aug 2026 04:33:27 -0700"
+    },
+    {
+      "id": "18176747",
+      "title": "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers―Straight Talk on the Challenges of Entrepreneurship",
+      "author": "Ben Horowitz",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386609333l/18176747.jpg",
+      "rating": 5,
+      "review": "A classic read on the reality of entrepreneurship and building startups",
+      "link": "https://www.goodreads.com/review/show/8858353077",
+      "added": "Fri, 14 Aug 2026 01:14:59 -0700"
+    },
+    {
+      "id": "50748232",
+      "title": "The Innovation Stack: Building an Unbeatable Business One Crazy Idea at a Time",
+      "author": "Jim McKelvey",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576629144l/50748232._SX318_SY475_.jpg",
+      "rating": 4,
+      "review": "The great secrets shared by different startups on how to look at innovation in a slightly different way",
+      "link": "https://www.goodreads.com/review/show/8858352241",
+      "added": "Fri, 14 Aug 2026 01:14:09 -0700"
+    },
+    {
+      "id": "224082571",
+      "title": "Strong Ground: The Lessons of Daring Leadership, the Tenacity of Paradox, and the Wisdom of the Human Spirit",
+      "author": "Brené Brown",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1755053739l/224082571._SY475_.jpg",
+      "rating": 5,
+      "review": "A great read as a follow-up to all her previous books, which help you dive deeper into understanding vulnerability and how to master it.",
+      "link": "https://www.goodreads.com/review/show/8858351541",
+      "added": "Fri, 14 Aug 2026 01:13:34 -0700"
+    },
+    {
+      "id": "99315",
+      "title": "A Whole New Mind: Why Right-Brainers Will Rule the Future",
+      "author": "Daniel H. Pink",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309284710l/99315.jpg",
+      "rating": 4,
+      "review": "A great read for those wondering, when AI takes over everything, what is left for us humans to do.",
+      "link": "https://www.goodreads.com/review/show/8858350981",
+      "added": "Fri, 14 Aug 2026 01:12:55 -0700"
+    },
+    {
+      "id": "214666632",
+      "title": "The Philosopher in the Valley: Alex Karp, Palantir and the Rise of the Surveillance State",
+      "author": "Michael Steinberger",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1757600370l/214666632._SY475_.jpg",
+      "rating": 4,
+      "review": "Really enjoy the story of Palantir and how they have been building their brand and the challenges they have been facing.",
+      "link": "https://www.goodreads.com/review/show/8858350339",
+      "added": "Fri, 14 Aug 2026 01:12:24 -0700"
+    },
+    {
+      "id": "241434373",
+      "title": "The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+      "author": "Sebastian Mallaby",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1759148143l/241434373._SY475_.jpg",
+      "rating": 4,
+      "review": "A really captivating book that shares all of the details about Demis and DeepMind.",
+      "link": "https://www.goodreads.com/review/show/8858349634",
+      "added": "Fri, 14 Aug 2026 01:11:41 -0700"
+    },
+    {
+      "id": "242970642",
+      "title": "Incorruptible: Why Good Companies Go Bad... and How Great Companies Stay Great",
+      "author": "Eric Ries",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1778218103l/242970642._SX318_.jpg",
+      "rating": 5,
+      "review": "A great read to understand what are the things to keep in mind when you are taking your company to the next stage.",
+      "link": "https://www.goodreads.com/review/show/8858348999",
+      "added": "Fri, 14 Aug 2026 01:10:53 -0700"
+    },
+    {
+      "id": "44135420",
+      "title": "Team Topologies: Organizing Business and Technology Teams for Fast Flow",
+      "author": "Matthew    Skelton",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563409554l/44135420.jpg",
+      "rating": 5,
+      "review": "A classic book that helps us understand how to optimize teams for collaboration and delivery.",
+      "link": "https://www.goodreads.com/review/show/8858348241",
+      "added": "Fri, 14 Aug 2026 01:10:06 -0700"
+    },
+    {
+      "id": "63063173",
+      "title": "Scaling People: Tactics for Management and Company Building",
+      "author": "Claire Hughes Johnson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1676853747l/63063173.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/8051496911",
+      "added": "Thu, 06 Nov 2025 21:56:10 -0800"
+    },
+    {
+      "id": "52153407",
+      "title": "The HeART of Laser-Focused Coaching: A Revolutionary Approach to Masterful Coaching",
+      "author": "Marion Franklin",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1569903404l/52153407._SX318_SY475_.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/8051496118",
+      "added": "Thu, 06 Nov 2025 21:55:28 -0800"
+    },
+    {
+      "id": "211399783",
+      "title": "The Thinking Machine: Jensen Huang, Nvidia, and the World's Most Coveted Microchip",
+      "author": "Stephen   Witt",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1741381542l/211399783._SY475_.jpg",
+      "rating": 0,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/8051495320",
+      "added": "Thu, 06 Nov 2025 21:54:45 -0800"
+    },
+    {
+      "id": "3828902",
+      "title": "Thinking In Systems: A Primer",
+      "author": "Donella H. Meadows",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390169859l/3828902.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4835153318",
+      "added": "Thu, 06 Nov 2025 21:54:19 -0800"
+    },
+    {
+      "id": "25967971",
+      "title": "Be Our Guest: Perfecting the Art of Customer Service",
+      "author": "Walt Disney Company",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437708244l/25967971._SX318_.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833592048",
+      "added": "Wed, 14 May 2025 09:14:47 -0700"
+    },
+    {
+      "id": "21343",
+      "title": "The Five Dysfunctions of a Team",
+      "author": "Patrick Lencioni",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400841022l/21343.jpg",
+      "rating": 4,
+      "review": "An excellent story outlining how to identify a broken team, and work with them to bring it back together. Excellent actionable points, helped me better understand my team as well.",
+      "link": "https://www.goodreads.com/review/show/4936003188",
+      "added": "Sun, 21 Aug 2022 21:20:31 -0700"
+    },
+    {
+      "id": "44333183",
+      "title": "The Unicorn Project",
+      "author": "Gene Kim",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566877586l/44333183.jpg",
+      "rating": 4,
+      "review": "Really enjoyed this story of building leadership, and getting things done when everything around you just isnt working out.",
+      "link": "https://www.goodreads.com/review/show/4936001132",
+      "added": "Sun, 21 Aug 2022 21:19:28 -0700"
+    },
+    {
+      "id": "39101777",
+      "title": "Surrounded by Idiots",
+      "author": "Thomas Erikson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583763517l/39101777._SX318_.jpg",
+      "rating": 4,
+      "review": "Awesome perspective on how different people think / act different. Helped me understand why I struggled to work with some people and was completely in sync with others.",
+      "link": "https://www.goodreads.com/review/show/4899221889",
+      "added": "Sat, 06 Aug 2022 02:10:29 -0700"
+    },
+    {
+      "id": "45303387",
+      "title": "An Elegant Puzzle: Systems of Engineering Management",
+      "author": "Will Larson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556221385l/45303387._SX318_.jpg",
+      "rating": 4,
+      "review": "Really enjoyed the perspectives shared in this book - not only does it allow you to better understand how different teams are coming together and working, but also works as a reference book when you are running into specific challenges!",
+      "link": "https://www.goodreads.com/review/show/4835153861",
+      "added": "Fri, 08 Jul 2022 22:45:50 -0700"
+    },
+    {
+      "id": "36417234",
+      "title": "Powerful: Building a Culture of Freedom and Responsibility",
+      "author": "Patty McCord",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1508080358l/36417234._SY475_.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833595164",
+      "added": "Fri, 08 Jul 2022 06:24:23 -0700"
+    },
+    {
+      "id": "23848190",
+      "title": "Extreme Ownership: How U.S. Navy SEALs Lead and Win",
+      "author": "Jocko Willink",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1427163007l/23848190.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833591252",
+      "added": "Fri, 08 Jul 2022 06:21:38 -0700"
+    },
+    {
+      "id": "8520610",
+      "title": "Quiet: The Power of Introverts in a World That Can't Stop Talking",
+      "author": "Susan Cain",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328562861l/8520610.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833590358",
+      "added": "Fri, 08 Jul 2022 06:21:01 -0700"
+    },
+    {
+      "id": "40102",
+      "title": "Blink: The Power of Thinking Without Thinking",
+      "author": "Malcolm Gladwell",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1440763417l/40102._SX318_.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833590244",
+      "added": "Fri, 08 Jul 2022 06:20:56 -0700"
+    },
+    {
+      "id": "11468377",
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317793965l/11468377.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833590033",
+      "added": "Fri, 08 Jul 2022 06:20:48 -0700"
+    },
+    {
+      "id": "69571",
+      "title": "Rich Dad Poor Dad: What the Rich Teach Their Kids About Money—That the Poor and Middle Class Do Not!",
+      "author": "Robert T. Kiyosaki",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1757619021l/69571._SY475_.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833589518",
+      "added": "Fri, 08 Jul 2022 06:20:26 -0700"
+    },
+    {
+      "id": "7108725",
+      "title": "Start with Why: How Great Leaders Inspire Everyone to Take Action",
+      "author": "Simon Sinek",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360936414l/7108725.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833589310",
+      "added": "Fri, 08 Jul 2022 06:20:17 -0700"
+    },
+    {
+      "id": "36072",
+      "title": "The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change",
+      "author": "Stephen R. Covey",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421842784l/36072.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833589258",
+      "added": "Fri, 08 Jul 2022 06:20:15 -0700"
+    },
+    {
+      "id": "40121378",
+      "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+      "author": "James Clear",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1655988385l/40121378.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833588691",
+      "added": "Fri, 08 Jul 2022 06:19:51 -0700"
+    },
+    {
+      "id": "10127019",
+      "title": "The Lean Startup",
+      "author": "Eric Ries",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1629999184l/10127019._SY475_.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833588356",
+      "added": "Fri, 08 Jul 2022 06:19:37 -0700"
+    },
+    {
+      "id": "18050143",
+      "title": "Zero to One: Notes on Startups, or How to Build the Future",
+      "author": "Peter Thiel",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630663027l/18050143.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/4833588277",
+      "added": "Fri, 08 Jul 2022 06:19:33 -0700"
+    },
+    {
+      "id": "11125",
+      "title": "Digital Fortress",
+      "author": "Dan    Brown",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360095966l/11125.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408311628",
+      "added": "Wed, 05 Sep 2012 22:54:20 -0700"
+    },
+    {
+      "id": "976",
+      "title": "Deception Point",
+      "author": "Dan    Brown",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1551277487l/976._SY475_.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408311622",
+      "added": "Wed, 05 Sep 2012 22:54:19 -0700"
+    },
+    {
+      "id": "4866",
+      "title": "How to Stop Worrying and Start Living: Time-Tested Methods for Conquering Worry",
+      "author": "Dale Carnegie",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442129098l/4866._SY475_.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408311436",
+      "added": "Wed, 05 Sep 2012 22:53:25 -0700"
+    },
+    {
+      "id": "4894",
+      "title": "Who Moved My Cheese?",
+      "author": "Spencer Johnson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388639717l/4894.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408311320",
+      "added": "Wed, 05 Sep 2012 22:53:10 -0700"
+    },
+    {
+      "id": "4865",
+      "title": "How to Win Friends & Influence People",
+      "author": "Dale Carnegie",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442726934l/4865._SY475_.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408311306",
+      "added": "Wed, 05 Sep 2012 22:53:06 -0700"
+    },
+    {
+      "id": "2623",
+      "title": "Great Expectations",
+      "author": "Charles Dickens",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1631687432l/2623._SY475_.jpg",
+      "rating": 1,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408311139",
+      "added": "Wed, 05 Sep 2012 22:52:33 -0700"
+    },
+    {
+      "id": "41865",
+      "title": "Twilight (The Twilight Saga, #1)",
+      "author": "Stephenie Meyer",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1700522826l/41865._SY475_.jpg",
+      "rating": 1,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408310935",
+      "added": "Wed, 05 Sep 2012 22:51:54 -0700"
+    },
+    {
+      "id": "3",
+      "title": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)",
+      "author": "J.K. Rowling",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474154022l/3._SY475_.jpg",
+      "rating": 3,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408310831",
+      "added": "Wed, 05 Sep 2012 22:51:32 -0700"
+    },
+    {
+      "id": "2767052",
+      "title": "The Hunger Games (The Hunger Games, #1)",
+      "author": "Suzanne Collins",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722975l/2767052._SY475_.jpg",
+      "rating": 1,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408310819",
+      "added": "Wed, 05 Sep 2012 22:51:29 -0700"
+    },
+    {
+      "id": "960",
+      "title": "Angels & Demons (Robert Langdon, #1)",
+      "author": "Dan    Brown",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696691404l/960._SY475_.jpg",
+      "rating": 4,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408310740",
+      "added": "Wed, 05 Sep 2012 22:51:13 -0700"
+    },
+    {
+      "id": "641604",
+      "title": "Purple Cow: Transform Your Business by Being Remarkable",
+      "author": "Seth Godin",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309203098l/641604.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408310551",
+      "added": "Wed, 05 Sep 2012 22:50:32 -0700"
+    },
+    {
+      "id": "1911",
+      "title": "The World Is Flat: A Brief History of the Twenty-first Century",
+      "author": "Thomas L. Friedman",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442191453l/1911._SY475_.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408310496",
+      "added": "Wed, 05 Sep 2012 22:50:18 -0700"
+    },
+    {
+      "id": "11084145",
+      "title": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1511288482l/11084145._SY475_.jpg",
+      "rating": 5,
+      "review": "",
+      "link": "https://www.goodreads.com/review/show/408310384",
+      "added": "Wed, 05 Sep 2012 22:49:50 -0700"
+    }
+  ]
+}

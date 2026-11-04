@@ -13,7 +13,8 @@
     "talks:missing": "python3 scripts/talk-images.py --list",
     "talks:find": "python3 scripts/talk-images.py --find",
     "og:images": "node scripts/og-images.mjs",
-    "adplist:refresh": "node scripts/adplist-refresh.mjs"
+    "adplist:refresh": "node scripts/adplist-refresh.mjs",
+    "goodreads:refresh": "node scripts/goodreads-refresh.mjs"
   },
   "dependencies": {
     "date-fns": "^3.6.0",
