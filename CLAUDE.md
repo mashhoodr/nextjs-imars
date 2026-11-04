@@ -12,8 +12,8 @@ npm run talks:images    # Process talks-inbox/ into public/talks/ + lib/talks.js
 npm run talks:missing   # List talks that still have no photo
 npm run talks:find -- <words>   # Search all talks; prints the filename to use
 npm run og:images       # Rebuild every social preview into public/og/
-npm run adplist:refresh   # Refresh lib/adplist-reviews.json (ADPList fallback)
-npm run goodreads:refresh # Refresh lib/goodreads-books.json (the Reading section; also weekly in CI)
+npm run adplist:refresh # Refresh a feed snapshot (also podcast:, goodreads:); weekly in CI
+npm run check:sections -- [url]  # Every homepage section present with content (daily in CI)
 ```
 
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
@@ -42,7 +42,7 @@ ISR (`revalidate: 3600`) on the homepage so external feeds do not freeze at depl
 | **Talks** | `lib/talks.json` | 85 entries, newest first. 38 carry a photo. The 2023–2026 AI sessions were imported from the Google Developer Expert activity export; frontmatter contract is in `components/talk-item.js` |
 | **Mentorship reviews** | `lib/adplist.js` | Live from ADPList's undocumented API, falling back to the committed `lib/adplist-reviews.json`. The API changed in Oct 2026 and the section vanished until the snapshot was added |
 | **Books** | `lib/goodreads-books.json` | Committed; the site never calls Goodreads (it 403s since Nov 2026). Refreshed weekly by `.github/workflows/refresh-feeds.yml` |
-| **Podcast / Newsletter** | RSS at build time | Anchor.fm, Substack. Each fetcher swallows errors and returns `[]` so a feed outage cannot fail the build |
+| **Podcast** | `lib/podcast.js` | Anchor RSS live (ISR), falling back to the committed `lib/podcast-episodes.json` |
 
 Markdown: a small local `matter()` (regex + `yaml`), not gray-matter (pinned a vulnerable js-yaml 3.x); remark + remark-html.
 
@@ -62,6 +62,7 @@ Markdown: a small local `matter()` (regex + `yaml`), not gray-matter (pinned a v
 
 - **British English** (`lang="en-GB"`). Em dashes are house style here; the LinkedIn
   drafts in `notes/` avoid them on purpose.
+- **No empty sections.** `lib/section-checks.js` throws in `getStaticProps` if one is empty: the build fails, ISR keeps the last good page.
 - **Accessibility is a gate.** Every page scores 100 on all four Lighthouse categories
   on desktop; mobile Performance is 97+. Verify before shipping.
 - **No third-party scripts.** 68 bytes of third-party code, LCP ~124ms. Embeds would
@@ -69,11 +70,9 @@ Markdown: a small local `matter()` (regex + `yaml`), not gray-matter (pinned a v
   **click-to-load facade** in `components/linkedin-video.js`: a local poster ships, the
   iframe is injected on click (0 third-party requests on load, CLS 0). Any future embed
   uses that pattern or none.
-- **Images ship at the size they render at.** Lighthouse's mobile run simulates
-  slow 4G, so total byte weight sets LCP more than anything on the main thread.
-  The homepage was 485 KiB because `profile.jpg` was 768px for a 144px box and
-  the logos were 24-bit PNGs up to 6x oversized; resizing and palette-quantising
-  took it to 294 KiB and mobile Performance from 93 to 97. Check an asset's
+- **Images ship at the size they render at.** Mobile Lighthouse simulates slow 4G, so
+  byte weight sets LCP. Resizing oversized `profile.jpg` and logos took the homepage
+  from 485 to 294 KiB and mobile Performance from 93 to 97. Check an asset's
   pixel size against its rendered size before adding it. Two traps: the logo wall
   is greyscaled by CSS but `:hover` restores colour, so do **not** bake greyscale
   in; and `contour.svg` is a base64 raster in an SVG wrapper.

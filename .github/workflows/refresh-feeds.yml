@@ -23,6 +23,9 @@ jobs:
       - name: Goodreads
         run: npm run goodreads:refresh
         continue-on-error: true
+      - name: Podcast
+        run: npm run podcast:refresh
+        continue-on-error: true
       - name: ADPList
         run: npm run adplist:refresh
         continue-on-error: true
@@ -30,7 +33,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lib/goodreads-books.json lib/adplist-reviews.json
+          git add lib/goodreads-books.json lib/adplist-reviews.json lib/podcast-episodes.json
           git diff --cached --quiet && { echo "No changes."; exit 0; }
           git commit -m "chore: refresh feed snapshots"
           git push

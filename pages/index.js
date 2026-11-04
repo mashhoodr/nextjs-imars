@@ -11,6 +11,7 @@ import { socials as SOCIALS } from "../lib/site";
 import { getAllWriting } from "../lib/writing";
 import allTalksData from "../lib/talks.json";
 import linkedinRecs from "../lib/linkedin-recommendations.json";
+import { assertSections } from "../lib/section-checks";
 import DateUtil from "../components/date";
 import TalkItem from "../components/talk-item";
 
@@ -538,18 +539,22 @@ export async function getStaticProps() {
     .filter(({ featured, created }) => featured && created >= RECENT_TALKS_FROM)
     .slice(0, 6);
 
+  const props = {
+    allPostsData,
+    allPodcastData,
+    allBooksReadData,
+    adplist,
+    ownWriting,
+    recentTalks,
+    // Rendered in the "all N talks" link, so the count cannot drift from the
+    // catalogue the way a hardcoded number would.
+    totalTalks: allTalksData.length,
+  };
+  // An empty section fails the build, or keeps the last good page under ISR.
+  assertSections({ ...props, linkedinRecs });
+
   return {
-    props: {
-      allPostsData,
-      allPodcastData,
-      allBooksReadData,
-      adplist,
-          ownWriting,
-      recentTalks,
-      // Rendered in the "all N talks" link, so the count cannot drift from the
-      // catalogue the way a hardcoded number would.
-      totalTalks: allTalksData.length,
-    },
+    props,
     // External feeds are fetched at build time, so without this the podcast and
     // newsletter lists freeze at whenever the site was last deployed.
     revalidate: 3600,

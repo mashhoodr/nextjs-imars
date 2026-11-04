@@ -1,0 +1,27 @@
+# Checks that every homepage section is present and has content
+# (scripts/check-sections.mjs). A failure emails the repo owner.
+# Runs after each production deployment and daily, because an hourly ISR
+# regeneration can change the page without a deployment.
+name: Check homepage sections
+
+on:
+  deployment_status:
+  schedule:
+    - cron: "41 4 * * *" # daily 04:41 UTC (09:41 PKT)
+  workflow_dispatch:
+
+jobs:
+  check:
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # Production deployment URLs can sit behind Vercel's deployment protection,
+      # so the check reads the public domain the deployment was just aliased to.
+      - run: node scripts/check-sections.mjs https://karachiwala.dev

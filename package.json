@@ -14,7 +14,9 @@
     "talks:find": "python3 scripts/talk-images.py --find",
     "og:images": "node scripts/og-images.mjs",
     "adplist:refresh": "node scripts/adplist-refresh.mjs",
-    "goodreads:refresh": "node scripts/goodreads-refresh.mjs"
+    "goodreads:refresh": "node scripts/goodreads-refresh.mjs",
+    "podcast:refresh": "node scripts/podcast-refresh.mjs",
+    "check:sections": "node scripts/check-sections.mjs"
   },
   "dependencies": {
     "date-fns": "^3.6.0",

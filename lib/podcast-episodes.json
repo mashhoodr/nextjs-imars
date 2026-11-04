@@ -1,0 +1,85 @@
+{
+  "fetchedAt": "2026-11-04T06:56:33.269Z",
+  "episodes": [
+    {
+      "id": "dd646f23-6ca3-428b-b3ad-6281c2833bed",
+      "title": "Software Factories When You're Not an Engineer",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Software-Factories-When-Youre-Not-an-Engineer-e3ri51u",
+      "description": "A builder without a technical background asked how to make software factories actually work. My answer is simpler than a better harness: build your understanding as you go. Every instruction is a chance to learn — ask the agent what it did, why, what the alternatives were. Good skills will carry a prototype a long way, but systems that last need you to understand how they're designed.\nQuestion: I want to move toward software factories because people talk about them a lot, but I can't seem to use them properly — is it worth it, and how do I build a workflow that makes sense?\nIn this episode:\n\nThe question: why software factories don't work for a non-technical builder yet\nStep in with curiosity and a learning mindset\nEvery instruction is a chance to learn: what did you do, why, what are the alternatives, pros and cons?\nDepth comes with time: data models, REST APIs, data storage, encryption, authentication\nSkills and a good harness carry a prototype a long way — look at what Matt Pocock and Addy Osmani share\nSystems that last need an understanding of system design, and sometimes the code\n\nRelated episodes:\n\nThe Shifting Role of the Developer: From Writing Code to Writing Specs\nFrom Coder to Architect: The Power of the Producer Mindset\nThe AI Autonomy Paradox: Why Software Engineers Must Unlearn \"Control\"\nAgentic Transformation Concept: Progressive Disclosure\n\nHave a question? Reach out on LinkedIn or Twitter.",
+      "created": "Sun, 01 Nov 2026 17:14:21 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1793553228760-c3e7fb7f62a47.jpg"
+    },
+    {
+      "id": "7e587c81-884c-45e0-8add-76cdac463926",
+      "title": "Depth or Breadth? What New Engineers Should Focus On",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Depth-or-Breadth--What-New-Engineers-Should-Focus-On-e3ri4o1",
+      "description": "A question from a young engineer: should you build depth or breadth in a market nobody can predict? I start with a different question — what kind of work do you actually enjoy? — then walk through where depth still matters (the AI frontier, trillion-dollar systems like Stripe, formal verification) and why breadth roles are becoming outcome-focused. My answer: try both, practise relentlessly, and set outcome-based targets for yourself.\nQuestion: Should new software engineers focus on fundamentals or other things — depth or breadth — to succeed in an unpredictable market?\nIn this episode:\n\nStart with what kind of work you enjoy — not everyone fits every path\nWhy most people will be a better fit for breadth roles\nWhere depth lives: model training, security, compute optimisation, and the ML frontier\nComplex systems at Stripe's scale need domain + technical depth to stay verified\nFormal verification: a new field that will demand depth\nBreadth = learning new domains fast; roles judged on pure outcomes\nSales, marketing, product, design — learn them on the go, deploy, get feedback\nThe open question: how do juniors build depth when AI does the work?\nPractice, critical and Socratic thinking, and outcome-based targets apply to both paths\n\nRelated episodes:\n\nAre you a T-Shaped Developer?\nWhats makes a good software engineer?\nStop Reviewing Code, Start Reviewing Tests: TDD in the Age of AI\nThe Shifting Role of the Developer: From Writing Code to Writing Specs\n\nHave a question? Reach out on LinkedIn or Twitter.",
+      "created": "Sun, 01 Nov 2026 17:07:14 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1793552726906-15128a256ba09.jpg"
+    },
+    {
+      "id": "24ae4602-90da-4031-85f0-5e1267bfa531",
+      "title": "What Forward-Deployed Engineering Actually Looks Like",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/What-Forward-Deployed-Engineering-Actually-Looks-Like-e3ri3i0",
+      "description": "\"Forward-deployed engineer\" is the title everyone wants. I share what it actually looked like for me: two weeks sitting in a field office that runs 200 schools, taking phone-call tasks about broken solar panels and missing teachers — and building tools in the afternoons until the coordinator asked to use them. Recorded live at a community session on agentic engineering (Urdu/English).\nQuestion: Is forward-deployed engineering a real role — and what does it actually look like?\nIn this episode:\n\nFDE is a company engineering role, not a freelance gig — and titles get abused\nThe field office story: arrive with a blank slate, do whatever work they hand you\nBuilding on Replit from 2–6pm, using the tool yourself the next day, gaining your first user\nTwo intense weeks that ended in a contract\n\nRelated episodes:\n\nAgentic Transformation: My Story\nThe Shifting Role of the Developer: From Writing Code to Writing Specs\n\nHave a question? Reach out on LinkedIn or Twitter.",
+      "created": "Sun, 01 Nov 2026 16:35:24 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1793552987396-578e1207d9901.jpg"
+    },
+    {
+      "id": "dcbcc361-2a6d-465d-8cf5-2a57230f7870",
+      "title": "Is This the Last Era of Software Engineering?",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Is-This-the-Last-Era-of-Software-Engineering-e3rhkal",
+      "description": "Every generation of engineers has been told their craft is ending — assembly to C, C to Java, Java to Python. Using the story of photography, I argue AI won't end software engineering; it will turn far more people into builders and change what the job looks like. Recorded live at a community session on agentic engineering (Urdu/English).\nQuestion: Do you think this is the last era of software engineering?\nIn this episode:\n\nAssembly → C → C++/Java → Python: each shift was called the end of real programming\nThe photographer analogy: cameras in every pocket, yet more photographers employed than ever\nBuilders go from ~5% of the world to maybe 40% — imagine how much software that creates\nThe job changes; it doesn't disappear\n\nRelated episodes:\n\nLLMs: Are AI Software Engineers ready to take over?\nThe AI Code Revolution: What Developers Need to Know\nAgentic Transformation: My Story\nThe Shifting Role of the Developer: From Writing Code to Writing Specs\n\nHave a question? Reach out on LinkedIn or Twitter.",
+      "created": "Sun, 01 Nov 2026 10:44:51 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1793552895586-957c84a3b4b51.jpg"
+    },
+    {
+      "id": "16e0690b-f08e-40fb-bb22-565e268eddd6",
+      "title": "The Shifting Role of the Developer: From Writing Code to Writing Specs",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/The-Shifting-Role-of-the-Developer-From-Writing-Code-to-Writing-Specs-e3i1g52",
+      "description": "Have you ever asked an AI to build something, only to realize it built the exact wrong thing? AI is incredible at generating code, but it lacks human judgment.\nIn this episode, I share the story of building an internal AI coaching bot called \"Jugnu.\" My first attempt failed completely because I relied on the AI's judgment instead of doing the research myself. I quickly learned that the most successful AI developers spend 90% of their time researching, planning, and writing specs before they ever type a prompt.\nJoin me as we explore how the role of the software engineer is merging with the product manager, the death of \"un-used software,\" and the exact frameworks and tools (like NotebookLM and Superpowers) you can use to master AI-assisted development.",
+      "created": "Fri, 17 Apr 2026 04:09:43 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1776398969268-8c2e9e67c5c6e.jpg"
+    },
+    {
+      "id": "a03734f3-5232-41ad-843c-e61256722c55",
+      "title": "Stop Reviewing Code, Start Reviewing Tests: TDD in the Age of AI",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Stop-Reviewing-Code--Start-Reviewing-Tests-TDD-in-the-Age-of-AI-e3hlndt",
+      "description": "As AI agents become capable of rewriting entire C compilers and Next.js repositories in days, the value of software is shifting away from the code itself. If LLMs write probabilistic code, how do you guarantee deterministic results? The answer: Tests. In this episode, we argue that developers need to stop agonizing over AI-generated implementation code and instead double down on writing, reviewing, and curating rigorous test suites. Learn why some open-source projects are actually closing their test repos, and how adopting an Architect mindset will unlock true AI autonomy in your workflow.",
+      "created": "Thu, 09 Apr 2026 15:44:03 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1775749269862-649edb656fc1f.jpg"
+    },
+    {
+      "id": "768a775c-4662-4d92-b1e3-7376e6b2eed5",
+      "title": "From Coder to Architect: The Power of the Producer Mindset",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/From-Coder-to-Architect-The-Power-of-the-Producer-Mindset-e3h0b1d",
+      "description": "The role of the developer is changing. In this episode, we discuss how to stop being a \"consumer\" of AI prompts and start becoming a \"producer\" of AI systems. By shifting your focus from writing code to designing autonomous loops and persistent architectures, you can move up the ladder of value and start steering the future of software development.",
+      "created": "Fri, 03 Apr 2026 01:36:03 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1775180149291-f0f10d6df48a9.jpg"
+    },
+    {
+      "id": "b0059668-f08b-43bb-b5ac-bb98948b22db",
+      "title": "The AI Autonomy Paradox: Why Software Engineers Must Unlearn \"Control\"",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/The-AI-Autonomy-Paradox-Why-Software-Engineers-Must-Unlearn-Control-e3h0j3c",
+      "description": "As software engineers, we are trained to control every detail—from code formatting to system architecture. But autonomous AI demands the exact opposite. In this episode, we discuss the \"Autonomy Paradox.\" Learn why enforcing arbitrary rules on AI agents causes them to fail, and how shifting your focus from \"how it's built\" to \"what it achieves\" is the key to unlocking next-generation development.",
+      "created": "Thu, 26 Mar 2026 15:10:21 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1774537790107-8fe9816be7d07.jpg"
+    },
+    {
+      "id": "239ce67d-7c8b-440f-89f9-95e13bcc7a96",
+      "title": "Agentic Transformation Concept: Progressive Disclosure",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Agentic-Transformation-Concept-Progressive-Disclosure-e3gchhu",
+      "description": "If you are dumping your entire codebase into Claude or Gemini and hoping for the best, you are doing it wrong.\nIn today's episode, we tackle Context Engineering. AI agents have short-term memory (the Goldfish Problem) and limited Context Windows. If you fill that window with unnecessary data or heavy MCPs, the AI's performance drops drastically.\nTune in to learn how to structure your information using Agent files, Skill files, and Rule files. We also break down advanced strategies like Progressive Disclosure (only giving the AI what it needs, when it needs it) and using Sub-Agents to keep your main context window clean.",
+      "created": "Fri, 13 Mar 2026 06:25:39 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1773383115544-02651378eb0b6.jpg"
+    },
+    {
+      "id": "61c4bb1a-aa2f-40f3-aba0-fdd33a2face1",
+      "title": "Agentic Transformation: My Story",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Agentic-Transformation-My-Story-e3g0rpk",
+      "description": "In this episode, I share a personal story of building an ERP system with AI in the field, and how it forced me to confront the \"5 Stages of Grief\" as a veteran software developer. The way we have written code for the last 20 years is ending. To survive, we have to unlearn our \"deterministic\" mindsets and adopt new mental models for a non-deterministic world. Join me as we kick off a brand new series on the foundational literacy required for the future of tech.",
+      "created": "Fri, 06 Mar 2026 03:32:46 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1772767928872-7fda6e6014f85.jpg"
+    }
+  ]
+}
