@@ -398,7 +398,7 @@ export default function Home({
           towards a triathlon.
         </p>
 
-        <p className={utilStyles.subheading}>Reading</p>
+        <p className={utilStyles.subheading} id="books">Reading</p>
         {/* Two columns of covers. Only 4 of 33 books on the shelf have a review,
             so the rating carries most entries and the review appears when there
             is one. The publisher blurb the old markup rendered is gone: it read

@@ -26,6 +26,8 @@ export const SECTIONS = [
   { id: "talks", label: "Talks" },
   { id: "mentorship", label: "Mentorship" },
   { id: "about", label: "About" },
+  // Not a <Section>: the Reading subheading inside About carries this id.
+  { id: "books", label: "Books" },
 ];
 
 /**
