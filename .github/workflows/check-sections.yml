@@ -1,13 +1,10 @@
 # Checks that every homepage section is present and has content
-# (scripts/check-sections.mjs). A failure emails the repo owner.
-# Runs after each production deployment and daily, because an hourly ISR
-# regeneration can change the page without a deployment.
+# (scripts/check-sections.mjs) after each production deployment. A failure
+# emails the repo owner. ISR regenerations are guarded by lib/section-checks.js.
 name: Check homepage sections
 
 on:
   deployment_status:
-  schedule:
-    - cron: "41 4 * * *" # daily 04:41 UTC (09:41 PKT)
   workflow_dispatch:
 
 jobs:

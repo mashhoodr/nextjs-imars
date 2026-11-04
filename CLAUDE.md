@@ -13,7 +13,7 @@ npm run talks:missing   # List talks that still have no photo
 npm run talks:find -- <words>   # Search all talks; prints the filename to use
 npm run og:images       # Rebuild every social preview into public/og/
 npm run adplist:refresh # Refresh a feed snapshot (also podcast:, goodreads:); weekly in CI
-npm run check:sections -- [url]  # Every homepage section present with content (daily in CI)
+npm run check:sections -- [url]  # Every homepage section present with content (CI, per deploy)
 ```
 
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
@@ -31,7 +31,7 @@ a typeset card. Rerun after adding a page or changing a title. Needs `sips`.
 ## Architecture
 
 Next.js 16 (Pages Router) + React 19. Everything is prerendered — SSG for pages,
-ISR (`revalidate: 3600`) on the homepage so external feeds do not freeze at deploy time. The only non-static route is `/sitemap.xml`, edge-cached for a day.
+ISR (`revalidate: 86400`, daily) on the homepage so external feeds do not freeze at deploy time. The only non-static route is `/sitemap.xml`, edge-cached for a day.
 
 ### Content sources
 

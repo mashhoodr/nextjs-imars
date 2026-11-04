@@ -557,6 +557,7 @@ export async function getStaticProps() {
     props,
     // External feeds are fetched at build time, so without this the podcast and
     // newsletter lists freeze at whenever the site was last deployed.
-    revalidate: 3600,
+    // Once a day: a new podcast episode shows up within 24 hours.
+    revalidate: 86400,
   };
 }

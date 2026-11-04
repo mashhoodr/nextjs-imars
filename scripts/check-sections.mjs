@@ -1,10 +1,9 @@
 // Check the rendered homepage: every sidebar section exists and has content.
 // Run: npm run check:sections -- [url]   (default https://karachiwala.dev)
-// Daily and after each deployment via .github/workflows/check-sections.yml.
+// After each production deployment via .github/workflows/check-sections.yml.
 //
 // This complements lib/section-checks.js, which checks the data at build time.
-// It catches what that can't: markup that hides a section while its data is fine,
-// and a stale ISR page that the build-time check kept serving.
+// It catches what that can't: markup that hides a section while its data is fine.
 import { readFileSync } from "node:fs";
 
 // Minimum <li> items between a section's id and the next section's id.
