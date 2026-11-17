@@ -1,6 +1,14 @@
 {
-  "fetchedAt": "2026-11-04T06:56:33.269Z",
+  "fetchedAt": "2026-11-17T07:59:58.236Z",
   "episodes": [
+    {
+      "id": "b6d58519-d630-44f9-a54b-ede5bd55266a",
+      "title": "Is Cloud Engineering a safe option in a world of AI?",
+      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Is-Cloud-Engineering-a-safe-option-in-a-world-of-AI-e3shfn9",
+      "description": "A student at LUMS asked whether cloud and distributed systems roles still need strong coding, or whether understanding the concepts is enough while a harness writes the code. Cloud work is changing the same way software engineering is: at Taleemabad we no longer have a full-time DevOps engineer, and agents now set up and change cloud infrastructure from a goal. What's left is validating what the agent built, closing security gaps, and knowing how systems behave in production. I also cover how freshers get in: structured DevOps programmes that start you on test infrastructure, and startups where cloud comes with the job.\nIn this episode:\n\nThe question: coding strength or concepts for cloud and distributed systems roles, and do freshers get hired?\nCloud roles are being changed by agents just like software engineering\nTaleemabad no longer has a full-time DevOps engineer; our CEO deploys and scales on Railway himself\nAgents can set up and change AWS and GCP infrastructure from the end goal\nLarge distributed systems (Kubernetes and the like) still need more depth\nInfrastructure is code: the job is validating it, making sure it's correct, and closing security gaps\nPractising is harder than in software, because real and sporadic workloads are hard to simulate\nA dedicated cloud role may merge into software engineering\nGetting in as a fresher: DevOps programmes like Careem's start you on test infrastructure; sizable startups give you cloud work as part of the job\nInterviews focus on how systems are built and run in production and at scale, what goes wrong, and how you respond\nRunbooks: you don't write them by hand anymore, but you decide which ones exist, how they're maintained, and the permissions and audits they run with\n\nRelated episodes:\n\nDepth or Breadth? What New Engineers Should Focus On\nWhat Forward-Deployed Engineering Actually Looks Like\nDo I need monitoring and observability for my web app?\nAre you a T-Shaped Developer?\n\nHave a question? Reach out on LinkedIn or Twitter.",
+      "created": "Tue, 17 Nov 2026 04:45:06 GMT",
+      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1794890676716-f8c4a3fe4c1dd.jpg"
+    },
     {
       "id": "dd646f23-6ca3-428b-b3ad-6281c2833bed",
       "title": "Software Factories When You're Not an Engineer",
@@ -72,14 +80,6 @@
       "description": "If you are dumping your entire codebase into Claude or Gemini and hoping for the best, you are doing it wrong.\nIn today's episode, we tackle Context Engineering. AI agents have short-term memory (the Goldfish Problem) and limited Context Windows. If you fill that window with unnecessary data or heavy MCPs, the AI's performance drops drastically.\nTune in to learn how to structure your information using Agent files, Skill files, and Rule files. We also break down advanced strategies like Progressive Disclosure (only giving the AI what it needs, when it needs it) and using Sub-Agents to keep your main context window clean.",
       "created": "Fri, 13 Mar 2026 06:25:39 GMT",
       "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1773383115544-02651378eb0b6.jpg"
-    },
-    {
-      "id": "61c4bb1a-aa2f-40f3-aba0-fdd33a2face1",
-      "title": "Agentic Transformation: My Story",
-      "link": "https://podcasters.spotify.com/pod/show/mashhoodr/episodes/Agentic-Transformation-My-Story-e3g0rpk",
-      "description": "In this episode, I share a personal story of building an ERP system with AI in the field, and how it forced me to confront the \"5 Stages of Grief\" as a veteran software developer. The way we have written code for the last 20 years is ending. To survive, we have to unlearn our \"deterministic\" mindsets and adopt new mental models for a non-deterministic world. Join me as we kick off a brand new series on the foundational literacy required for the future of tech.",
-      "created": "Fri, 06 Mar 2026 03:32:46 GMT",
-      "image": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode/5750144/5750144-1772767928872-7fda6e6014f85.jpg"
     }
   ]
 }
