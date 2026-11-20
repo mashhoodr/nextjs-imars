@@ -16,6 +16,12 @@ npm run adplist:refresh # Refresh a feed snapshot (also podcast:, goodreads:); w
 npm run check:sections -- [url]  # Every homepage section present with content (CI, per deploy)
 ```
 
+**Adding a talk or workshop:** prepend it to `lib/talks.json` (next free `id`;
+`audienceType: "trained"` for workshops). Then report it to Advocu if it isn't
+there: from `mars_pa`, `python3 tools/advocu/advocu.py find <words>`, and if
+nothing matches, `advocu.py draft <public-speaking|workshop> body.json`. It
+creates a draft only; Mashhood submits it in the Advocu app.
+
 **Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
 (`2025-05-24.jpg`), or its id where two talks share a date (`62.jpg`), then run
 `npm run talks:images`. It crops square at 256px, re-encodes and sets the `image`
