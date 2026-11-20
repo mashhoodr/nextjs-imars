@@ -16,16 +16,11 @@ npm run adplist:refresh # Refresh a feed snapshot (also podcast:, goodreads:); w
 npm run check:sections -- [url]  # Every homepage section present with content (CI, per deploy)
 ```
 
-**Adding a talk or workshop:** prepend it to `lib/talks.json` (next free `id`;
-`audienceType: "trained"` for workshops). Then report it to Advocu if it isn't
-there: from `mars_pa`, `python3 tools/advocu/advocu.py find <words>`, and if
-nothing matches, `advocu.py draft <public-speaking|workshop> body.json`. It
-creates a draft only; Mashhood submits it in the Advocu app.
+**Adding a talk or workshop:** prepend to `lib/talks.json` (`audienceType: "trained"` for workshops), then
+report it to Advocu as a draft: see `mars_pa/tools/advocu/advocu.py` (`find`, then `draft`).
 
-**Adding a talk photo:** drop it in `talks-inbox/` named after the talk's date
-(`2025-05-24.jpg`), or its id where two talks share a date (`62.jpg`), then run
-`npm run talks:images`. It crops square at 256px, re-encodes and sets the `image`
-key. Accepts HEIC. `talks-inbox/` is gitignored — empty it after the run.
+**Adding a talk photo:** drop it in `talks-inbox/` named `<date>.jpg` (or `<id>.jpg` when two talks share
+a date; HEIC works), run `npm run talks:images` (square 256px, sets `image`), then empty the gitignored inbox.
 
 **Social previews:** `npm run og:images` rebuilds all 58 into `public/og/` plus
 `lib/og-images.json`, by hand like `talks:images`, and the output is committed.
