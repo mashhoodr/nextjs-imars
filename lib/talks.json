@@ -1,5 +1,15 @@
 [
   {
+    "title": "Building Agent Autonomy Using Software Factories",
+    "id": "91",
+    "created": "2026-11-19",
+    "location": "Road to DevFest 2026, GDG Cloud Islamabad, Air University, Islamabad, Pakistan",
+    "description": "A two-hour hands-on workshop, Track 1 of Road to DevFest 2026 with Women Techmakers Islamabad: building agents that work on their own inside a software factory, with the skills, hooks, permissions and guardrails that keep them on track.",
+    "audienceType": "trained",
+    "link": "https://www.linkedin.com/posts/gdgcloudislamabad_roadtodevfest-devfest2026-gdgcloudislamabad-activity-7529035035090313216-htfE",
+    "featured": true
+  },
+  {
     "title": "The Missing Semester for Software 3.0 — The Toolkit",
     "id": "90",
     "created": "2026-10-31",
