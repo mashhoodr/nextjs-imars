@@ -17,7 +17,7 @@ npm run check:sections -- [url]  # Every homepage section present with content (
 ```
 
 **Adding a talk or workshop:** prepend to `lib/talks.json` (`audienceType: "trained"` for workshops), then
-report it to Advocu as a draft: see `mars_pa/tools/advocu/advocu.py` (`find`, then `draft`).
+create the Advocu activity with the mars_pa `/advocu-activity` skill.
 
 **Adding a talk photo:** drop it in `talks-inbox/` named `<date>.jpg` (or `<id>.jpg` when two talks share
 a date; HEIC works), run `npm run talks:images` (square 256px, sets `image`), then empty the gitignored inbox.
