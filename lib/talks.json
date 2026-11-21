@@ -7,7 +7,8 @@
     "description": "A two-hour hands-on workshop, Track 1 of Road to DevFest 2026 with Women Techmakers Islamabad: building agents that work on their own inside a software factory, with the skills, hooks, permissions and guardrails that keep them on track.",
     "audienceType": "trained",
     "link": "https://www.linkedin.com/posts/gdgcloudislamabad_roadtodevfest-devfest2026-gdgcloudislamabad-activity-7529035035090313216-htfE",
-    "featured": true
+    "featured": true,
+    "image": "/talks/2026-11-19-building-agent-autonomy-using-software-factories.jpg"
   },
   {
     "title": "The Missing Semester for Software 3.0 — The Toolkit",
