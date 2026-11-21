@@ -1,5 +1,17 @@
 [
   {
+    "title": "AI & Education — Fireside Chat",
+    "id": "92",
+    "created": "2026-11-21",
+    "location": "DevFest Pakistan 2026, GDG Live Pakistan, Online",
+    "description": "A fireside chat with Dr. Farah Nadeem (Assistant Professor, LUMS) on how AI is reshaping learning: what changes for ed-tech builders, for teachers and for the classroom.",
+    "audienceType": "attended",
+    "link": "https://www.linkedin.com/posts/devfest-devfestpakistan-gdglivepakistan-share-7528682163916038144-xRNE",
+    "video": "https://www.youtube.com/watch?v=_w2MbdR41cU&t=5778s",
+    "featured": true,
+    "image": "/talks/2026-11-21-ai-education-fireside-chat.jpg"
+  },
+  {
     "title": "Building Agent Autonomy Using Software Factories",
     "id": "91",
     "created": "2026-11-19",
