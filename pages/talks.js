@@ -5,6 +5,9 @@ import allTalksData from "../lib/talks.json";
 import utilStyles from "../styles/utils.module.css";
 import TalkItem from "../components/talk-item";
 
+// Every Event needs a location or Search Console marks it invalid. Fail the build instead.
+const noVenue = allTalksData.filter((t) => !(t.location || "").trim()).map((t) => t.id);
+if (noVenue.length) throw new Error(`lib/talks.json: talks without a location: ${noVenue.join(", ")}`);
 
 export default function Talks() {
   return (
@@ -31,7 +34,8 @@ export default function Talks() {
                   // declared as in-person. A Place node for something called
                   // "Online" is wrong twice over: the mode and the location
                   // type. VirtualLocation is the correct node for those.
-                  const online = /^online$/i.test((location || "").trim());
+                  // Matches "Online", "GDG Kolachi, Online" and "Nest I/O (Online)".
+                  const online = /\bonline\b/i.test(location || "");
                   const url = slides || link;
                   return {
                     "@type": "ListItem",
@@ -44,13 +48,13 @@ export default function Talks() {
                       eventAttendanceMode: online
                         ? "https://schema.org/OnlineEventAttendanceMode"
                         : "https://schema.org/OfflineEventAttendanceMode",
-                      // A few entries have no recorded venue. Emitting a Place
-                      // with an empty name is worse than emitting nothing.
-                      ...(online
-                        ? { location: { "@type": "VirtualLocation", ...(url ? { url } : {}) } }
-                        : location
-                        ? { location: { "@type": "Place", name: location } }
-                        : {}),
+                      // Google requires `location` on every Event (Search Console:
+                      // "Missing field 'location'"), with `url` on a VirtualLocation
+                      // and `address` on a Place. Every talk in lib/talks.json
+                      // carries a location; the virtual ones say "Online".
+                      location: online
+                        ? { "@type": "VirtualLocation", url: url || absoluteUrl("/talks") }
+                        : { "@type": "Place", name: location, address: location },
                       performer: { "@id": PERSON_ID },
                       ...(description ? { description } : {}),
                       // How many people were actually in the room. This is the

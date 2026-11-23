@@ -14,7 +14,7 @@ import DateUtil from "./date";
  *   id            string, unique
  *   title         string
  *   created       YYYY-MM-DD
- *   location      optional string — venue and city, or "Online"
+ *   location      required string — venue and city, or "<organiser>, Online" (Event schema needs it)
  *   description   optional one-line write-up
  *   audience      optional number
  *   audienceType  "attended" | "trained" — a workshop is not a talk, and the
